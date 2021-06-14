@@ -1,21 +1,45 @@
 * {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   user-select: auto;
   outline: none;
 }
 
 body {
+  display: flex;
   overflow: hidden;
 }
-
-#previewContainer{
+#navBar{
+  position:relative;
+  width: 100%;
+  background: #555;
   display: flex;
-  max-height: 100vh;
-  width: 75%;
-  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 10px 0;
 }
+#navBar ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15px 0 0;
+}
+#navBar ul li{
+  display: block;
+  list-style: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+#previewContainer {
+  display: flex;
+  overflow-y: auto;
+  width: 100%;
+  max-height: 100vh;
+}
+
 #SpaceHeyPreview {
   display: inline-block;
   width: 100%;
@@ -23,14 +47,13 @@ body {
 }
 
 #customizeContainer {
-  float: left;
-  font-family: sans-serif;
-  color: #DDD;
   display: inline-block;
+  float: left;
   width: 25%;
   height: 100vh;
+  color: #DDD;
   background: #333333;
-  border-right: 6px solid #DDD;
+  font-family: sans-serif;
 }
 
 #contentContainer::-webkit-scrollbar,
@@ -40,14 +63,14 @@ textarea::-webkit-scrollbar {
 
 #contentContainer::-webkit-scrollbar-track,
 textarea::-webkit-scrollbar-track {
-  background: #BBB;
   border-radius: 0px;
+  background: #BBB;
 }
 
 #contentContainer::-webkit-scrollbar-thumb,
 textarea::-webkit-scrollbar-thumb {
-  background: #222;
   border-radius: 0px;
+  background: #222;
 }
 
 #contentContainer::-webkit-scrollbar-thumb:hover,
@@ -55,48 +78,53 @@ textarea::-webkit-scrollbar-thumb:hover {
   background: #CCC;
 }
 
-.inputWrapper{
+.inputWrapper {
   width: 90%;
 }
 
-.topBar{
+.topBar {
   display: flex;
-  flex-direction: row;
-  justify-content:space-between;
   align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.topBar h3{
+
+.topBar h3 {
   width: 100%;
   text-align: center;
 }
-.topBar button{
+
+.topBar button {
   width: 50px;
-  background: #555;
-  border: 2px solid black;;
-  border-radius: 5px;
+  padding: 3px;
   cursor: pointer;
   color: #FFF;
-  padding: 3px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: #555;
 }
-.topBar button:hover{
+
+.topBar button:hover {
   background: #777;
 }
-.topBar button:active{
+
+.topBar button:active {
   background: #222;
 }
+
 #customizeContainer h3, #customizeContainer h2 {
   padding: 10px 8px;
-
 }
+
 #cssContainer {
   display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  align-items: center;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   height: 25vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  align-items: center;
-  justify-content: center;
 }
 
 #cssBox {
@@ -104,166 +132,179 @@ textarea::-webkit-scrollbar-thumb:hover {
   width: 100%;
 }
 
-textarea{
+textarea {
   border-radius: 5px;
   font-size: 16px;
 }
 
-textarea:hover{
+textarea:hover {
   background: #FFF;
 }
 
 #cssBox textarea {
-  background: #111111;
-  color: #BBB;
-  font-family: monospace;
-  margin: 0 auto;
   width: 85%;
   height: 20vh;
+  margin: 0 auto;
   resize: none;
+  color: #BBB;
+  background: #111111;
+  font-family: monospace;
 }
 
 #contentContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-height: 63vh;
-  height: auto;
-  overflow-y: auto;
   overflow-x: hidden;
+  overflow-y: auto;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-height: 63vh;
   text-align: center;
 }
 
 #contentContainer textarea {
-  background: #111111;
-  color: #BBB;
-  font-family: monospace;
-  margin: 0 auto;
   width: 100%;
   height: 23vh;
+  margin: 0 auto;
   resize: none;
+  color: #BBB;
+  background: #111111;
+  font-family: monospace;
   direction: ltr;
 }
 
 .seperator {
-  border-top: 6px solid #CCC;
   margin: 10px 0;
+  border-top: 6px solid #CCC;
 }
 
 .contentInput {
   height: 600px;
 }
 
-.toolbarWrapper{
+.toolbarWrapper {
   display: block;
   width: 100%;
   height: auto;
 }
-#toolbar{
+
+#toolbar {
   text-align: center;
-  background: #333;
   border-bottom: 3px solid #DDD;
+  background: #333;
 }
-#toolbar li{
+
+#toolbar li {
   display: inline-block;
-  text-align: center;
   padding: 10px 20px;
-  font-family: sans-serif;
+  text-align: center;
   color: #DDD;
+  font-family: sans-serif;
   font-weight: bold;
 }
-#toolbar li p{
+
+#toolbar li p {
   cursor: pointer;
 }
-#toolbar li{
+
+#toolbar li {
   width: 49%;
   color: #FFF;
 }
 
-#toolbar li:last-child{
+#toolbar li:last-child {
   color: lightblue;
 }
 
-#toolbar li:last-child::before{
+#toolbar li:last-child::before {
   content: "(Alt + S)";
   color: #DDD;
   font-size: 11px;
-};
+}
 
-#CSSTitle{
+;
+
+#CSSTitle {
   width: 100%;
   text-align: center;
 }
 
-#CSSTitle h3{
+#CSSTitle h3 {
   display: inline-block;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-#CSSPop{
-  color: yellow;
+#CSSPop {
   cursor: pointer;
+  color: yellow;
 }
 
-.popupContainer{
-  display: flex;
+.popupContainer {
   position: absolute;
+  top: -9999px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  top: -9999px;
   width: 100%;
   height: 100vh;
-  background: rgba(0,0,0,.5);
   transition: .2s;
+  background: rgba(0, 0, 0, .5);
   filter: opacity(0%);
 }
 
-.popup{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.popup {
   position: relative;
-  background: rgba(80,80,80,.95);
-  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   width: 500px;
   height: auto;
+  border: 2px solid #000;
   border-radius: 20px;
+  background: rgba(80, 80, 80, .95);
   font-family: sans-serif;
 }
 
-.popupContent{
+.popupContent {
   text-align: center;
   color: #FFF;
 }
-.popupContent h2{
+
+.popupContent h2 {
   padding: 15px 0 0 0;
 }
-.popupContent p{
+
+.popupContent p {
   padding: 10px;
 }
-#gotitButton{
-  margin: 10px;
-  font-size: 18px;
+
+.gotitButton {
+  margin: 10px 5px;
   padding: 3px;
-  background: #DDDDDD;
-  border: none;
   cursor: pointer;
+  border: none;
   border-radius: 5px;
+  background: #DDDDDD;
+  font-size: 18px;
+  display: inline-block;
 }
-#gotitButton:hover{
+
+.gotitButton:hover {
   background: #FFFFFF;
 }
-#gotitButton:active{
+
+.gotitButton:active {
   background: #CCCCCC;
 }
 
-#quickCSS{
+#quickCSS {
   width: 550px;
 }
-#quickCSSWrapper{
+
+#quickCSSWrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -271,45 +312,114 @@ textarea:hover{
   max-height: 40vh;
 }
 
-#CSSOptions{
+#CSSOptions {
   position: relative;
-  color: #FFF;
-  padding: 0  20px 0 0;
-  margin: 20px 0 0 0;
   overflow-y: auto;
   width: 50%;
+  margin: 20px 0 0 0;
+  padding: 0 20px 0 0;
+  color: #FFF;
 }
-#CSSOptions li{
+
+#CSSOptions li {
+  margin: 5px 0 0 0;
+  padding: 5px 0 5px 0;
   list-style: none;
   text-align: left;
-  padding: 5px 0 5px 0;
-  margin: 5px 0 0 0;
   border-bottom: 2px solid #FFF;
 }
-#CSSOptions  li:last-child{
+
+#CSSOptions li:last-child {
   margin: 10px 0 20px 0;
 }
-#CSSOptions li p{
+
+#CSSOptions li p {
   cursor: pointer;
 }
-#CSSOutput{
+
+#CSSOutput {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   margin: 0 20px 0 0;
 }
-#CSSOutput .topBar{
+
+#CSSOutput .topBar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   margin: 0 20px 10px 0;
 }
-#CSSOutput textarea{
+
+#CSSOutput textarea {
   width: 100%;
   height: 30%;
   resize: none;
-  background: #333;
   color: #FFF;
+  background: #333;
+}
+
+#roadmapContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  padding: 20px;
+  color: #FFF;
+}
+
+.flexColumn{
+  flex: 2.5;
+  flex-wrap: wrap;
+}
+
+.flexRow{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+}
+
+.roadmapTitle h3{
+  border-bottom: 2px solid #333;
+  margin: 0 5px;
+}
+
+.roadmapTitle:nth-child(1) h3{
+  color: #f99191;
+}
+.roadmapTitle:nth-child(2) h3{
+  color: #ffa64e;
+}
+.roadmapTitle:nth-child(3) h3{
+  color: #ebef2d;
+}
+.roadmapTitle:nth-child(4) h3{
+  color: #62ef72;
+}
+.flexRow p{
+  padding: 10px 0;
+  display: flex;
+  flex: 2.5;
+  align-items: center;
+  justify-content: center;
+}
+
+#FAQContentWrapper{
+  padding: 20px;
+}
+#FAQContentWrapper h4{
+  color: #DDD;
+  margin: 10px 0;
+}
+#FAQContentWrapper h4:first-child{
+  margin: 0 0 10px 0;
+}
+#FAQContentWrapper p{
+  color: #BBB;
 }

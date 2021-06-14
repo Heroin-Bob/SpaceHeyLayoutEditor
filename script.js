@@ -73,6 +73,17 @@ function quickCSSPopup() {
   document.getElementsByClassName("popupContainer")[1].style.filter = "opacity(100%)";
 }
 
+function roadmapPopup() {
+  document.getElementsByClassName("popupContainer")[2].style.top = "0px";
+  document.getElementsByClassName("popupContainer")[2].style.filter = "opacity(100%)";
+}
+
+function FAQPopup(){
+  closePopup();
+  document.getElementsByClassName("popupContainer")[3].style.top = "0px";
+  document.getElementsByClassName("popupContainer")[3].style.filter = "opacity(100%)";
+}
+
 function copyText(box) {
   var copyText = "";
 

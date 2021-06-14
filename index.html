@@ -8,26 +8,33 @@
   <link rel="stylesheet" href="style.css">
 
   <script src="script.js"></script>
+  <script src="resizeDivs.js"></script>
   <title>SpaceHey Layout Editor</title>
 </head>
 
 <body onload="openDefaultProfile()">
-  <div class="popupContainer">
-    <div id="CSSpopup" class="popup">
-      <div class="popupContent">
-        <h2>CSS Box Info:</h2>
-        <p>The content of the CSS box will be placed in the About Me section of your generated HTML. However, you can still add a style tag to any of the boxes and add more CSS wherever you want!<br>The purpose of the CSS being separated is simply to make things easier to reference.</p>
-      </div>
-      <button id="gotitButton" onclick="closePopup()">Got it!</button>
-    </div>
-  </div>
+
   <div id="customizeContainer">
+
     <div id="toolbarWrapper">
+      <nav id="navBar">
+        <ul>
+          <li>
+            <p onclick="roadmapPopup()">Roadmap</p>
+          </li>
+          <li>
+            <p onclick="beautifyHTML()">Beautify</p>
+          </li>
+          <li>
+            <p onclick="quickCSSPopup()">Quick CSS</p>
+          </li>
+        </ul>
+      </nav>
       <div id="toolbar">
         <ul>
-          <li><p onclick="beautifyHTML()">Beautify</p></li>
-          <li><p onclick="quickCSSPopup()">Quick CSS</p></li>
-          <li><p onclick="updateProfile()">Update</p></li>
+          <li>
+            <p onclick="updateProfile()">Update</p>
+          </li>
         </ul>
       </div>
     </div>
@@ -102,27 +109,71 @@
       </div>
     </div>
   </div>
+  <div class="handler"></div>
+  <div id="previewContainer">
+    <div id="SpaceHeyPreview"></div>
+  </div>
 
+  <div class="popupContainer">
+    <div id="CSSpopup" class="popup">
+      <div class="popupContent">
+        <h2>CSS Box Info:</h2>
+        <p>The content of the CSS box will be placed in the About Me section of your generated HTML. However, you can still add a style tag to any of the boxes and add more CSS wherever you want!<br>The purpose of the CSS being separated is simply to
+          make things easier to reference.</p>
+      </div>
+      <button class="gotitButton" onclick="closePopup()">Got it!</button>
+    </div>
+  </div>
   <div class="popupContainer">
     <div id="quickCSS" class="popup">
       <div id="quickCSSWrapper">
         <div id="CSSOptions">
           <ul>
-            <li><p onclick="CSSReference('varTemplate')">Variable Template</p></li>
-            <li><p onclick="CSSReference('blurbs')">Blurbs Section</p></li>
-            <li><p onclick="CSSReference('aboutme')">About Me</p></li>
-            <li><p onclick="CSSReference('meet')">Who I'd Like To Meet</p></li>
-            <li><p>Interests Section</p></li>
-            <li><p>General</p></li>
-            <li><p>Music</p></li>
-            <li><p>Movies</p></li>
-            <li><p>Television</p></li>
-            <li><p>Books</p></li>
-            <li><p>Heroes</p></li>
-            <li><p>Links Section</p></li>
-            <li><p>Instagram</p></li>
-            <li><p>Twitter</p></li>
-            <li><p>Youtube</p></li>
+            <li>
+              <p onclick="CSSReference('varTemplate')">Variable Template</p>
+            </li>
+            <li>
+              <p onclick="CSSReference('blurbs')">Blurbs Section</p>
+            </li>
+            <li>
+              <p onclick="CSSReference('aboutme')">About Me</p>
+            </li>
+            <li>
+              <p onclick="CSSReference('meet')">Who I'd Like To Meet</p>
+            </li>
+            <li>
+              <p>Interests Section</p>
+            </li>
+            <li>
+              <p>General</p>
+            </li>
+            <li>
+              <p>Music</p>
+            </li>
+            <li>
+              <p>Movies</p>
+            </li>
+            <li>
+              <p>Television</p>
+            </li>
+            <li>
+              <p>Books</p>
+            </li>
+            <li>
+              <p>Heroes</p>
+            </li>
+            <li>
+              <p>Links Section</p>
+            </li>
+            <li>
+              <p>Instagram</p>
+            </li>
+            <li>
+              <p>Twitter</p>
+            </li>
+            <li>
+              <p>Youtube</p>
+            </li>
           </ul>
         </div>
         <div id="CSSOutput">
@@ -133,15 +184,77 @@
           <textarea id="CSSOutputText"></textarea>
         </div>
       </div>
-      <button id="gotitButton" onclick="closePopup()">Got it!</button>
+      <button class="gotitButton" onclick="closePopup()">Got it!</button>
     </div>
   </div>
+  <div class="popupContainer">
+    <div id="Roadmap" class="popup" style="width: 800px">
+      <div id="roadmapContent">
+        <div class="flexRow">
+          <div class="roadmapTitle flexColumn">
+            <h3>Considered</h3>
+          </div>
+          <div class="roadmapTitle flexColumn">
+            <h3>Planned</h3>
+          </div>
+          <div class="roadmapTitle flexColumn">
+            <h3>In Progress</h3>
+          </div>
+          <div class="roadmapTitle flexColumn">
+            <h3>Completed</h3>
+          </div>
+        </div>
+        <div class="flexRow">
+          <p>Advanced layout template</p>
+          <p>Simple layout template</p>
+          <p>Revamped Quick CSS menu</p>
+          <p>All profile settings boxes functional</p>
+        </div>
+        <div class="flexRow">
+          <p>Match HTML/CSS/JS filters used on SpaceHey native</p>
+          <p>Resizable sidebar/boxes</p>
+          <p></p>
+          <p>Alt+S Update hotkey</p>
+        </div>
+        <div class="flexRow">
+          <p>Ace Editor for IDE instead of text boxes</p>
+          <p></p>
+          <p></p>
+          <p>Add CSS to top of About Me when copied</p>
+        </div>
+        <div class="flexRow">
+          <p>Toggle function to click on element to get CSS selector</p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+        <div class="flexRow">
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+      <div class="buttonWrapper">
+        <button id="FAQButton" class="gotitButton" onclick="FAQPopup()">FAQ</button>
+        <button class="gotitButton" onclick="closePopup()">Got it!</button>
+      </div>
 
-  <div id="previewContainer">
-    <div id="SpaceHeyPreview"></div>
+    </div>
   </div>
-
-
+  <div class="popupContainer">
+    <div id="FAQPopup" class="popup" style="width: 800px">
+      <div id="FAQContentWrapper">
+        <h4><i>Would you consider auto-update while editing?</i></h4>
+        <p>Nope. I kind of hate auto-update. What ends up happening is you, at some point, add something like audio or an animation or whatever and then every time the screen updates that sound/animation/etc. restarts. Super annoying. Not going to do that.
+        </p>
+        <h4><i>Why does something I put on my page not display the same on SpaceHey?</i></h4>
+        <p>In the roadmap you'll see that there is a "Match HTML/CSS/JS filters used on SpaceHey native" under the Considered column. There are some things you're simply not allowed to do on SpaceHey that I do not filter at this point in time. If
+          your HTML/CSS/embed violates that rule then it will not work properly. There's really nothing I can do about that without adding the same filter to this page, which is very far down the list of things I would consider at this time. I also do not have access to that information so it may not be possible with 100% accuracy.</i></h4>
+      </div>
+      <button class="gotitButton" onclick="closePopup()">Got it!</button>
+    </div>
+  </div>
 </body>
 
 </html>
