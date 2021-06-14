@@ -185,6 +185,12 @@ textarea:hover{
   color: lightblue;
 }
 
+#toolbar li:last-child::before{
+  content: "(Alt + S)";
+  color: #DDD;
+  font-size: 11px;
+};
+
 #CSSTitle{
   width: 100%;
   text-align: center;
