@@ -454,66 +454,66 @@ We are <b>SpaceHey.com</b>!
                         <p><b>SpaceHey has <span class="count">124964</span> friends.</b></p>
             <div class="friends-grid">
                             <div class="person">
-                <a href="/profile?id=128497">
+                <a href="#">
                   <p>Alfred Trujillo</p>
                 </a>
-                <a href="/profile?id=128497">
+                <a href="#">
                   <img src="SpaceHeyImages/128497_d670439c73465ceb83a3282ea0fde995.jpg" alt="profile picture" loading="lazy">
                 </a>
               </div>
                             <div class="person">
-                <a href="/profile?id=128496">
+                <a href="#">
                   <p>clawedbeauty</p>
                 </a>
-                <a href="/profile?id=128496">
+                <a href="#">
                   <img src="SpaceHeyImages/128496_2f5a4f641b5e1d0d3a0464827376a2db.jpg" alt="profile picture" loading="lazy">
                 </a>
               </div>
                             <div class="person">
-                <a href="/profile?id=128495">
+                <a href="#">
                   <p>IntimateAhole</p>
                 </a>
-                <a href="/profile?id=128495">
+                <a href="#">
                   <img src="SpaceHeyImages/0_default.png" alt="profile picture" loading="lazy">
                 </a>
               </div>
                             <div class="person">
-                <a href="/profile?id=128494">
+                <a href="#">
                   <p>KathrynE297</p>
                 </a>
-                <a href="/profile?id=128494">
+                <a href="#">
                   <img src="SpaceHeyImages/128494_689a07a40c16320ef9ebb69774dd055b.jpg" alt="profile picture" loading="lazy">
                 </a>
               </div>
                             <div class="person">
-                <a href="/profile?id=128493">
+                <a href="#">
                   <p>StarLord</p>
                 </a>
-                <a href="/profile?id=128493">
+                <a href="#">
                   <img src="SpaceHeyImages/0_default.png" alt="profile picture" loading="lazy">
                 </a>
               </div>
                             <div class="person">
-                <a href="/profile?id=128492">
+                <a href="#">
                   <p>Kristen Lockwood</p>
                 </a>
-                <a href="/profile?id=128492">
+                <a href="#">
                   <img src="SpaceHeyImages/128492_6f7ed93350da27eb46f643b053c146dd.jpg" alt="profile picture" loading="lazy">
                 </a>
               </div>
                             <div class="person">
-                <a href="/profile?id=128491">
+                <a href="#">
                   <p>Ash</p>
                 </a>
-                <a href="/profile?id=128491">
+                <a href="#">
                   <img src="SpaceHeyImages/0_default.png" alt="profile picture" loading="lazy">
                 </a>
               </div>
                             <div class="person">
-                <a href="/profile?id=128490">
+                <a href="#">
                   <p>Matt Saundry</p>
                 </a>
-                <a href="/profile?id=128490">
+                <a href="#">
                   <img src="SpaceHeyImages/128490_d8cab7d91bfbf12288c13d3f362991b9.jpg" alt="profile picture" loading="lazy">
                 </a>
               </div>
@@ -535,10 +535,10 @@ We are <b>SpaceHey.com</b>!
               <tbody>
                                 <tr>
                   <td>
-                    <a href="/profile?id=127733">
+                    <a href="#">
                       <p>(っ◔◡◔)っ Beat</p>
                     </a>
-                    <a href="/profile?id=127733">
+                    <a href="#">
                       <img src="SpaceHeyImages/127733_7ddcf4f2f7fe3ff56c39c680fe399ad3.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -557,10 +557,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=23510">
+                    <a href="#">
                       <p>Paisley</p>
                     </a>
-                    <a href="/profile?id=23510">
+                    <a href="#">
                       <img src="SpaceHeyImages/23510_7b3ddb060993892823d20b13f113bdfb.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -579,10 +579,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=127331">
+                    <a href="#">
                       <p>DarkMiryam</p>
                     </a>
-                    <a href="/profile?id=127331">
+                    <a href="#">
                       <img src="SpaceHeyImages/127331_ba3afb0f971e803e8d8e4374d91998f8.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -601,10 +601,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=127332">
+                    <a href="#">
                       <p>Deej</p>
                     </a>
-                    <a href="/profile?id=127332">
+                    <a href="#">
                       <img src="SpaceHeyImages/127332_bf33f9dc87bdc8e48ba4a810f4e7cd7b.png" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -623,10 +623,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=127321">
+                    <a href="#">
                       <p>Azizi Chesca</p>
                     </a>
-                    <a href="/profile?id=127321">
+                    <a href="#">
                       <img src="SpaceHeyImages/1.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -645,10 +645,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=124861">
+                    <a href="#">
                       <p>Quentin Kokta QK</p>
                     </a>
-                    <a href="/profile?id=124861">
+                    <a href="#">
                       <img src="SpaceHeyImages/124861_0b4dd5709a49f9dc2c7adc69dcbb42ca.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -667,10 +667,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=127316">
+                    <a href="#">
                       <p>CVMDOSIV 4TWNY</p>
                     </a>
-                    <a href="/profile?id=127316">
+                    <a href="#">
                       <img src="SpaceHeyImages/127316_f1b21a4cc646d41b195b29b98921d29d.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -689,10 +689,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=127316">
+                    <a href="#">
                       <p>CVMDOSIV 4TWNY</p>
                     </a>
-                    <a href="/profile?id=127316">
+                    <a href="#">
                       <img src="SpaceHeyImages/2.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -711,10 +711,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=127061">
+                    <a href="#">
                       <p>Alexa&amp;Ali</p>
                     </a>
-                    <a href="/profile?id=127061">
+                    <a href="#">
                       <img src="SpaceHeyImages/127061_f59528323bfb7563c70072bb758e99a4.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -733,10 +733,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=127052">
+                    <a href="#">
                       <p>Christopher</p>
                     </a>
-                    <a href="/profile?id=127052">
+                    <a href="#">
                       <img src="SpaceHeyImages/127052_3d36f0a76f3a89a75ee30e1c45731716.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -755,10 +755,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=126328">
+                    <a href="#">
                       <p>William</p>
                     </a>
-                    <a href="/profile?id=126328">
+                    <a href="#">
                       <img src="SpaceHeyImages/126328_69539240638debf42259534aef547543.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -777,7 +777,7 @@ We are <b>SpaceHey.com</b>!
                         <p>
                           <small>
                             by
-                            <a href="/profile?id=127052"><b>Christopher</b></a>;
+                            <a href="#"><b>Christopher</b></a>;
                             <time class="ago" data-timestamp="1622342723" style="opacity: 1;">2 weeks ago</time>;
                                                         <a href="https://spacehey.com/report?type=comment&amp;id=234537">
                               Report
@@ -793,10 +793,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=12139">
+                    <a href="#">
                       <p>Frannie</p>
                     </a>
-                    <a href="/profile?id=12139">
+                    <a href="#">
                       <img src="SpaceHeyImages/0_default.png" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -815,10 +815,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=126834">
+                    <a href="#">
                       <p>Jasmine</p>
                     </a>
-                    <a href="/profile?id=126834">
+                    <a href="#">
                       <img src="SpaceHeyImages/0_default.png" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -837,10 +837,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=126263">
+                    <a href="#">
                       <p>Shahid</p>
                     </a>
-                    <a href="/profile?id=126263">
+                    <a href="#">
                       <img src="SpaceHeyImages/0_default.png" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -859,10 +859,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=125650">
+                    <a href="#">
                       <p>K1Y0_1S_D3AD</p>
                     </a>
-                    <a href="/profile?id=125650">
+                    <a href="#">
                       <img src="SpaceHeyImages/0_default.png" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -881,7 +881,7 @@ We are <b>SpaceHey.com</b>!
                         <p>
                           <small>
                             by
-                            <a href="/profile?id=116039"><b>𝓕 𝓻 𝓪 𝓷 𝓴    𝓭 𝓾 𝓴 𝓮    𝓸 𝓯   𝓼 𝓹 𝓪 𝓬 𝓮 𝓱 𝓮 𝔂</b></a>;
+                            <a href="#"><b>𝓕 𝓻 𝓪 𝓷 𝓴    𝓭 𝓾 𝓴 𝓮    𝓸 𝓯   𝓼 𝓹 𝓪 𝓬 𝓮 𝓱 𝓮 𝔂</b></a>;
                             <time class="ago" data-timestamp="1621212264" style="opacity: 1;">27 days ago</time>;
                                                         <a href="https://spacehey.com/report?type=comment&amp;id=230091">
                               Report
@@ -897,10 +897,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=23510">
+                    <a href="#">
                       <p>Paisley</p>
                     </a>
-                    <a href="/profile?id=23510">
+                    <a href="#">
                       <img src="SpaceHeyImages/3.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
@@ -919,10 +919,10 @@ We are <b>SpaceHey.com</b>!
                 </tr>
                                 <tr>
                   <td>
-                    <a href="/profile?id=16909">
+                    <a href="#">
                       <p>🖤Xx.RJ.xX🖤</p>
                     </a>
-                    <a href="/profile?id=16909">
+                    <a href="#">
                       <img src="SpaceHeyImages/0_default.png" alt="profile picture" loading="lazy">
                     </a>
                   </td>
