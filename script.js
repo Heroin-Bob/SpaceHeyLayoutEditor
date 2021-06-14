@@ -1,9 +1,3 @@
-
-
-function beautifyHTML(){
-
-}
-
 function cssPopClick() {
   document.getElementsByClassName("popupContainer")[0].style.top = "0px";
   document.getElementsByClassName("popupContainer")[0].style.filter = "opacity(100%)";
