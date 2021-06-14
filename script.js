@@ -165,7 +165,6 @@ function CSSReference(elem){
   document.getElementById("CSSOutputText").value = outStr;
 }
 
-
 //Alt+S to hotkey update
 function KeyPress(e) {
       var evtobj = window.event? event : e;
