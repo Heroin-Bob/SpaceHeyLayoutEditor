@@ -393,15 +393,19 @@ textarea:hover {
 .roadmapTitle:nth-child(1) h3{
   color: #f99191;
 }
+
 .roadmapTitle:nth-child(2) h3{
   color: #ffa64e;
 }
+
 .roadmapTitle:nth-child(3) h3{
   color: #ebef2d;
 }
+
 .roadmapTitle:nth-child(4) h3{
   color: #62ef72;
 }
+
 .flexRow p{
   padding: 10px 0;
   display: flex;
