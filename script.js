@@ -256,7 +256,7 @@ var defaultProf = `
         <h1>SpaceHey <span class="verified-info" title="Verified User" data-reason="Official Brand Account"><img src="https://static.spacehey.net/icons2/tick_light_blue.png" class="icon verified" aria-hidden="true" loading="lazy" alt="Tick_light_blue Icon"></span></h1>
                 <div class="general-about">
           <div class="profile-pic">
-            <img src="https://cdn.spacehey.net/profilepics/2_a182558ef032396e37a8432b09540a48.png?token=wckTPxef0IizvfGhE_TTwlSd0--DKRk_fbrmLPPxO-Q&amp;expires=1623624376" alt="profile picture" loading="lazy">
+            <img src="SpaceHeyImages/mainprofile.png" alt="profile picture">
           </div>
           <div class="details">
             <p>"Having fun!"</p><p>SPACEHEY.COM - A SPACE FOR FRIENDS</p>                                  </div>
@@ -474,7 +474,7 @@ We are <b>SpaceHey.com</b>!
                   <p>IntimateAhole</p>
                 </a>
                 <a href="/profile?id=128495">
-                  <img src="https://cdn.spacehey.net/profilepics/0_default.png?token=B4DwKSEz_P1msYg4Qz2ozPCzk84N-vy590u8NVO2sKs&amp;expires=1623624196" alt="profile picture" loading="lazy">
+                  <img src="SpaceHeyImages/0_default.png" alt="profile picture" loading="lazy">
                 </a>
               </div>
                             <div class="person">
@@ -490,7 +490,7 @@ We are <b>SpaceHey.com</b>!
                   <p>StarLord</p>
                 </a>
                 <a href="/profile?id=128493">
-                  <img src="https://cdn.spacehey.net/profilepics/0_default.png?token=B4DwKSEz_P1msYg4Qz2ozPCzk84N-vy590u8NVO2sKs&amp;expires=1623624196" alt="profile picture" loading="lazy">
+                  <img src="SpaceHeyImages/0_default.png" alt="profile picture" loading="lazy">
                 </a>
               </div>
                             <div class="person">
@@ -506,7 +506,7 @@ We are <b>SpaceHey.com</b>!
                   <p>Ash</p>
                 </a>
                 <a href="/profile?id=128491">
-                  <img src="https://cdn.spacehey.net/profilepics/0_default.png?token=B4DwKSEz_P1msYg4Qz2ozPCzk84N-vy590u8NVO2sKs&amp;expires=1623624196" alt="profile picture" loading="lazy">
+                  <img src="SpaceHeyImages/0_default.png" alt="profile picture" loading="lazy">
                 </a>
               </div>
                             <div class="person">
@@ -561,7 +561,7 @@ We are <b>SpaceHey.com</b>!
                       <p>Paisley</p>
                     </a>
                     <a href="/profile?id=23510">
-                      <img src="https://cdn.spacehey.net/profilepics/23510_7b3ddb060993892823d20b13f113bdfb.jpg?token=jfs9KhrIeUrmIHHc_oz-hwrWfODHVE88MAJBlAo3Re0&amp;expires=1623618569" alt="profile picture" loading="lazy">
+                      <img src="SpaceHeyImages/23510_7b3ddb060993892823d20b13f113bdfb.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
                   <td>
@@ -649,7 +649,7 @@ We are <b>SpaceHey.com</b>!
                       <p>Quentin Kokta QK</p>
                     </a>
                     <a href="/profile?id=124861">
-                      <img src="https://cdn.spacehey.net/profilepics/124861_0b4dd5709a49f9dc2c7adc69dcbb42ca.jpg?token=s_PGcGQCMNgJQyJhbo3pQ5w_5z6tPaD4Sa9zbfx9kuo&amp;expires=1623623914" alt="profile picture" loading="lazy">
+                      <img src="SpaceHeyImages/124861_0b4dd5709a49f9dc2c7adc69dcbb42ca.jpg" alt="profile picture" loading="lazy">
                     </a>
                   </td>
                   <td>
