@@ -201,11 +201,7 @@ var defaultProf = `
   <link href="https://spacehey.com/opensearch.xml" rel="search" title="Search SpaceHey" type="application/opensearchdescription+xml">
 
 
-  <script src="https://static.spacehey.net/js/jquery.js?v=3.6.0"></script>
-  <script src="" async=""></script>
 
-  <!--<link rel="preconnect" href="https://cdn.spacehey.net">
-  <link rel="preconnect" href="https://static.spacehey.net">-->
 <style type="text/css">.c1-ui-state-hover {background-color:yellow !important; padding:5px !important }</style></head>
 <body>
 <!-- [spacehey.com] SpaceHey Server: vps-1 - Session Handler: redis IN USE - {"PHPSESSID":"kppmf5th99o197aftd2divhenl","spacehey_user_notice":"agreed","SH_TEST":"yes"} -->
