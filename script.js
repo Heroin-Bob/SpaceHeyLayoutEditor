@@ -984,7 +984,7 @@ We are <b>SpaceHey.com</b>!
 
 <link rel="stylesheet" href="https://spacehey.com/css/important.css?c=bcb835f9120d9fa7b157b928286ea870e41d421e40f9e581afeb34363231528a">
 
-<script src="https://tibushlabs.de/a/t.js" async="" defer=""></script>
+<script src="" async="" defer=""></script>
 <noscript><img src="https://tibushlabs.de/a/post"></noscript>
 
 
