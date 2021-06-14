@@ -202,7 +202,7 @@ var defaultProf = `
 
 
   <script src="https://static.spacehey.net/js/jquery.js?v=3.6.0"></script>
-  <script src="https://spacehey.com/js/script.js?v=0.22" async=""></script>
+  <script src="" async=""></script>
 
   <link rel="preconnect" href="https://cdn.spacehey.net">
   <link rel="preconnect" href="https://static.spacehey.net">
