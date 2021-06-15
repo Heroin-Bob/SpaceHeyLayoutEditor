@@ -10,8 +10,9 @@ body {
   display: flex;
   overflow: hidden;
 }
-#navBar{
-  position:relative;
+
+#navBar {
+  position: relative;
   width: 100%;
   background: #555;
   display: flex;
@@ -20,19 +21,22 @@ body {
   height: auto;
   padding: 10px 0;
 }
-#navBar ul{
+
+#navBar ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 0 15px 0 0;
 }
-#navBar ul li{
+
+#navBar ul li {
   display: block;
   list-style: none;
   text-decoration: none;
   cursor: pointer;
 }
+
 #previewContainer {
   display: flex;
   overflow-y: auto;
@@ -54,27 +58,32 @@ body {
   color: #DDD;
   background: #333333;
   font-family: sans-serif;
+  border-right: 4px solid #DDDDDD;
 }
 
 #contentContainer::-webkit-scrollbar,
-textarea::-webkit-scrollbar {
+textarea::-webkit-scrollbar,
+#CSSOptionsWrapper::-webkit-scrollbar {
   width: 6px;
 }
 
 #contentContainer::-webkit-scrollbar-track,
-textarea::-webkit-scrollbar-track {
+textarea::-webkit-scrollbar-track,
+#CSSOptionsWrapper::-webkit-scrollbar-track {
   border-radius: 0px;
   background: #BBB;
 }
 
 #contentContainer::-webkit-scrollbar-thumb,
-textarea::-webkit-scrollbar-thumb {
+textarea::-webkit-scrollbar-thumb,
+#CSSOptionsWrapper::-webkit-scrollbar-thumb {
   border-radius: 0px;
   background: #222;
 }
 
 #contentContainer::-webkit-scrollbar-thumb:hover,
-textarea::-webkit-scrollbar-thumb:hover {
+textarea::-webkit-scrollbar-thumb:hover,
+#CSSOptionsWrapper::-webkit-scrollbar-thumb:hover  {
   background: #CCC;
 }
 
@@ -133,7 +142,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 textarea {
-  border-radius: 5px;
+  border-radius: 2px;
   font-size: 16px;
 }
 
@@ -257,13 +266,10 @@ textarea:hover {
 .popup {
   position: relative;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  align-items:baseline;
   width: 500px;
   height: auto;
   border: 2px solid #000;
-  border-radius: 20px;
   background: rgba(80, 80, 80, .95);
   font-family: sans-serif;
 }
@@ -290,6 +296,7 @@ textarea:hover {
   background: #DDDDDD;
   font-size: 18px;
   display: inline-block;
+  position: relative;
 }
 
 .gotitButton:hover {
@@ -300,68 +307,121 @@ textarea:hover {
   background: #CCCCCC;
 }
 
-#quickCSS {
-  width: 550px;
-}
-
-#quickCSSWrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.buttonWrapper{
+  position: absolute;
   width: 100%;
-  max-height: 40vh;
-}
-
-#CSSOptions {
-  position: relative;
-  overflow-y: auto;
-  width: 50%;
-  margin: 20px 0 0 0;
-  padding: 0 20px 0 0;
-  color: #FFF;
-}
-
-#CSSOptions li {
-  margin: 5px 0 0 0;
-  padding: 5px 0 5px 0;
-  list-style: none;
-  text-align: left;
-  border-bottom: 2px solid #FFF;
-}
-
-#CSSOptions li:last-child {
-  margin: 10px 0 20px 0;
-}
-
-#CSSOptions li p {
-  cursor: pointer;
-}
-
-#CSSOutput {
+  bottom: 0;
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
-  margin: 0 20px 0 0;
 }
+
+#quickCSS {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  height: 550px;
+}
+
+#quickCSSWrapper{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+#CSSOutput{
+  display: flex;
+  flex-direction: row;
+  background: #AAA;
+  width: 50%;
+  min-height: 500px;
+  max-height: 500px;
+}
+
+#CSSOptionsWrapper{
+  width: 50%;
+  min-height: 500px;
+  max-height: 500px;
+  overflow-y: auto;
+  background: #333;
+}
+.leftCol{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 5px;
+}
+.rightCol{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items:stretch;
+  width: 50%;
+}
+#CSSOptions .CSSOption {
+  padding: 0 0 0 10px;
+  display: block;
+  overflow: hidden;
+  transition: .3s;
+  max-height: 0;
+
+  background: #dfe290;
+}
+
+#CSSOptions .CSSButton {
+  background: #333;
+  color: white;
+  cursor: pointer;
+  padding: 18px 8px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: .3s;
+}
+#CSSOptions .CSSButton:focus{
+  background: #225044;
+}
+
+#CSSOptions .CSSButton span {
+  padding: 0 0 0 0;
+  float: left;
+  transform: rotate(0deg);
+  transition: .3s;
+}
+#CSSOptions .CSSButton span::after{
+  content: ' ';
+  padding: 0 8px 0 0;
+}
+
 
 #CSSOutput .topBar {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  margin: 0 20px 10px 0;
+  margin: 3px 20px 10px 0;
 }
-
-#CSSOutput textarea {
+#elementImg{
+  height: 477px;
+  margin: 0 auto;
   width: 100%;
-  height: 30%;
+  background-image: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#CSSOutput textarea {
+  width: 90%;
+  height: 285px;
   resize: none;
   color: #FFF;
   background: #333;
 }
 
-#roadmapContent{
+#roadmapContent {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -371,12 +431,12 @@ textarea:hover {
   color: #FFF;
 }
 
-.flexColumn{
+.flexColumn {
   flex: 2.5;
   flex-wrap: wrap;
 }
 
-.flexRow{
+.flexRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -385,28 +445,28 @@ textarea:hover {
   text-align: center;
 }
 
-.roadmapTitle h3{
+.roadmapTitle h3 {
   border-bottom: 2px solid #333;
   margin: 0 5px;
 }
 
-.roadmapTitle:nth-child(1) h3{
+.roadmapTitle:nth-child(1) h3 {
   color: #f99191;
 }
 
-.roadmapTitle:nth-child(2) h3{
+.roadmapTitle:nth-child(2) h3 {
   color: #ffa64e;
 }
 
-.roadmapTitle:nth-child(3) h3{
+.roadmapTitle:nth-child(3) h3 {
   color: #ebef2d;
 }
 
-.roadmapTitle:nth-child(4) h3{
+.roadmapTitle:nth-child(4) h3 {
   color: #62ef72;
 }
 
-.flexRow p{
+.flexRow p {
   padding: 10px 0;
   display: flex;
   flex: 2.5;
@@ -414,16 +474,23 @@ textarea:hover {
   justify-content: center;
 }
 
-#FAQContentWrapper{
+#FAQContentWrapper {
   padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 0 0 50px 0;
+
 }
-#FAQContentWrapper h4{
+
+#FAQContentWrapper h4 {
   color: #DDD;
   margin: 10px 0;
 }
-#FAQContentWrapper h4:first-child{
+
+#FAQContentWrapper h4:first-child {
   margin: 0 0 10px 0;
 }
-#FAQContentWrapper p{
+
+#FAQContentWrapper p {
   color: #BBB;
 }

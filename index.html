@@ -9,13 +9,13 @@
 
   <script src="script.js"></script>
   <script src="resizeDivs.js"></script>
+  <script src="QuickCSS.js"></script>
   <title>SpaceHey Layout Editor</title>
 </head>
 
 <body onload="openDefaultProfile()">
 
   <div id="customizeContainer">
-
     <div id="toolbarWrapper">
       <nav id="navBar">
         <ul>
@@ -109,7 +109,7 @@
       </div>
     </div>
   </div>
-  <div class="handler"></div>
+
   <div id="previewContainer">
     <div id="SpaceHeyPreview"></div>
   </div>
@@ -124,69 +124,70 @@
       <button class="gotitButton" onclick="closePopup()">Got it!</button>
     </div>
   </div>
+
+  <!--Quick CSS Popup-->
   <div class="popupContainer">
     <div id="quickCSS" class="popup">
       <div id="quickCSSWrapper">
-        <div id="CSSOptions">
-          <ul>
-            <li>
-              <p onclick="CSSReference('varTemplate')">Variable Template</p>
-            </li>
-            <li>
-              <p onclick="CSSReference('blurbs')">Blurbs Section</p>
-            </li>
-            <li>
-              <p onclick="CSSReference('aboutme')">About Me</p>
-            </li>
-            <li>
-              <p onclick="CSSReference('meet')">Who I'd Like To Meet</p>
-            </li>
-            <li>
-              <p>Interests Section</p>
-            </li>
-            <li>
-              <p>General</p>
-            </li>
-            <li>
-              <p>Music</p>
-            </li>
-            <li>
-              <p>Movies</p>
-            </li>
-            <li>
-              <p>Television</p>
-            </li>
-            <li>
-              <p>Books</p>
-            </li>
-            <li>
-              <p>Heroes</p>
-            </li>
-            <li>
-              <p>Links Section</p>
-            </li>
-            <li>
-              <p>Instagram</p>
-            </li>
-            <li>
-              <p>Twitter</p>
-            </li>
-            <li>
-              <p>Youtube</p>
-            </li>
-          </ul>
+        <div id="CSSOptionsWrapper">
+          <div id="CSSOptions">
+            <button type="button" class="CSSButton">Templates<span>&#11166;<span></button>
+            <div class="CSSOption">
+              <button type="button" class="CSSButton" onclick="CSSReference('simpleLayout')">Simple Layout</button>
+              <button type="button" class="CSSButton" onclick="CSSReference('varTemplate')">Variables</button>
+            </div>
+            <button type="button" class="CSSButton" onclick="CSSReference('body')">Body</button>
+            <button type="button" class="CSSButton" onclick="CSSReference('main')">Main</button>
+            <button type="button" class="CSSButton" onclick="CSSReference('header')">Header<span>&#11166;<span></button>
+            <div class="CSSOption">
+              <button type="button" class="CSSButton" onclick="CSSReference('headerTop')">Header Top</button>
+              <button type="button" class="CSSButton" onclick="CSSReference('navLinks')">Navigation Links</button>
+            </div>
+            <button type="button" class="CSSButton" onclick="CSSReference('leftColumn')">Left Column<span>&#11166;<span></button>
+            <div class="CSSOption">
+              <button type="button" class="CSSButton" onclick="CSSReference()">Display Name</button>
+              <button type="button" class="CSSButton" onclick="CSSReference()">Verified Icon</button>
+              <button type="button" class="CSSButton" onclick="CSSReference()">General Info<span>&#11166;<span></button>
+              <div class="CSSOption">
+                <button type="button" class="CSSButton" onclick="CSSReference()">Profile Picture</button>
+                <button type="button" class="CSSButton" onclick="CSSReference()">Details<span>&#11166;<span></button>
+                <div class="CSSOption">
+                  <button type="button" class="CSSButton" onclick="CSSReference()">Status</button>
+                  <button type="button" class="CSSButton" onclick="CSSReference()">About You</button>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="CSSButton">Right Column<span>&#11166;<span></button>
+            <button type="button" class="CSSButton">Footer<span>&#11166;<span></button>
+
+
+            <div class="CSSDropdown"></div>
+          </div>
         </div>
         <div id="CSSOutput">
-          <div class="topBar">
-            <h3>Element CSS:</h3>
-            <button onclick="copyText('quickCSS')">Copy</button>
+
+          <div class="leftCol">
+            <h3>Element:</h3>
+            <div id="elementImg"></div>
           </div>
-          <textarea id="CSSOutputText"></textarea>
+          <div class="rightCol">
+            <div class="topBar">
+              <h3>Element CSS:</h3>
+              <button onclick="copyText('quickCSS')">Copy</button>
+            </div>
+            <textarea id="CSSOutputText"></textarea>
+          </div>
         </div>
       </div>
-      <button class="gotitButton" onclick="closePopup()">Got it!</button>
+
+      <div class="buttonWrapper">
+        <button class="gotitButton" onclick="closePopup()">Got it!</button>
+      </div>
+
     </div>
   </div>
+
+  <!--Roadmap Popup-->
   <div class="popupContainer">
     <div id="Roadmap" class="popup" style="width: 800px">
       <div id="roadmapContent">
@@ -218,13 +219,13 @@
         </div>
         <div class="flexRow">
           <p>Ace Editor for IDE instead of text boxes</p>
-          <p></p>
+          <p>Beautify HTML/CSS support</p>
           <p></p>
           <p>Add CSS to top of About Me when copied</p>
         </div>
         <div class="flexRow">
           <p>Toggle function to click on element to get CSS selector</p>
-          <p></p>
+          <p>Make UI mobile friendly</p>
           <p></p>
           <p></p>
         </div>
@@ -242,17 +243,25 @@
 
     </div>
   </div>
+
+  <!--FAQ Popup-->
   <div class="popupContainer">
     <div id="FAQPopup" class="popup" style="width: 800px">
       <div id="FAQContentWrapper">
         <h4><i>Would you consider auto-update while editing?</i></h4>
-        <p>Nope. I kind of hate auto-update. What ends up happening is you, at some point, add something like audio or an animation or whatever and then every time the screen updates that sound/animation/etc. restarts. Super annoying. Not going to do that.
+        <p>Nope. I kind of hate auto-update. What ends up happening is you, at some point, add something like audio or an animation or whatever and then every time the screen updates that sound/animation/etc. restarts. Super annoying. Not going to do
+          that.
         </p>
         <h4><i>Why does something I put on my page not display the same on SpaceHey?</i></h4>
         <p>In the roadmap you'll see that there is a "Match HTML/CSS/JS filters used on SpaceHey native" under the Considered column. There are some things you're simply not allowed to do on SpaceHey that I do not filter at this point in time. If
-          your HTML/CSS/embed violates that rule then it will not work properly. There's really nothing I can do about that without adding the same filter to this page, which is very far down the list of things I would consider at this time. I also do not have access to that information so it may not be possible with 100% accuracy.</i></h4>
+          your HTML/CSS/embed violates that rule then it will not work properly. There's really nothing I can do about that without adding the same filter to this page, which is very far down the list of things I would consider at this time. I also
+          do not have access to that information so it may not be possible with 100% accuracy.</i></h4>
+        <h4><i>These popups look like shit.</i></h4>
+        <p>lol, yeah.</p>
       </div>
-      <button class="gotitButton" onclick="closePopup()">Got it!</button>
+      <div class="buttonWrapper">
+        <button class="gotitButton" onclick="closePopup()">Got it!</button>
+      </div>
     </div>
   </div>
 </body>

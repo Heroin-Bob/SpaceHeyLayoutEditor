@@ -55,6 +55,28 @@ function updateProfile() {
 
 function openDefaultProfile() {
   document.getElementById("SpaceHeyPreview").innerHTML = defaultProf;
+
+  //set listener for CSSDropdowns
+  var coll = document.getElementsByClassName("CSSButton");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      if (this.getElementsByTagName("span")[0].style.transform === "rotate(90deg)"){
+        this.getElementsByTagName("span")[0].style.transform = "rotate(0deg)";
+      } else{
+        this.getElementsByTagName("span")[0].style.transform = "rotate(90deg)";
+      }
+
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight === "500px") {
+        content.style.maxHeight = "0px";
+      } else {
+        content.style.maxHeight = "500px";
+      }
+    });
+  }
 }
 
 function loadFile(filePath) {
@@ -143,34 +165,13 @@ function copyText(box) {
   }
 }
 
-function CSSReference(elem){
-  var outStr = "";
-  switch (elem){
-    case "varTemplate":
-      outStr = ":root {\n  --blue: #1e90ff;\n  --white: #ffffff;\n}";
-      break;
-    case "blurbs":
-      outStr = ".blurbs{\n\n}";
-      break;
-    case "aboutme":
-      outStr = ".blurbs .inner .section:nth-child(1){\n\n}";
-      break;
-    case "meet":
-      outStr = ".blurbs .inner .section:nth-child(2){\n\n}";
-      break;
-    case "general":
-      outStr = "";
-      break;
-  }
-  document.getElementById("CSSOutputText").value = outStr;
-}
-
 //Alt+S to hotkey update
 function KeyPress(e) {
       var evtobj = window.event? event : e;
       if (evtobj.keyCode == 83 && evtobj.altKey) updateProfile();
 }
 document.onkeydown = KeyPress;
+
 //Look, I don't like it either, but this is the easiest way for me to do this.
 //iFrames don't work well due to security, passing data from a text file didn't work
 //for the same reason. So, fuck it, here's a big fat string getting dumped into
