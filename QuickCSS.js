@@ -1,7 +1,7 @@
 function CSSReference(elem){
   var outStr = "";
   var outImg = "";
-  var folder = "CSSElements/"
+  var folder = "CSSElements/";
   switch (elem){
     case "simpleLayout":
       outStr = "";
