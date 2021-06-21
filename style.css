@@ -1,0 +1,511 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: auto;
+  outline: none;
+}
+
+body {
+  display: flex;
+  overflow: hidden;
+}
+
+#navBar {
+  position: relative;
+  width: 100%;
+  background: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 10px 0;
+}
+
+#navBar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15px 0 0;
+}
+
+#navBar ul li {
+  display: block;
+  list-style: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#previewContainer {
+  display: flex;
+  overflow-y: auto;
+  width: 100%;
+  max-height: 100vh;
+}
+
+#SpaceHeyPreview {
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+}
+
+#customizeContainer {
+  display: inline-block;
+  float: left;
+  width: 25%;
+  height: 100vh;
+  color: #DDD;
+  background: #333333;
+  font-family: sans-serif;
+  border-right: 4px solid #DDDDDD;
+}
+
+#contentContainer::-webkit-scrollbar,
+textarea::-webkit-scrollbar,
+#CSSOptionsWrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+#contentContainer::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track,
+#CSSOptionsWrapper::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background: #BBB;
+}
+
+#contentContainer::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb,
+#CSSOptionsWrapper::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background: #222;
+}
+
+#contentContainer::-webkit-scrollbar-thumb:hover,
+textarea::-webkit-scrollbar-thumb:hover,
+#CSSOptionsWrapper::-webkit-scrollbar-thumb:hover  {
+  background: #CCC;
+}
+
+.inputWrapper {
+  width: 90%;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.topBar h3 {
+  width: 100%;
+  text-align: center;
+}
+
+.topBar button {
+  width: 50px;
+  padding: 3px;
+  cursor: pointer;
+  color: #FFF;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: #555;
+}
+
+.topBar button:hover {
+  background: #777;
+}
+
+.topBar button:active {
+  background: #222;
+}
+
+#customizeContainer h3, #customizeContainer h2 {
+  padding: 10px 8px;
+}
+
+#cssContainer {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 25vh;
+}
+
+#cssBox {
+  display: flex;
+  width: 100%;
+}
+
+textarea {
+  border-radius: 2px;
+  font-size: 16px;
+}
+
+textarea:hover {
+  background: #FFF;
+}
+
+#cssBox textarea {
+  width: 85%;
+  height: 20vh;
+  margin: 0 auto;
+  resize: none;
+  color: #BBB;
+  background: #111111;
+  font-family: monospace;
+}
+
+#contentContainer {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-height: 63vh;
+  text-align: center;
+}
+
+#contentContainer textarea {
+  width: 100%;
+  height: 23vh;
+  margin: 0 auto;
+  resize: none;
+  color: #BBB;
+  background: #111111;
+  font-family: monospace;
+  direction: ltr;
+}
+
+.seperator {
+  margin: 10px 0;
+  border-top: 6px solid #CCC;
+}
+
+.contentInput {
+  height: 600px;
+}
+
+.toolbarWrapper {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#toolbar {
+  text-align: center;
+  border-bottom: 3px solid #DDD;
+  background: #333;
+}
+
+#toolbar li {
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  color: #DDD;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+#toolbar li p {
+  cursor: pointer;
+}
+
+#toolbar li {
+  width: 49%;
+  color: #FFF;
+}
+
+#toolbar li:last-child {
+  color: lightblue;
+}
+
+#toolbar li:last-child::before {
+  content: "(Alt + S)";
+  color: #DDD;
+  font-size: 11px;
+}
+
+;
+
+#CSSTitle {
+  width: 100%;
+  text-align: center;
+}
+
+#CSSTitle h3 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+#CSSPop {
+  cursor: pointer;
+  color: yellow;
+}
+
+.popupContainer {
+  position: absolute;
+  top: -9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  transition: .2s;
+  background: rgba(0, 0, 0, .5);
+  filter: opacity(0%);
+}
+
+.popup {
+  position: relative;
+  display: flex;
+  align-items:baseline;
+  width: 500px;
+  height: auto;
+  border: 2px solid #000;
+  background: rgba(80, 80, 80, .95);
+  font-family: sans-serif;
+}
+
+.popupContent {
+  text-align: center;
+  color: #FFF;
+}
+
+.popupContent h2 {
+  padding: 15px 0 0 0;
+}
+
+.popupContent p {
+  padding: 10px;
+}
+
+.gotitButton {
+  margin: 10px 5px;
+  padding: 3px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #DDDDDD;
+  font-size: 18px;
+  display: inline-block;
+  position: relative;
+}
+
+.gotitButton:hover {
+  background: #FFFFFF;
+}
+
+.gotitButton:active {
+  background: #CCCCCC;
+}
+
+.buttonWrapper{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#quickCSS {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  height: 550px;
+}
+
+#CSSOutput button{
+  margin: 0 10px 0 0;
+}
+
+#quickCSSWrapper{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+#CSSOutput{
+  display: flex;
+  flex-direction: row;
+  background: #AAA;
+  width: 50%;
+  min-height: 500px;
+  max-height: 500px;
+}
+
+#CSSOptionsWrapper{
+  width: 50%;
+  min-height: 500px;
+  max-height: 500px;
+  overflow-y: auto;
+  background: #333;
+}
+.leftCol{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 5px;
+}
+.rightCol{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items:stretch;
+  width: 50%;
+}
+#CSSOptions .CSSOption {
+  padding: 0 0 0 10px;
+  display: block;
+  overflow: hidden;
+  transition: .3s;
+  max-height: 0;
+
+  background: #dfe290;
+}
+
+#CSSOptions .CSSButton {
+  background: #333;
+  color: white;
+  cursor: pointer;
+  padding: 18px 8px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: .3s;
+}
+#CSSOptions .CSSButton:focus{
+  background: #225044;
+}
+
+#CSSOptions .CSSButton span {
+  padding: 0 0 0 0;
+  float: left;
+  transform: rotate(0deg);
+  transition: .3s;
+}
+#CSSOptions .CSSButton span::after{
+  content: ' ';
+  padding: 0 8px 0 0;
+}
+
+
+#CSSOutput .topBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 3px 20px 10px 0;
+}
+
+#elementImgWrapper{
+  display: relative;
+  width: 100%;
+}
+
+#elementImg{
+  display: block;
+  height: 477px;
+  height: 100%;
+  max-height: 450px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background-image: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1.0;
+}
+#CSSOutput textarea {
+  width: 90%;
+  height: 285px;
+  resize: none;
+  color: #FFF;
+  background: #333;
+}
+
+#roadmapContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  padding: 20px;
+  color: #FFF;
+}
+
+.flexColumn {
+  flex: 2.5;
+  flex-wrap: wrap;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+}
+
+.roadmapTitle h3 {
+  border-bottom: 2px solid #333;
+  margin: 0 5px;
+}
+
+.roadmapTitle:nth-child(1) h3 {
+  color: #f99191;
+}
+
+.roadmapTitle:nth-child(2) h3 {
+  color: #ffa64e;
+}
+
+.roadmapTitle:nth-child(3) h3 {
+  color: #ebef2d;
+}
+
+.roadmapTitle:nth-child(4) h3 {
+  color: #62ef72;
+}
+
+.flexRow p {
+  padding: 10px 0;
+  display: flex;
+  flex: 2.5;
+  align-items: center;
+  justify-content: center;
+}
+
+#FAQContentWrapper {
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 0 0 50px 0;
+
+}
+
+#FAQContentWrapper h4 {
+  color: #DDD;
+  margin: 10px 0;
+}
+
+#FAQContentWrapper h4:first-child {
+  margin: 0 0 10px 0;
+}
+
+#FAQContentWrapper p {
+  color: #BBB;
+}
