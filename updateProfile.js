@@ -13,6 +13,7 @@ function updateProfile() {
   var x = 0;
 
   //CSS
+  
 
   document.querySelector(".blurbs > div.inner > div:nth-child(1)").innerHTML = "<h4>About me:</h4>" + "<style>" + CSSeditor.getValue() + "</style>" + aboutMeeditor.getValue();
 
