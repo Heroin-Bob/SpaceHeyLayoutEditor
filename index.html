@@ -13,8 +13,27 @@
 
   <title>SpaceHey Layout Editor</title>
 </head>
+<!--
+    Created by Tommy Patton, 2021
 
+    IDE library from CodeMirror at https://codemirror.net/
+
+-->
 <body>
+  <div id="themeMixer">
+    <p>Color 1:</p>
+    <input type="text" id="color1"></input>
+    <p>Color 2:</p>
+    <input type="text" id="color2"></input>
+    <p>Color 3:</p>
+    <input type="text" id="color3"></input>
+    <p>Color 4:</p>
+    <input type="text" id="color4"></input>
+    <p>Color 5:</p>
+    <input type="text" id="color5"></input>
+    <div id="themeMixerButton" onclick="themeMix()">Mix 'em</div>
+    <div id="copyMixer" onclick="copyMin()">Copy Min CSS</div>
+  </div>
   <div id="editorContainer">
     <div id="optionsBar">
       <ul>

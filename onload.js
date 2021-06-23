@@ -978,3 +978,7 @@ function openDefaultProfile() {
 `;
   document.getElementById("previewContainer").innerHTML = defaultProf;
 }
+
+if (window.location.href.indexOf("github") > -1){
+  document.getElementById("themeMixer").style.display = "none";
+}

@@ -10,6 +10,39 @@ body{
   flex-direction: row;
 }
 
+#themeMixer{
+  position: absolute;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 15;
+}
+
+#themeMixerButton{
+  text-align: center;
+  padding: 5px 0;
+  background: lightgreen;
+  user-select: none;
+  cursor: pointer;
+  margin: 10px 0 0 0;
+}
+
+#copyMixer{
+  text-align: center;
+  padding: 5px 0;
+  background: lightblue;
+  user-select: none;
+  cursor: pointer;
+  margin: 10px 0 0 0;
+}
+
+textarea{
+  background: #333;
+  border: none;
+  resize: none;
+  outline: none;
+}
 .CodeMirror{
   width: 100% !important;
   max-width: 100% !important;
