@@ -154,12 +154,13 @@ function sizeBoxes() {
 window.onload = openDefaultProfile();
 
 function openDefaultProfile() {
+  /*
   if (window.location.href.indexOf("github") > -1){
     document.getElementById("themeMixer").style.display = "none";
     document.getElementById("themeMixer").style.right = "auto";
     document.getElementById("themeMixer").style.left = "-99999px";
   }
-
+*/
   var defaultProf = `
   <html lang="en"><head>
     <meta charset="utf-8">
