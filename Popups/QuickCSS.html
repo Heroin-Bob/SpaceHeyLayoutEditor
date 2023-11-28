@@ -139,48 +139,10 @@
   <div id="quickCSSWrapper">
     <div id="CSSOptionsWrapper">
       <div id="CSSOptions">
-        <button type="button" class="CSSButton">Templates<span>&#11166;<span></button>
+        <button type="button" class="CSSButton">Code Snippets<span>&#11166;<span></button>
         <div class="CSSOption">
-          <button type="button" class="CSSButton">Simple Template<span>&#11166;<span></button>
-          <div class="CSSOption">
-            <button type="button" class="CSSButton" onclick="CSSReference('varTemplateDarkGray')">Dark Mode (Gray)</button>
-            <button type="button" class="CSSButton" onclick="CSSReference('varTemplateDarkNight')">Dark Mode (Night)</button>
-            <button type="button" class="CSSButton" onclick="CSSReference('varTemplateFeelTheTeal')">Feel The Teal</button>
-            <button type="button" class="CSSButton" onclick="CSSReference('varTemplateReptile')">Reptile</button>
-            <button type="button" class="CSSButton" onclick="CSSReference('varTemplateIceCream')">Bowl of Ice Cream</button>
-            <button type="button" class="CSSButton" onclick="CSSReference('varTemplateVampyr')">Vampyr</button>
-
-          </div>
-          <button type="button" class="CSSButton">Code Snippets<span>&#11166;<span></button>
-          <div class="CSSOption">
-            <button type="button" class="CSSButton" onclick="CSSReference('varTemplate')">Variables</button>
-          </div>
+          <button type="button" class="CSSButton" onclick="CSSReference('varEnterLeaveSplash')">Enter / Leave Splash Screen</button>
         </div>
-        <button type="button" class="CSSButton" onclick="CSSReference('body')">Body</button>
-        <button type="button" class="CSSButton" onclick="CSSReference('main')">Main</button>
-        <button type="button" class="CSSButton" onclick="CSSReference('header')">Header<span>&#11166;<span></button>
-        <div class="CSSOption">
-          <button type="button" class="CSSButton" onclick="CSSReference('headerTop')">Header Top</button>
-          <button type="button" class="CSSButton" onclick="CSSReference('navLinks')">Navigation Links</button>
-        </div>
-        <button type="button" class="CSSButton" onclick="CSSReference('leftColumn')">Left Column<span>&#11166;<span></button>
-        <div class="CSSOption">
-          <button type="button" class="CSSButton" onclick="CSSReference()">Display Name</button>
-          <button type="button" class="CSSButton" onclick="CSSReference()">Verified Icon</button>
-          <button type="button" class="CSSButton" onclick="CSSReference()">General Info<span>&#11166;<span></button>
-          <div class="CSSOption">
-            <button type="button" class="CSSButton" onclick="CSSReference()">Profile Picture</button>
-            <button type="button" class="CSSButton" onclick="CSSReference()">Details<span>&#11166;<span></button>
-            <div class="CSSOption">
-              <button type="button" class="CSSButton" onclick="CSSReference()">Status</button>
-              <button type="button" class="CSSButton" onclick="CSSReference()">About You</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="CSSButton">Right Column<span>&#11166;<span></button>
-        <button type="button" class="CSSButton">Footer<span>&#11166;<span></button>
-
-
         <div class="CSSDropdown"></div>
       </div>
     </div>
@@ -194,9 +156,12 @@
       <div class="outputCol">
         <div class="topBar">
           <h3>Element CSS: <span class="copyButton" onclick="copyText('quickCSS')"></span></h3>
-
         </div>
         <textarea id="CSSOutputText"></textarea>
+        <div class="topBar">
+          <h3>Element HTML: <span class="copyButton" onclick="copyText('quickHTML')"></span></h3>
+        </div>
+        <textarea id="HTMLOutputText"></textarea>
       </div>
     </div>
   </div>

@@ -28,16 +28,16 @@ function updateProfile() {
   document.querySelector("#previewContainer > div > main > div > div.col.w-40.left > div:nth-child(6) > div.inner > table > tbody > tr:nth-child(2) > td:nth-child(2)").innerHTML = musiceditor.getValue();
 
   //Movies
-  document.querySelector("#previewContainer > div > main > div > div.col.w-40.left > div:nth-child(6) > div.inner > table > tbody > tr:nth-child(3) > td:nth-child(2)").innerHTML = moviesCode;
+  document.querySelector("#previewContainer > div > main > div > div.col.w-40.left > div:nth-child(6) > div.inner > table > tbody > tr:nth-child(3) > td:nth-child(2)").innerHTML = movieseditor.getValue();
 
   //TV
-  document.querySelector("#previewContainer > div > main > div > div.col.w-40.left > div:nth-child(6) > div.inner > table > tbody > tr:nth-child(4) > td:nth-child(2)").innerHTML = tvCode;
+  document.querySelector("#previewContainer > div > main > div > div.col.w-40.left > div:nth-child(6) > div.inner > table > tbody > tr:nth-child(4) > td:nth-child(2)").innerHTML = tveditor.getValue();
 
   //Books
-  document.querySelector("#previewContainer > div > main > div > div.col.w-40.left > div:nth-child(6) > div.inner > table > tbody > tr:nth-child(5) > td:nth-child(2)").innerHTML = booksCode;
+  document.querySelector("#previewContainer > div > main > div > div.col.w-40.left > div:nth-child(6) > div.inner > table > tbody > tr:nth-child(5) > td:nth-child(2)").innerHTML = bookseditor.getValue();
 
   //Heroes
-  document.querySelector("#previewContainer > div > main > div > div.col.w-40.left > div:nth-child(6) > div.inner > table > tbody > tr:nth-child(6) > td:nth-child(2)").innerHTML = heroesCode;
+  document.querySelector("#previewContainer > div > main > div > div.col.w-40.left > div:nth-child(6) > div.inner > table > tbody > tr:nth-child(6) > td:nth-child(2)").innerHTML = heroeseditor.getValue();
 
   document.getElementById("updateBar").getElementsByTagName("li:hover")[1].style.color = "#90ee90";
 }

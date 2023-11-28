@@ -75,6 +75,9 @@ function copyText(box) {
       case "quickCSS":
         copyText = document.getElementById("CSSOutputText").value;
         break;
+      case "quickHTML":
+        copyText = document.getElementById("HTMLOutputText").value;
+        break;
     }
 
     if (copyText != "") {
