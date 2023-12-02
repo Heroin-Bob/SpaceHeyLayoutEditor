@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="codemirror-5.62.0/lib/codemirror.css">
   <link rel="stylesheet" href="codemirror-5.62.0/theme/abcdef.css">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
 
   <title>SpaceHey Layout Editor</title>
 </head>
@@ -38,6 +38,7 @@
 -->
   <div id="editorContainer">
     <div id="optionsBar">
+      <p style="text-align: right;">Made by <a href="https://spacehey.com/tommypanzram" style="color: inherit; text-decoration: underline;">Tommy Panzram</a></p>
       <ul>
         <!--<li onclick="openPopup('roadmap')">Roadmap</li>-->
         <!--<li>Beautify</li>-->
@@ -75,17 +76,20 @@
       </div>
     </div>
   </div>
+
+  <button id="paneSizeButton" onclick="resizeButtonToggle()"><i class="fa fa-angle-double-left"></i></button>
   <div id="previewContainer">
 
   </div>
 
-
+ <!--
   <div id="roadmapPopup" class="popup">
     <div class="button" onclick="closePopup()">Got it!</div>
     <iframe src="Popups/RoadMap.html" frameborder="0"></iframe>
   </div>
+-->
   <div id="quickCSSPopup" class="popup">
-    <div class="button" onclick="closePopup()">Got it!</div>
+    <div class="button" onclick="closePopup()">Close</div>
     <iframe src="Popups/QuickCSS.html" frameborder="0"></iframe>
   </div>
 

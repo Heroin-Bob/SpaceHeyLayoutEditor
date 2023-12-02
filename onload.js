@@ -130,6 +130,19 @@ $(document).ready(function() {
     theme: "abcdef",
     lineWrapping: true
   });
+
+  const myCookieValue = getCookie('layoutCookie');
+  const newArr = JSON.parse(myCookieValue);
+  
+  CSSeditor.setValue(newArr[0]);
+  aboutMeeditor.setValue(newArr[1]);
+  meeteditor.setValue(newArr[2]);
+  generaleditor.setValue(newArr[3]);
+  musiceditor.setValue(newArr[4]);
+  movieseditor.setValue(newArr[5]);
+  tveditor.setValue(newArr[6]);
+  bookseditor.setValue(newArr[7]);
+  heroeseditor.setValue(newArr[8]);
 });
 
 window.onload = sizeBoxes();
@@ -984,3 +997,22 @@ function openDefaultProfile() {
 `;
   document.getElementById("previewContainer").innerHTML = defaultProf;
 }
+
+function getCookie(name) {
+  const cookies = document.cookie.split(';');
+  
+  for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      
+      // Check if this is the cookie we're looking for
+      if (cookie.startsWith(name + '=')) {
+          return decodeURIComponent(cookie.substring(name.length + 1));
+      }
+  }
+
+  // Return null if the cookie is not found
+  return null;
+}
+
+
+

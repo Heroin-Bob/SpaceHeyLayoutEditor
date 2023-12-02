@@ -135,23 +135,54 @@
     #CSSOutput .copyButton{
       margin: 0 20px 0 0;
     }
+
+    #snippetPreview{
+      height: 100%;
+      width: 100%;
+    }
   </style>
   <div id="quickCSSWrapper">
     <div id="CSSOptionsWrapper">
       <div id="CSSOptions">
+
         <button type="button" class="CSSButton">Code Snippets<span>&#11166;<span></button>
         <div class="CSSOption">
           <button type="button" class="CSSButton" onclick="CSSReference('varEnterLeaveSplash')">Enter / Leave Splash Screen</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRecordPlayer')">Record Player</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varBaseImage')">Page Base Image/Gif</button>
         </div>
         <div class="CSSDropdown"></div>
       </div>
+
+      <div id="CSSOptions">
+        <button type="button" class="CSSButton">Text Effects<span>&#11166;<span></button>
+        <div class="CSSOption">
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowText')">Rainbow</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowUnderline')">Rainbow Underline</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowPan')">Rainbow Pan</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowFlash')">Rainbow Flash</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowFlashShadow')">Rainbow Flash Shadow</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowBlink')">Rainbow Blink</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowBlinkPan')">Rainbow Blink Pan</button>
+        </div>
+        <div class="CSSDropdown"></div>
+      </div>
+
+
+
+      
     </div>
     <div id="CSSOutput">
       <div class="outputCol">
-        <h3>Element:</h3>
+        <h3>Interactive Preview:</h3>
+        <div id="snippetPreview">
+
+        </div>
+        <!--
         <div id="elementImgWrapper">
           <img id="elementImg"></img>
         </div>
+      -->
       </div>
       <div class="outputCol">
         <div class="topBar">

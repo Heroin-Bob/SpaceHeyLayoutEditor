@@ -57,6 +57,7 @@ textarea{
   background: #333333;
   width: 30%;
   height: 100vh;
+  overflow: hidden;
 }
 
 #editorContainer h1, #CSSBoxWrapper h1{
@@ -88,6 +89,9 @@ textarea{
   cursor: w-resize;
   border-left: 1px solid #000000;
   border-right: 1px solid #000000;
+}
+.hideAfter::after {
+  display: none !important;
 }
 #optionsBar{
   background: #333333;
@@ -247,4 +251,13 @@ textarea{
 }
 .copyButton:active{
   background: #222222;
+}
+
+#paneSizeButton{
+  height: 25px;
+  font-size: 20px;
+  z-index: 1000;
+  margin: 0 0 0 5px;
+  background: #333;
+  color: #FFF;
 }

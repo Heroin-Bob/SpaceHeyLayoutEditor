@@ -243,3 +243,28 @@ function copyMin() {
   document.execCommand('copy');
   document.body.removeChild(el);
 }
+
+//cookie stuff
+
+
+
+// Example usage:
+// setCookie('layoutCookie', 'Hello, Cookie!', 90);
+
+
+function resizeButtonToggle() {
+  const button = document.getElementById('paneSizeButton');
+  const container = document.getElementById('previewContainer');
+  container.classList.toggle('hideAfter');
+  if (button.innerHTML === '<i class="fa fa-angle-double-left"></i>') {
+      button.innerHTML = '<i class="fa fa-angle-double-right"></i>';
+      document.getElementById("editorContainer").style.width = "0px";
+      document.getElementById("previewContainer").style.width = "100%";
+  } else {
+      button.innerHTML = '<i class="fa fa-angle-double-left"></i>';
+      document.getElementById("editorContainer").style.width = "30%";
+      document.getElementById("previewContainer").style.width = "70%";
+  }
+}
+
+
