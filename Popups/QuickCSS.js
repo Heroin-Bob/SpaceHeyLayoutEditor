@@ -12,7 +12,7 @@ function CSSReference(elem){
     case "varRecordPlayer":
       CSSoutStr = "  @keyframes spin {\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n  .vinyl {\n    animation: spin 3s linear infinite;\n    height: 150px;\n    margin-left: 55px;\n    padding: 0px;\n    position: absolute;\n  }\n  .vinylRecord {\n    height: 150px;\n    padding: 0px;\n    position: relative;\n    z-index: 1;\n    margin-right: 55px;\n  }\n  .recordPlayer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }";
       HTMLoutStr = "<div class='recordPlayer'>\n  <img class='vinyl' src='https://i.ibb.co/xqbZjv3/vinyl-black-1.png' />\n  <img class='vinylRecord' src='https://i.ibb.co/PxSdL3D/81a-ECQl-JWw-L-UF894-1000-QL80.jpg' />\n</div>";
-      PreviewOutStr = "<style>" + CSSoutStr + "</style>" + HTMLoutStr;
+      PreviewOutStr = "<p>Thank you <a href='https://murgn.neocities.org/secretsociety'>Morgan</a> for the design.</p><br><style>" + CSSoutStr + "</style>" + HTMLoutStr;
       break;
     case "varRainbowText":
       CSSoutStr = ".rainbow {\n  background: -webkit-linear-gradient(\n    -35deg,\n    #FFFF00,\n    #00FFFF,\n    #0000FF,\n    #FF0000\n  );\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  display: inline;\n}";
@@ -69,6 +69,12 @@ function CSSReference(elem){
       HTMLoutStr = "<p class='neon'>T<span class='flicker2'>h</span>is <span class='flicker3'>Sign</span> Is <span class='flicker1 neon'>D</span>ying</p>";
       PreviewOutStr = "<style>" + CSSoutStr + "</style>" + "<p class='neon' style='font-size:45px'>T<span class='flicker2'>h</span>is <span class='flicker3'>Sign</span> Is <span class='flicker1 neon'>D</span>ying</p>";
       break;
+    case "varTopEight":
+      CSSoutStr = "";
+      HTMLoutStr = "";
+      PreviewOutStr = "";
+      break;
+    
     case "template":
       CSSoutStr = "";
       HTMLoutStr = "";
@@ -94,6 +100,7 @@ function CSSReference(elem){
     document.getElementById("elementImg").style.opacity = 0;
   }
   */
+ document.getElementById().innerHTML.replace()
 }
 
 function genEmbed(){
