@@ -253,8 +253,12 @@ textarea{
 #paneSizeButton{
   height: 25px;
   font-size: 20px;
-  z-index: 1000;
+  z-index: 2;
   margin: 0 0 0 5px;
   background: #333;
   color: #FFF;
+}
+
+.highlight {
+  outline: 2px solid red;
 }

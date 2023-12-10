@@ -268,3 +268,97 @@ function resizeButtonToggle() {
 }
 
 
+
+/*
+below text is solely for the hover function
+*/
+
+let highlightEnabled = false;
+
+function toggleHighlightFunction() {
+    highlightEnabled = document.getElementById('toggleFunction').checked;
+}
+
+document.addEventListener('mouseover', function (event) {
+    if (highlightEnabled) {
+        const hoveredElement = event.target;
+
+        // Check if the hovered element is not the checkbox
+        if (hoveredElement.id !== 'toggleFunction') {
+            // Add red border to the hovered element
+            hoveredElement.classList.add('highlight');
+        }
+    }
+});
+
+document.addEventListener('mouseout', function (event) {
+    if (highlightEnabled) {
+        const hoveredElement = event.target;
+
+        // Remove red border when mouse leaves the element
+        hoveredElement.classList.remove('highlight');
+    }
+});
+
+document.addEventListener('click', function (event) {
+    if (highlightEnabled) {
+        const clickedElement = event.target;
+
+        // Check if the clicked element is not the checkbox
+        if (clickedElement.id !== 'toggleFunction') {
+            // Get the CSS selector of the clicked element and its first parent element
+            const cssSelector = getFullCssSelector(clickedElement);
+
+            // Copy the CSS selector to the clipboard
+            copyToClipboard(cssSelector);
+
+            // Turn off the function, remove the highlight, and uncheck the checkbox
+            highlightEnabled = false;
+            clickedElement.classList.remove('highlight');
+            document.getElementById('toggleFunction').checked = false;
+        }
+    }
+});
+
+// Function to get the full CSS selector of an element
+function getFullCssSelector(element) {
+    const selectorParts = [];
+
+    // Get the CSS selector of the clicked element
+    const selector = getCssSelector(element);
+    if (selector) {
+        selectorParts.push(selector);
+    }
+
+    // Get the CSS selector of the first parent element
+    const parentSelector = getCssSelector(element.parentElement);
+    if (parentSelector) {
+        selectorParts.unshift(parentSelector);
+    }
+
+    return selectorParts.join(' ');
+}
+
+// Function to get the CSS selector of an element
+function getCssSelector(element) {
+    if (!element) return '';
+    const selector = element.tagName.toLowerCase();
+    if (element.id) {
+        return `#${element.id}`;
+    }
+    if (element.className) {
+        return `.${element.className.replace(/\s+/g, '.')}`;
+    }
+    return selector;
+}
+
+// Function to copy text to clipboard
+function copyToClipboard(text) {
+    text = text.replace(".highlight","");
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+}

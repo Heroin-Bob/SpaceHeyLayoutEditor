@@ -51,7 +51,7 @@ function CSSReference(elem){
       break;
     case "varBaseImage":
       CSSoutStr = "";
-      HTMLoutStr = "<div style='max-height: 300px; position: fixed; left: 1px; bottom: 0px; z-index: 400;'>\n<img src='https://i.ibb.co/XyrR0st/168459.gif' height='200' loading='lazy'></div>";
+      HTMLoutStr = "<div style='max-height: 300px; position: fixed; left: 1px; bottom: 0px; z-index: 99;'>\n<img src='https://i.ibb.co/XyrR0st/168459.gif' height='200' loading='lazy'></div>";
       PreviewOutStr = HTMLoutStr;
       break;
     case "varYoutubeAutoplay":
@@ -74,7 +74,31 @@ function CSSReference(elem){
       HTMLoutStr = "";
       PreviewOutStr = "";
       break;
-    
+    case "varCRT":
+      CSSoutStr = "body::before {\n  content: ' ';\n  display: block;\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);\n  z-index: 100;\n  background-size: 100% 2px, 3px 100%;\n  pointer-events: none;\n}";
+      HTMLoutStr = "";
+      PreviewOutStr = "<p>Thank you <a href='https://spacehey.com/profile?id=72395'>p0libius</a> for the design.</p><div id='innerPreview'></div><br><style>#innerPreview{width: 100%; height: 100%;background: #FFF;  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);\n  z-index: 1;\n  background-size: 100% 2px, 3px 100%;\n  pointer-events: none;}</style>";
+      break;
+    case "varSnowflakes":
+      CSSoutStr = ".snowflake {\n  position: fixed;\n  top: -10%;\n  z-index: 99;\n  user-select: none;\n  animation-name: snowflakes-fall, snowflakes-shake;\n  animation-duration: 10s, 3s;\n  animation-timing-function: linear, ease-in-out;\n  animation-iteration-count: infinite, infinite;\n  animation-play-state: running, running;\n  width: 25px;\n  height: 25px;\n}\n\n.snowflake.type1{\n  content: url(https://cinni.net/images/favi/p/poke_61.gif);\n}\n\n.snowflake:nth-of-type(0) {\n  left: 1%;\n  animation-delay: 0s, 0s\n}\n\n.snowflake:nth-of-type(1) {\n  left: 10%;\n  animation-delay: 1s, 1s\n}\n\n.snowflake:nth-of-type(2) {\n  left: 20%;\n  animation-delay: 6s, .5s\n}\n\n.snowflake:nth-of-type(3) {\n  left: 30%;\n  animation-delay: 4s, 2s\n}\n\n.snowflake:nth-of-type(4) {\n  left: 40%;\n  animation-delay: 2s, 2s\n}\n\n.snowflake:nth-of-type(5) {\n  left: 50%;\n  animation-delay: 8s, 3s\n}\n\n.snowflake:nth-of-type(6) {\n  left: 60%;\n  animation-delay: 6s, 2s\n}\n\n.snowflake:nth-of-type(7) {\n  left: 70%;\n  animation-delay: 2.5s, 1s\n}\n\n.snowflake:nth-of-type(8) {\n  left: 80%;\n  animation-delay: 1s, 0s\n}\n\n.snowflake:nth-of-type(9) {\n  left: 90%;\n  animation-delay: 3s, 1.5s\n}\n\n.snowflake:nth-of-type(10) {\n  left: 25%;\n  animation-delay: 2s, 0s\n}\n\n.snowflake:nth-of-type(11) {\n  left: 65%;\n  animation-delay: 4s, 2.5s\n}\n\n@keyframes snowflakes-fall {\n  0% { top: -10% }\n  100% { top: 100% }\n}\n\n@keyframes snowflakes-shake {\n  0%, 100% { transform: translateX(0) }\n  50% { transform: translateX(80px) }\n}";
+      HTMLoutStr = "<img class='snowflake type1'/>\n<img class='snowflake type2' src='https://i.ibb.co/vBzPhbB/d69nlwl-d0598ebc-c85d-4eda-bfff-e40c17e684a0.gif' />\n<img class='snowflake type1'/>\n<img class='snowflake type1'/>\n<img class='snowflake type1'/>\n<img class='snowflake type2' src='https://i.ibb.co/vBzPhbB/d69nlwl-d0598ebc-c85d-4eda-bfff-e40c17e684a0.gif'/>\n<img class='snowflake type1'/>\n<img class='snowflake type1'/>\n<img class='snowflake type2' src='https://i.ibb.co/vBzPhbB/d69nlwl-d0598ebc-c85d-4eda-bfff-e40c17e684a0.gif'/>\n<img class='snowflake type1'/>\n<img class='snowflake type1'/>\n<img class='snowflake type1'/>";
+      PreviewOutStr = "<style>" + CSSoutStr + "</style>" + HTMLoutStr;
+      break;
+    case "varAnimatedCRT":
+      CSSoutStr = "html:before {\n  animation: grain 8s steps(10) infinite;\n  background-image: url(https://i.ibb.co/d2Np1d2/static.gif);\n  background-size: 200px !important;\n  content: '';\n  height: 300%;\n  left: -50%;\n  opacity: .3; /*Change this value (0 - 1) to change the intensity of the effect)*/\n  position: fixed;\n  top: -110%;\n  width: 300%;\n  pointer-events:none;\n}\n@keyframes grain {\n  0%, 100% { transform:translate(0, 0) }\n  10% { transform:translate(-5%, -10%) }\n  20% { transform:translate(-15%, 5%) }\n  30% { transform:translate(7%, -25%) }\n  40% { transform:translate(-5%, 25%) }\n  50% { transform:translate(-15%, 10%) }\n  60% { transform:translate(15%, 0%) }\n  70% { transform:translate(0%, 15%) }\n  80% { transform:translate(3%, 35%) }\n  90% { transform:translate(-10%, 10%) }\n}";
+      HTMLoutStr = "";
+      PreviewOutStr = "<style>  #snippetPreview {\n  \n  background-image: url(https://i.ibb.co/d2Np1d2/static.gif);\n  \n  content: '';\n  height: 100%;\n  width: 100%;\n  opacity: .3;\n  position: relative;\n pointer-events:none;\n}\n@keyframes grain {\n  0%, 100% { transform:translate(0, 0) }\n  10% { transform:translate(-5%, -10%) }\n  20% { transform:translate(-15%, 5%) }\n  30% { transform:translate(7%, -25%) }\n  40% { transform:translate(-5%, 25%) }\n  50% { transform:translate(-15%, 10%) }\n  60% { transform:translate(15%, 0%) }\n  70% { transform:translate(0%, 15%) }\n  80% { transform:translate(3%, 35%) }\n  90% { transform:translate(-10%, 10%) }\n}  </style>";
+      break;
+    case "varLoadingAnimation":
+      CSSoutStr = "body:before {\ncontent: ' ';\nheight: 100vh;\nwidth: 100vw;\ndisplay: block;\nposition: fixed; \ntop: 0; \nleft: 0; \nz-index: 100;\nbackground-image: url('https://i.ibb.co/5MB69XF/7e2aeb1567e91bfc2404cecca6aceecd.gif');\nbackground-size: cover;\nbackground-repeat: no-repeat;\nbackground-position:center;\nanimation: yourAnimation 6s ease 0s 1 normal forwards;\npointer-events: none;\n}\n@keyframes yourAnimation { 0.0%{ opacity: 1;} 75%{ opacity: 1; } 100%{ opacity: 0;} } ";
+      HTMLoutStr = "";
+      PreviewOutStr = "<style>#snippetPreview {\ncontent: ' ';\nheight: 100%;\nwidth: 100%;\ndisplay: block;\nposition: relative; \ntop: 0; \nleft: 0; \nz-index: 100;\nbackground-image: url('https://i.ibb.co/5MB69XF/7e2aeb1567e91bfc2404cecca6aceecd.gif');\nbackground-size: cover;\nbackground-repeat: no-repeat;\nbackground-position:center;\nanimation: yourAnimation 6s ease 0s 1 normal forwards;\npointer-events: none;\n}\n@keyframes yourAnimation { 0.0%{ opacity: 1;} 75%{ opacity: 1; } 100%{ opacity: 0;} } </style";
+      break;
+    case "varBanner":
+      CSSoutStr = "main:before {\n	width: 100%;\n	height: 300px;\n	display: block;\n	content: '';\n	background-image: url(https://i.ibb.co/M6Qwf44/8653-smile.gif);\n	background-position: center center;\n	background-size: cover;\n}\n@media only screen and (max-width: 600px) {\n	main:before{\n		height: 200px;\n	}\n}\n";
+      HTMLoutStr = "";
+      PreviewOutStr = "<style>#snippetPreview {\n	width: 100%;\n	height: 300px;\n	display: block;\n	content: '';\n	background-image: url(https://i.ibb.co/M6Qwf44/8653-smile.gif);\n	background-position: center center;\n	background-size: cover;\n}\n@media only screen and (max-width: 600px) {\n	main:before{\n		height: 200px;\n	}\n}\n</style>";
+      break;
     case "template":
       CSSoutStr = "";
       HTMLoutStr = "";
@@ -100,7 +124,6 @@ function CSSReference(elem){
     document.getElementById("elementImg").style.opacity = 0;
   }
   */
- document.getElementById().innerHTML.replace()
 }
 
 function genEmbed(){

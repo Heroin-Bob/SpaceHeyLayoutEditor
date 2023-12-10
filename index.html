@@ -42,10 +42,22 @@
       <ul>
         <!--<li onclick="openPopup('roadmap')">Roadmap</li>-->
         <!--<li>Beautify</li>-->
-        <li onclick="openPopup('quickcss')">Quick CSS</li>
+        <li onclick="openPopup('quickcss')" style="text-decoration: underline;">CSS/HTML Page Decorations</li>
       </ul>
     </div>
     <div id="updateBar">
+      
+
+
+
+      <input type="checkbox" id="toggleFunction" onchange="toggleHighlightFunction()"><label style="color: white; padding: 5px;">Turn On/Off Element Selection</label><p id="hoverInfo" style="display: inline; color: yellow; font-size: 1.2em; cursor: pointer;" onclick="alert('This box, when checked, will turn on a function that will:\n1. Make each element you hover show a red border\n2. When that element is clicked the element will be stored in your clipboard.\nFrom there you can paste the element selector in the CSS box and style away!')">?</p>
+      <script>
+          
+      </script>
+
+
+
+
       <ul>
         <li>(Alt + S)</li>
         <li><p onclick="updateProfile()">Update</p></li>

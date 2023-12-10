@@ -58,13 +58,17 @@
       background: #333;
       color: white;
       cursor: pointer;
-      padding: 18px 8px;
+      padding: 5px 5px;
       width: 100%;
       border: none;
       text-align: left;
       outline: none;
       font-size: 25px;
       transition: .3s;
+    }
+
+    #CSSOptions .CSSButton:nth-child(odd) {
+      background: #444;
     }
     #CSSOptions .CSSButton:focus{
       background: #225044;
@@ -140,6 +144,11 @@
       height: 100%;
       width: 100%;
     }
+
+    #CSSOptions > button{
+      background: #555 !important;
+    }
+
   </style>
   <div id="quickCSSWrapper">
     <div id="CSSOptionsWrapper">
@@ -151,8 +160,12 @@
           <button type="button" class="CSSButton" onclick="CSSReference('varRecordPlayer')">Record Player</button>
           <button type="button" class="CSSButton" onclick="CSSReference('varBaseImage')">Page Base Image/Gif</button>
           <button type="button" class="CSSButton" onclick="CSSReference('varYoutubeAutoplay')">Autoplay Music (YouTube)</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varCRT')">CRT Scan Lines</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varAnimatedCRT')">Animated CRT Scan Lines</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varSnowflakes')">Falling images (snowflakes)</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varLoadingAnimation')">Splash Screen / Loading Animation</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varBanner')">Profile Banner</button>
         </div>
-        <div class="CSSDropdown"></div>
       </div>
 
       <div id="CSSOptions">
@@ -168,7 +181,14 @@
           <button type="button" class="CSSButton" onclick="CSSReference('varRainbowBlink')">Rainbow Blink</button>
           <button type="button" class="CSSButton" onclick="CSSReference('varRainbowBlinkPan')">Rainbow Blink Pan</button>
         </div>
-        <div class="CSSDropdown"></div>
+      </div>
+
+      <div id="CSSOptions">
+        <button type="button" class="CSSButton">Other Resources<span>&#11166;<span></button>
+        <div class="CSSOption">
+          <a href="https://groups.spacehey.com/HTML_" target="_blank"><button type="button" class="CSSButton">SpaceHey HTML Group</button></a>
+          <a href="https://discord.gg/DmbEX2qkyp" target="_blank"><button type="button" class="CSSButton">Wubzilla's Discord</button></a>
+        </div>
       </div>
 
 
