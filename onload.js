@@ -1147,7 +1147,7 @@ function openDefaultBlog(){
     </span>
                 <div class="edit-info">
                     <div class="profile-pic ">
-                        <img class="pfp-fallback" src="https://cdn.spacehey.net/profilepics/2_942c747dfa91de093ccc26a18a172a1d.png?token=UiM9Y8QwbWPz4MAwyyvmO1fQGqvV7ULAiUqXfvuwZ5I&amp;expires=1702665497" alt="SpaceHey's profile picture" loading="lazy">
+                        <img class="pfp-fallback" src="SpaceHeyImages/mainprofile.png" alt="SpaceHey's profile picture" loading="lazy">
                     </div>
                     <div class="author-details">
                         <h4>
