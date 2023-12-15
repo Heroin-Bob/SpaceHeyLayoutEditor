@@ -1810,9 +1810,7 @@ function openDefaultGroup(){
         <a href="#">
                     <img class="logo logo-fallback" src="https://spacehey.com/img/logo.svg" alt="SpaceHey" fetchpriority="high" style="aspect-ratio: 55/14;">
         </a>
-                                        <a href="#" title="Christmas 2023">
-              <img class="christmas" src="https://i.ibb.co/VSMZbwp/profilepic.png" alt="Christmas">
-            </a>
+                                        
                         </div>
       <div class="center">
                               <form action="https://groups.spacehey.com/search" role="search">
