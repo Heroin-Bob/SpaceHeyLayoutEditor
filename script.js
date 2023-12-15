@@ -78,6 +78,23 @@ function copyText(box) {
       case "quickHTML":
         copyText = document.getElementById("HTMLOutputText").value;
         break;
+      case "blog":
+        var outStr = '<style>\n' +
+        CSSeditor.getValue() +
+        '\n</style>\n\n' +
+        blogeditor.getValue();
+
+        copyText = outStr;
+        break;
+      case "bulletin":
+        var outStr = '<style>\n' +
+        CSSeditor.getValue() +
+        '\n</style>\n\n' +
+        bulletineditor.getValue();
+
+        outStr = outStr.replace(/\n/g, "");
+        copyText = outStr;
+        break;
     }
 
     if (copyText != "") {

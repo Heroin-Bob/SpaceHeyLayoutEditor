@@ -40,6 +40,8 @@ var movieseditor;
 var tveditor;
 var bookseditor;
 var heroeseditor;
+var blogeditor;
+var bulletineditor;
 $(document).ready(function() {
   //CSS
   var code = $(".codemirror-textarea")[0];
@@ -131,6 +133,26 @@ $(document).ready(function() {
     lineWrapping: true
   });
 
+  //About Me
+  code = $(".codemirror-textarea")[9];
+  blogeditor = CodeMirror.fromTextArea(code, {
+    lineNumbers: true,
+    tabsize: 1,
+    mode: "xml",
+    theme: "abcdef",
+    lineWrapping: true
+  });
+
+  //About Me
+  code = $(".codemirror-textarea")[10];
+  bulletineditor = CodeMirror.fromTextArea(code, {
+    lineNumbers: true,
+    tabsize: 1,
+    mode: "xml",
+    theme: "abcdef",
+    lineWrapping: true
+  });
+
   const myCookieValue = getCookie('layoutCookie');
   const newArr = JSON.parse(myCookieValue);
   
@@ -143,16 +165,22 @@ $(document).ready(function() {
   tveditor.setValue(newArr[6]);
   bookseditor.setValue(newArr[7]);
   heroeseditor.setValue(newArr[8]);
-});
+  blogeditor.setValue(newArr[9]);
+  bulletineditor.setValue(newArr[10]);
 
-window.onload = sizeBoxes();
+  
+
+});
 
 function sizeBoxes() {
   var codeBoxes = $(".CodeMirror").length;
   var container = $("#editorContainer");
 
   for (var i = 0; i < codeBoxes; i++) {
-    $(".CodeMirror")[i].style.width = container.style.width;
+    if ($(".CodeMirror")[i].style.width){
+      $(".CodeMirror")[i].style.width = container.style.width;
+    }
+    
   }
 }
 
@@ -164,16 +192,9 @@ function sizeBoxes() {
 //for the same reason. So, fuck it, here's a big fat string getting dumped into
 //a div. I'm not messing with PHP right now and you can't make me.
 
-window.onload = openDefaultProfile();
+/*window.onload = openDefaultProfile();*/
 
 function openDefaultProfile() {
-  /*
-  if (window.location.href.indexOf("github") > -1){
-    document.getElementById("themeMixer").style.display = "none";
-    document.getElementById("themeMixer").style.right = "auto";
-    document.getElementById("themeMixer").style.left = "-99999px";
-  }
-*/
   var defaultProf = `
   <html lang="en"><head>
     <meta charset="utf-8">
@@ -995,6 +1016,724 @@ function openDefaultProfile() {
 
   </body></html>
 `;
+
+  document.getElementById("previewContainer").innerHTML = defaultProf;
+  showBoxes([0,1,2,3,4,5,6,7,8,9,10]);
+  removeBoxes([9,10]);
+  
+  
+
+}
+
+function openDefaultBlog(){
+  var defaultProf = `
+  <meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hello World! - SpaceHey's Blog | SpaceHey</title>
+
+<link rel="preconnect" href="https://static.spacehey.net" crossorigin="">
+<link rel="preconnect" href="https://cdn.spacehey.net" crossorigin="">
+
+<script src="https://spacehey.com/js/script.js?v=0.39" async=""></script>
+
+<link rel="stylesheet" href="https://spacehey.com/css/normalize.css">
+<link rel="stylesheet" href="https://spacehey.com/css/my.css?c=d2869da4874e8ee7f4690ae5ccc17e6b468309019e0e10d23a7a22dfc3fa1473">
+
+<link rel="dns-prefetch" href="https://static.spacehey.net">
+<link rel="dns-prefetch" href="https://cdn.spacehey.net">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://spacehey.com/favicon.ico?v=2">
+
+<meta name="title" content="Hello World! - SpaceHey's Blog | SpaceHey">
+<meta name="description" content="Hello everyone! Welcome to SpaceHey!">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hello World! - SpaceHey's Blog | SpaceHey">
+<meta property="og:description" content="Hello everyone! Welcome to SpaceHey!">
+<meta property="og:image" content="https://external-media.spacehey.net/media/200x200,sc,s7JgvYDpxawV68cEzSryAVZMqxlu9yAKSMMaRn20Boo8=/https://cdn.spacehey.net/profilepics/2_942c747dfa91de093ccc26a18a172a1d.png?token=UiM9Y8QwbWPz4MAwyyvmO1fQGqvV7ULAiUqXfvuwZ5I&amp;expires=1702665497">
+<meta property="og:site_name" content="SpaceHey">
+
+<meta property="twitter:site" content="@spacehey">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:title" content="Hello World! - SpaceHey's Blog | SpaceHey">
+<meta property="twitter:description" content="Hello everyone! Welcome to SpaceHey!">
+<meta property="twitter:image" content="https://external-media.spacehey.net/media/200x200,sc,s7JgvYDpxawV68cEzSryAVZMqxlu9yAKSMMaRn20Boo8=/https://cdn.spacehey.net/profilepics/2_942c747dfa91de093ccc26a18a172a1d.png?token=UiM9Y8QwbWPz4MAwyyvmO1fQGqvV7ULAiUqXfvuwZ5I&amp;expires=1702665497">
+<meta name="twitter:label1" content="Category">
+<meta name="twitter:data1" content="SpaceHey">
+<link rel="apple-touch-icon" sizes="180x180" href="https://spacehey.com/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://spacehey.com/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://spacehey.com/img/favicons/favicon-16x16.png">
+<link rel="mask-icon" href="https://spacehey.com/img/favicons/safari-pinned-tab.svg" color="#1D4ED8">
+<link rel="manifest" href="https://spacehey.com/img/favicons/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="SpaceHey">
+<meta name="application-name" content="SpaceHey">
+<meta name="msapplication-TileColor" content="#1D4ED8">
+<meta name="msapplication-config" content="https://spacehey.com/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#1D4ED8">
+
+<link href="https://spacehey.com/opensearch.xml" rel="search" title="Search SpaceHey" type="application/opensearchdescription+xml">
+
+<link rel="canonical" href="https://blog.spacehey.com/entry?id=1">
+
+<!-- [spacehey.com] SpaceHey Server: webserver-2 -->
+
+<div class="container">
+    <nav class="">
+        <div class="top">
+            <div class="left">
+                <a href="#">
+                    <img class="logo logo-fallback" src="https://static.spacehey.net/img/logo_optimized.svg" alt="SpaceHey" fetchpriority="high" style="aspect-ratio: 55/14;">
+                </a>
+
+            </div>
+            <div class="center">
+                <form action="https://blog.spacehey.com/search" role="search">
+                    <label for="q">Search Blog Entries:</label>
+                    <div class="search-wrapper">
+                        <input id="q" type="text" name="q" autocomplete="off">
+                    </div>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <div class="right">
+                <a href="#" rel="help">Help</a> |
+                <form action="https://spacehey.com/logout" method="post" class="logout-form"><button class="logout-btn" type="submit" name="submit">LogOut</button></form> <br>
+                <div class="support-right">
+                    <a href="#">
+              Support us
+            </a>
+                </div>
+            </div>
+        </div>
+        <ul class="links">
+            <li class=""><a href="#">Home</a></li>
+            <li class=""><a href="#">Browse</a></li>
+            <li class=""><a href="#">Search</a></li>
+            <li class=""><a href="#">Messages</a></li>
+            <li class="active"><a href="#">Blog</a></li>
+            <li class=""><a href="#">Bulletins</a></li>
+            <li class=""><a href="#">Forum</a></li>
+            <li class=""><a href="#">Groups</a></li>
+            <li class=""><a href="#">Layouts</a></li>
+            <li class=""><a href="#">Favorites</a></li>
+            <li class=""><a href="#">Invite</a></li>
+            <li class="">
+                <a href="#" title="SpaceHey Mobile"><img src="https://static.spacehey.net/icons/new.png" class="icon" aria-hidden="true" loading="lazy" alt=""> App</a>
+            </li>
+            <li><a href="#">Shop</a></li>
+            <li class=""><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <div class="row article blog-entry" itemscope="" itemtype="http://schema.org/Article">
+            <div class="col w-20 left">
+                <span itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SpaceHey">
+      <meta itemprop="logo" content="https://spacehey.com/img/logo.svg">
+    </span>
+                <div class="edit-info">
+                    <div class="profile-pic ">
+                        <img class="pfp-fallback" src="https://cdn.spacehey.net/profilepics/2_942c747dfa91de093ccc26a18a172a1d.png?token=UiM9Y8QwbWPz4MAwyyvmO1fQGqvV7ULAiUqXfvuwZ5I&amp;expires=1702665497" alt="SpaceHey's profile picture" loading="lazy">
+                    </div>
+                    <div class="author-details">
+                        <h4>
+                            Published by
+                            <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            <meta itemprop="url" content="https://spacehey.com/profile?id=2">
+            <span itemprop="name">
+              <a href="#">SpaceHey <span class="verified-info" title="Verified User" data-reason="Official Brand Account"><img src="https://static.spacehey.net/icons2/tick_light_blue.png" class="icon verified" aria-hidden="true" loading="lazy" alt=""></span></a>
+                            </span>
+                            </span>
+                        </h4>
+                        <p class="publish-date">
+                            published <time class="ago" itemprop="datePublished" content="2020-11-28" data-timestamp="1606570431" style="opacity: 1;">3 years ago</time><br> updated <time class="ago" itemprop="dateModified" content="2020-11-28" data-timestamp="1606598458" style="opacity: 1;">3 years ago</time> </p>
+                        <p class="category">
+                            <b>Category:</b> <a href="#">SpaceHey</a>
+                        </p>
+                        <p class="links">
+                            <a href="#">
+                                <img src="https://static.spacehey.net/icons/script.png" class="icon" aria-hidden="true" loading="lazy" alt=""> <span class="m-hide">View</span> Blog
+                            </a>
+                            <a href="#">
+                                <img src="https://static.spacehey.net/icons/user.png" class="icon" aria-hidden="true" loading="lazy" alt=""> <span class="m-hide">View</span> Profile
+                            </a>
+                            <a href="#" rel="nofollow">
+                                <img src="https://static.spacehey.net/icons/flag_red.png" class="icon" aria-hidden="true" loading="lazy" alt=""> Report Blog Entry
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col right">
+                <h1 class="title" itemprop="headline name">Hello World!</h1>
+                <div class="content" itemprop="articleBody">
+                    <p></p>
+                    <div>Hello everyone!</div>
+                    <div>Welcome to SpaceHey!</div>
+                    <div><br></div>
+                    <div></div>
+                    <p></p>
+                </div>
+                <br>
+                <div class="kudos" id="kudos">
+                    <p>
+                        <b>
+          <span class="count">475</span> Kudos
+        </b>
+
+                    </p>
+                    <form method="post" action="/kudos">
+                        <input type="hidden" name="id" value="1">
+                        <input type="hidden" name="action" value="add">
+                        <button class="kudos-btn" type="submit" name="amount" value="1">
+            Give 1 Kudos.
+          </button> —
+                        <button class="kudos-btn" type="submit" name="amount" value="2">
+            Give 2 Kudos
+          </button>
+                    </form>
+                    <p></p>
+                </div>
+                <div class="comments" id="comments">
+                    <div class="heading">
+                        <h4>Comments</h4>
+                    </div>
+                    <div class="inner">
+                        <meta itemprop="commentCount" content="90">
+                        <p>
+                            <b>
+            Displaying <span class="count">20</span> of <span class="count">90</span> comments
+            ( <a href="#">View all</a> | <a href="#">Add Comment</a> )
+          </b>
+                        </p>
+                        <table class="comments-table" cellspacing="0" cellpadding="3" bordercolor="ffffff" border="1">
+                            <tbody>
+                                <tr class="">
+                                    <td>
+                                        <a href="#">
+                                            <p>anti</p>
+                                        </a>
+                                        <a href="#">
+                                            <img class="pfp-fallback" src="https://i.ibb.co/VSMZbwp/profilepic.png" alt="anti's profile picture" loading="lazy">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <p><b><time class="ago" data-timestamp="1702317363" style="opacity: 1;">3 days ago</time></b></p>
+                                        <p>i stole some toast from a toaster like yesterday lol</p>
+                                        <br>
+                                        <p class="report">
+                                            <a href="#" rel="nofollow">
+                                                <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""> Report Comment
+                                            </a>
+                                        </p>
+                                        <br><br>
+                                        <div class="comment-replies">
+                                            <div class="comment-reply">
+                                                <p>didnt know who it belonged to, but i stole it anyway lmaoooo what a loser no more toast for you</p>
+                                                <p>
+                                                    <small>
+                        by
+                        <a href="#"><b>anti</b></a>;
+                        <time class="ago" data-timestamp="1702317430" style="opacity: 1;">3 days ago</time>;
+                                                <a href="#" rel="nofollow">
+                          Report
+                        </a>
+                      </small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <a href="#">
+                                            <button>Add Reply</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="">
+                                    <td>
+                                        <a href="#">
+                                            <p>tord !? ( xmas ver )</p>
+                                        </a>
+                                        <a href="#">
+                                            <img class="pfp-fallback" src="https://i.ibb.co/VSMZbwp/profilepic.png" alt="               tord !? ( ...'s profile picture" loading="lazy">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <p><b><time class="ago" data-timestamp="1702255739" style="opacity: 1;">4 days ago</time></b></p>
+                                        <p>somebody stole my toast</p>
+                                        <br>
+                                        <p class="report">
+                                            <a href="#" rel="nofollow">
+                                                <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""> Report Comment
+                                            </a>
+                                        </p>
+                                        <a href="#">
+                                            <button>Add Reply</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="">
+                                    <td>
+                                        <a href="#">
+                                            <p>clifford</p>
+                                        </a>
+                                        <a href="#">
+                                            <img class="pfp-fallback" src="https://i.ibb.co/VSMZbwp/profilepic.png" alt="clifford's profile picture" loading="lazy">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <p><b><time class="ago" data-timestamp="1702124314" style="opacity: 1;">5 days ago</time></b></p>
+                                        <p>Hellooooooooooooooooo!</p>
+                                        <br>
+                                        <p class="report">
+                                            <a href="#" rel="nofollow">
+                                                <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""> Report Comment
+                                            </a>
+                                        </p>
+                                        <a href="#">
+                                            <button>Add Reply</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="">
+                                    <td>
+                                        <a href="#">
+                                            <p>☆ liv the rat !! [🌴🌈/🛒🏀]☆</p>
+                                        </a>
+                                        <a href="#">
+                                            <img class="pfp-fallback" src="https://i.ibb.co/VSMZbwp/profilepic.png" alt="☆ liv the rat !! [🌴🌈/🛒🏀]☆'s profile picture" loading="lazy">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <p><b><time class="ago" data-timestamp="1701485478" style="opacity: 1;">13 days ago</time></b></p>
+                                        <p>heeyyyyyy mannnnnn</p>
+                                        <br>
+                                        <p class="report">
+                                            <a href="#" rel="nofollow">
+                                                <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""> Report Comment
+                                            </a>
+                                        </p>
+                                        <a href="#">
+                                            <button>Add Reply</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="">
+                                    <td>
+                                        <a href="#">
+                                            <p>☆ liv the rat !! [🌴🌈/🛒🏀]☆</p>
+                                        </a>
+                                        <a href="#">
+                                            <img class="pfp-fallback" src="https://i.ibb.co/VSMZbwp/profilepic.png" alt="☆ liv the rat !! [🌴🌈/🛒🏀]☆'s profile picture" loading="lazy">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <p><b><time class="ago" data-timestamp="1701485477" style="opacity: 1;">13 days ago</time></b></p>
+                                        <p>heeyyyyyy mannnnnn</p>
+                                        <br>
+                                        <p class="report">
+                                            <a href="#" rel="nofollow">
+                                                <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""> Report Comment
+                                            </a>
+                                        </p>
+                                        <a href="#">
+                                            <button>Add Reply</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="">
+                                    <td>
+                                        <a href="#">
+                                            <p>3m0t10n41ax3l</p>
+                                        </a>
+                                        <a href="#">
+                                            <img class="pfp-fallback" src="https://i.ibb.co/VSMZbwp/profilepic.png" alt="3m0t10n41ax3l's profile picture" loading="lazy">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <p><b><time class="ago" data-timestamp="1701415806" style="opacity: 1;">2 weeks ago</time></b></p>
+                                        <p>Hello</p>
+                                        <br>
+                                        <p class="report">
+                                            <a href="#" rel="nofollow">
+                                                <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""> Report Comment
+                                            </a>
+                                        </p>
+                                        <a href="#">
+                                            <button>Add Reply</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="">
+
+                                    <td>
+                                        <a href="#">
+                                            <p>holiv :333</p>
+                                        </a>
+                                        <a href="#">
+                                            <img class="pfp-fallback" src="https://i.ibb.co/VSMZbwp/profilepic.png" alt="holiv :333's profile picture" loading="lazy">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <p><b><time class="ago" data-timestamp="1691274106" style="opacity: 1;">4 months ago</time></b></p>
+                                        <p>I HATE THOSE EMOJISSSSS LOLZZZ</p>
+                                        <br>
+                                        <p class="report">
+                                            <a href="#" rel="nofollow">
+                                                <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""> Report Comment
+                                            </a>
+                                        </p>
+                                        <br><br>
+                                        <div class="comment-replies">
+                                            <div class="comment-reply">
+                                                <p>haha now im gonna make you see it again</p>
+                                                <p>
+                                                    <small>
+                        by
+                        <a href="#"><b>Karl the stautiymum statue</b></a>;
+                        <time class="ago" data-timestamp="1695339413" style="opacity: 1;">2 months ago</time>;
+                                                <a href="#" rel="nofollow">
+                          Report
+                        </a>
+                      </small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <a href="#">
+                                            <button>Add Reply</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pagination">
+                            <a class="next" href="#">
+                                <button>
+              Next Page
+            </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p>
+            brought to you by <a href="#" target="_blank" rel="noopener">tibush labs</a>
+        </p>
+        <p> <i>Disclaimer: This is a fan-based project and is not affiliated with MySpace® in any way.</i>
+        </p>
+        <ul class="links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Rules</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Brand</a></li>
+            <li><a href="#">Credits</a></li>
+            <li><a href="#">RSS</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Imprint</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Report Abuse</a></li>
+            <li><a href="#">Status</a></li>
+            <li><a href="#">SpaceHey Shop</a></li>
+        </ul>
+        <p class="copyright">
+            <a href="#">©2023 SpaceHey.com All Rights Reserved.</a>
+        </p>
+    </footer>
+</div>
+
+<link rel="stylesheet" href="https://spacehey.com/css/important.css?c=994aafba76bf9205f4f293837ea21a3ecdfd1dbc4223ec4de3cac4e15c853257">
+  `;
+  document.getElementById("previewContainer").innerHTML = defaultProf;
+  showBoxes([0,1,2,3,4,5,6,7,8,9,10]);
+  removeBoxes([1,2,3,4,5,6,7,8,10]);
+  
+
+
+}
+function openDefaultBulletin(){
+  var defaultProf = `
+  
+  <html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>"I'M FREE :D" by 96haato - Bulletins | SpaceHey</title>
+
+  <link rel="preconnect" href="https://static.spacehey.net" crossorigin="">
+  <link rel="preconnect" href="https://cdn.spacehey.net" crossorigin="">
+
+  <script src="https://spacehey.com/js/script.js?v=0.39" async=""></script>
+  
+  <link rel="stylesheet" href="https://spacehey.com/css/normalize.css">
+  <link rel="stylesheet" href="https://spacehey.com/css/my.css?c=d2869da4874e8ee7f4690ae5ccc17e6b468309019e0e10d23a7a22dfc3fa1473">
+  
+  <link rel="dns-prefetch" href="https://static.spacehey.net">
+  <link rel="dns-prefetch" href="https://cdn.spacehey.net">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://spacehey.com/favicon.ico?v=2">
+
+  <meta name="title" content="&quot;I'M FREE :D&quot; by 96haato - Bulletins | SpaceHey">
+  <meta name="description" content="MY RESUME IS IN! I'M FREE! :D Also I finally checked my grade specifics and I got an 89 on my interview! Literally the only thing she commented on was my talkin...">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="&quot;I'M FREE :D&quot; by 96haato - Bulletins | SpaceHey">
+  <meta property="og:description" content="MY RESUME IS IN! I'M FREE! :D Also I finally checked my grade specifics and I got an 89 on my interview! Literally the only thing she commented on was my talkin...">
+  <meta property="og:image" content="https://spacehey.com/img/meta_o.png">
+  <meta property="og:site_name" content="SpaceHey">
+
+  <meta property="twitter:site" content="@spacehey">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="&quot;I'M FREE :D&quot; by 96haato - Bulletins | SpaceHey">
+  <meta property="twitter:description" content="MY RESUME IS IN! I'M FREE! :D Also I finally checked my grade specifics and I got an 89 on my interview! Literally the only thing she commented on was my talkin...">
+  <meta property="twitter:image" content="https://spacehey.com/img/meta_o.png">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://spacehey.com/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://spacehey.com/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://spacehey.com/img/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="https://spacehey.com/img/favicons/safari-pinned-tab.svg" color="#1D4ED8">
+  <link rel="manifest" href="https://spacehey.com/img/favicons/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="SpaceHey">
+  <meta name="application-name" content="SpaceHey">
+  <meta name="msapplication-TileColor" content="#1D4ED8">
+  <meta name="msapplication-config" content="https://spacehey.com/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#1D4ED8">
+
+  <link href="https://spacehey.com/opensearch.xml" rel="search" title="Search SpaceHey" type="application/opensearchdescription+xml">
+
+  <link rel="canonical" href="https://spacehey.com/bulletin?id=3030031">  
+</head>
+<body data-base="https://spacehey.com">
+<!-- [spacehey.com] SpaceHey Server: webserver-2 -->
+
+<div class="container">
+  <nav class="">
+            <div class="top">
+      <div class="left">
+        <a href="#">
+                    <img class="logo logo-fallback" src="https://spacehey.com/img/logo.svg" alt="SpaceHey" fetchpriority="high" style="aspect-ratio: 55/14;">
+        </a>
+                                        
+                        </div>
+      <div class="center">
+                              <form action="https://spacehey.com/search" role="search">
+                          <label for="q">Search Users:</label>
+              <div class="search-wrapper">
+                <input id="q" type="text" name="q" autocomplete="off">
+              </div>
+              <button type="submit">Search</button>
+            </form>
+                        </div>
+      <div class="right">
+        <a href="#" rel="help">Help</a> | <form action="https://spacehey.com/logout" method="post" class="logout-form"><button class="logout-btn" type="submit" name="submit">LogOut</button></form>                    <br>
+          <div class="support-right">
+            <a href="#">
+              Support us
+            </a>
+          </div>
+                        </div>
+    </div>
+        <ul class="links">
+            <li class=""><a href="#">Home</a></li>
+      <li class=""><a href="#">Browse</a></li>
+      <li class=""><a href="#">Search</a></li>
+      <li class=""><a href="#">Messages</a></li>
+      <li class=""><a href="#">Blog</a></li>
+      <li class="active"><a href="#">Bulletins</a></li>
+      <li class=""><a href="#">Forum</a></li>
+      <li class=""><a href="#">Groups</a></li>
+      <li class=""><a href="#">Layouts</a></li>
+            <li class=""><a href="#">Favorites</a></li>
+      <li class=""><a href="#">Invite</a></li>
+            <li class=""><a href="#" title="SpaceHey Mobile"><img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""> App</a></li>
+      <li><a href="#">Shop</a></li>
+      <li class=""><a href="#">About</a></li>
+          </ul>
+    </nav>
+  <main>
+
+<div class="row article bulletin">
+  <div class="col w-20 left">
+    <div class="edit-info">
+      <div class="profile-pic ">
+        <img class="pfp-fallback" src="SpaceHeyImages/mainprofile.png" alt="96haato's profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+      </div>
+      <div class="author-details">
+        <h4>Bulletin by <a href="#">SpaceHey</a></h4>
+        <p class="publish-date">
+          posted <time class="ago" data-timestamp="1702568507" style="opacity: 1;">10 hours ago</time><br>
+          expires <time class="in" data-timestamp="1703432507" style="opacity: 1;">in 10 days</time>
+        </p>
+        <p class="links">
+          <a href="#">
+            <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">            <span class="m-hide">View</span> Bulletins
+          </a>
+          <a href="#">
+            <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">            <span class="m-hide">View</span> Profile
+          </a>
+          <a href="#" rel="nofollow">
+            <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">            Report Bulletin
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col right">
+        <h1 class="title">Title of the bulletin!</h1>
+        <div class="content">
+      <p>Hello there! Welcome to the bulletins page!</p>
+    </div>
+    <br>
+    <div class="comments" id="comments">
+      <div class="heading">
+        <h4>Bulletin Comments</h4>
+      </div>
+      <div class="inner">
+                <p>
+          <b>
+            Displaying <span class="count">3</span> of <span class="count">3</span> comments
+            ( <a href="#">View all</a> | <a href="#">Add Comment</a> )
+          </b>
+        </p>
+        <table class="comments-table" cellspacing="0" cellpadding="3" bordercolor="ffffff" border="1">
+          <tbody>
+                        <tr>
+              <td class="">
+                <a href="#">
+                  <p>Nehiri</p>
+                </a>
+                <a href="#">
+                  <img class="pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="Nehiri's profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+                </a>
+              </td>
+              <td>
+                <p><b><time class="ago" data-timestamp="1702574641" style="opacity: 1;">8 hours ago</time></b></p>
+                <p>How are you gonna spend all this free time you have?</p>
+                <br>
+                                <p class="report">
+                  <a href="#" rel="nofollow">
+                    <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">                    Report Comment
+                  </a>
+                </p>
+                                <br><br>
+                <div class="comment-replies">
+                                    <div class="comment-reply">
+                    <p>Design more layouts :)</p>
+                    <p>
+                      <small>
+                        by
+                        <a href="#"><b>SpaceHey</b></a>;
+                        <time class="ago" data-timestamp="1702578295" style="opacity: 1;">7 hours ago</time>;
+                                                <a href="#" rel="nofollow">
+                          Report
+                        </a>
+                      </small>
+                    </p>
+                  </div>
+                                  </div>
+                                                <a href="#">
+                  <button>Add Reply</button>
+                </a>
+                              </td>
+            </tr>
+                        <tr>
+              <td class="">
+                <a href="#">
+                  <p>DonDoe404</p>
+                </a>
+                <a href="#">
+                  <img class="pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="DonDoe404's profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+                </a>
+              </td>
+              <td>
+                <p><b><time class="ago" data-timestamp="1702570238" style="opacity: 1;">9 hours ago</time></b></p>
+                <p>Hi SpaceHey<br>I'm Don</p>
+                <br>
+                                <p class="report">
+                  <a href="#" rel="nofollow">
+                    <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">                    Report Comment
+                  </a>
+                </p>
+                                <br><br>
+                
+                                                <a href="#">
+                  <button>Add Reply</button>
+                </a>
+                              </td>
+            </tr>
+                        <tr>
+              <td class="">
+                <a href="#">
+                  <p>melancholyskittle</p>
+                </a>
+                <a href="#">
+                  <img class="pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="melancholyskittle's profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+                </a>
+              </td>
+              <td>
+                <p><b><time class="ago" data-timestamp="1702569161" style="opacity: 1;">9 hours ago</time></b></p>
+                <p>DUDE Whats Up!<br>This site is rad.</p>
+                <br>
+                                <p class="report">
+                  <a href="#" rel="nofollow">
+                    <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">                    Report Comment
+                  </a>
+                </p>
+                                <br><br>
+                
+                                                <a href="#">
+                  <button>Add Reply</button>
+                </a>
+                              </td>
+            </tr>
+                      </tbody>
+        </table>
+                      </div>
+    </div>
+  </div>
+</div>
+
+  </main>
+  <footer>
+    <p>
+      brought to you by <a href="#" target="_blank" rel="noopener">tibush labs</a>
+          </p>
+    <p>       <i>Disclaimer: This is a fan-based project and is not affiliated with MySpace® in any way.</i>
+    </p>
+    <ul class="links">
+            <li><a href="#">About</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Rules</a></li>
+      <li><a href="#">Press</a></li>
+      <li><a href="#">Brand</a></li>
+      <li><a href="#">Credits</a></li>
+      <li><a href="#">RSS</a></li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Imprint</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Report Abuse</a></li>
+      <li><a href="#">Status</a></li>
+      <li><a href="#">SpaceHey Shop</a></li>
+    </ul>
+    <p class="copyright">
+      <a href="#">©2023 SpaceHey.com All Rights Reserved.</a>
+    </p>
+  </footer>
+</div>
+
+<link rel="stylesheet" href="https://spacehey.com/css/important.css?c=994aafba76bf9205f4f293837ea21a3ecdfd1dbc4223ec4de3cac4e15c853257">
+
+
+</body></html>
+  
+  `
+  showBoxes([0,1,2,3,4,5,6,7,8,9,10]);
+  removeBoxes([1,2,3,4,5,6,7,8,9]);
   document.getElementById("previewContainer").innerHTML = defaultProf;
 }
 
@@ -1014,5 +1753,54 @@ function getCookie(name) {
   return null;
 }
 
+document.getElementById('designOption').addEventListener('change', function() {
+  var selectedValue = this.value;
+
+  if (selectedValue === 'Profile') {
+    openDefaultProfile();
+  } else if (selectedValue === 'Blog') {
+    openDefaultBlog();
+  } else if (selectedValue === 'Bulletin') {
+    openDefaultBulletin();
+  }
+});
+
+function removeBoxes(elArr){
+  var boxWrapper = document.getElementById("editorContainer");
+
+  elArr.forEach(
+    function(el){
+      boxWrapper.getElementsByTagName("h1")[el].style.display = "none";
+      var cm = $('.CodeMirror')[el].CodeMirror;
+      $(cm.getWrapperElement()).hide();
+
+      //boxWrapper.getElementsByClassName("CodeMirror cm-s-abcdef CodeMirror-wrap")[el].style.display = "none";
+    }
+  );
+}
+
+function showBoxes(elArr){
+  var boxWrapper = document.getElementById("editorContainer");
+
+  elArr.forEach(
+    function(el){
+      boxWrapper.getElementsByTagName("h1")[el].style.display = "block";
+      var cm = $('.CodeMirror')[el].CodeMirror;
+      $(cm.getWrapperElement()).show();
+      //boxWrapper.getElementsByClassName("CodeMirror cm-s-abcdef CodeMirror-wrap")[el].style.display = "block";
+    }
+  );
+}
 
 
+window.onload = function(){ 
+  sizeBoxes();
+  var cm = $('.CodeMirror')[8].CodeMirror;
+  $(cm.getWrapperElement()).hide();
+  var cm = $('.CodeMirror')[9].CodeMirror;
+  $(cm.getWrapperElement()).hide();
+  /*
+  document.getElementById("detailsBoxesWrapper").getElementsByClassName("CodeMirror cm-s-abcdef CodeMirror-wrap")[8].style.display = "none";
+  document.getElementById("detailsBoxesWrapper").getElementsByClassName("CodeMirror cm-s-abcdef CodeMirror-wrap")[9].style.display = "none";
+  */
+}

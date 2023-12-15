@@ -64,6 +64,8 @@ textarea{
   position: relative;
   color: #DDDDDD;
   text-align: center;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 #previewContainer{
@@ -130,23 +132,26 @@ textarea{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   text-decoration: none;
   list-style: none;
 
 }
 #optionsBar li{
   font-size: 25px;
-  cursor: pointer;
   border: 1px solid transparent;
-  padding: 2px 5px;
   transition: .3s;
   margin: 3px 0;
 }
-#optionsBar li:hover{
-  border: 1px solid #FFFFFF;
 
-  transition: .3s;
+#optionsBar select{
+  background: white;
+  border: 2px solid transparent;
+  border-radius: 0;
+  font-size: 15px !important;
+  font-family: 'Teko', sans-serif !important;
 }
+
 
 #contentBoxesWrapper{
   display: flex;
