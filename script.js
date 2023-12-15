@@ -95,6 +95,15 @@ function copyText(box) {
         outStr = outStr.replace(/\n/g, "");
         copyText = outStr;
         break;
+      case "group":
+        var outStr = '<style>\n' +
+        CSSeditor.getValue() +
+        '\n</style>\n\n' +
+        groupeditor.getValue();
+
+        outStr = outStr.replace(/\n/g, "");
+        copyText = outStr;
+        break;
     }
 
     if (copyText != "") {

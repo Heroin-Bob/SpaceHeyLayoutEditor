@@ -53,6 +53,9 @@ function updateProfile() {
     case "Bulletin":
       document.querySelector("#previewContainer > div > main > div > div.col.right > div.content").innerHTML = "<style>" + CSSeditor.getValue() + "</style>" + bulletineditor.getValue();
       break;
+    case "Group":
+      document.querySelector("#previewContainer > div > main > div > div.col.w-75.group-right > p.description").innerHTML = "<style>" + CSSeditor.getValue() + "</style>" + groupeditor.getValue();
+      break;
   }
   
 

@@ -42,6 +42,8 @@ var bookseditor;
 var heroeseditor;
 var blogeditor;
 var bulletineditor;
+var groupeditor;
+
 $(document).ready(function() {
   //CSS
   var code = $(".codemirror-textarea")[0];
@@ -153,6 +155,15 @@ $(document).ready(function() {
     lineWrapping: true
   });
 
+  code = $(".codemirror-textarea")[11];
+  groupeditor = CodeMirror.fromTextArea(code, {
+    lineNumbers: true,
+    tabsize: 1,
+    mode: "xml",
+    theme: "abcdef",
+    lineWrapping: true
+  });
+
   const myCookieValue = getCookie('layoutCookie');
   const newArr = JSON.parse(myCookieValue);
   
@@ -167,6 +178,7 @@ $(document).ready(function() {
   heroeseditor.setValue(newArr[8]);
   blogeditor.setValue(newArr[9]);
   bulletineditor.setValue(newArr[10]);
+  groupeditor.setValue(newArr[11]);
 
   
 
@@ -1018,8 +1030,8 @@ function openDefaultProfile() {
 `;
 
   document.getElementById("previewContainer").innerHTML = defaultProf;
-  showBoxes([0,1,2,3,4,5,6,7,8,9,10]);
-  removeBoxes([9,10]);
+  showBoxes([0,1,2,3,4,5,6,7,8,9,10,11]);
+  removeBoxes([9,10,11]);
   
   
 
@@ -1450,8 +1462,8 @@ function openDefaultBlog(){
 <link rel="stylesheet" href="https://spacehey.com/css/important.css?c=994aafba76bf9205f4f293837ea21a3ecdfd1dbc4223ec4de3cac4e15c853257">
   `;
   document.getElementById("previewContainer").innerHTML = defaultProf;
-  showBoxes([0,1,2,3,4,5,6,7,8,9,10]);
-  removeBoxes([1,2,3,4,5,6,7,8,10]);
+  showBoxes([0,1,2,3,4,5,6,7,8,9,10,11]);
+  removeBoxes([1,2,3,4,5,6,7,8,10,11]);
   
 
 
@@ -1732,8 +1744,413 @@ function openDefaultBulletin(){
 </body></html>
   
   `
-  showBoxes([0,1,2,3,4,5,6,7,8,9,10]);
-  removeBoxes([1,2,3,4,5,6,7,8,9]);
+  showBoxes([0,1,2,3,4,5,6,7,8,9,10,11]);
+  removeBoxes([1,2,3,4,5,6,7,8,9,11]);
+  document.getElementById("previewContainer").innerHTML = defaultProf;
+}
+
+function openDefaultGroup(){
+  var defaultProf = `
+  
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpaceHey | Groups | SpaceHey</title>
+
+  <link rel="preconnect" href="https://static.spacehey.net" crossorigin="">
+  <link rel="preconnect" href="https://cdn.spacehey.net" crossorigin="">
+
+  <script src="https://spacehey.com/js/script.js?v=0.39" async=""></script>
+  
+  <link rel="stylesheet" href="https://spacehey.com/css/normalize.css">
+  <link rel="stylesheet" href="https://spacehey.com/css/my.css?c=d2869da4874e8ee7f4690ae5ccc17e6b468309019e0e10d23a7a22dfc3fa1473">
+  
+  <link rel="dns-prefetch" href="https://static.spacehey.net">
+  <link rel="dns-prefetch" href="https://cdn.spacehey.net">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://spacehey.com/favicon.ico?v=2">
+
+  <meta name="title" content="SpaceHey | Groups | SpaceHey">
+  <meta name="description" content="Hello everyone — This is a Group for any kind of Feedback, Ideas or Bug Reports on SpaceHey! Please use the Group Forum for Bug Reports, Feature Ideas and Ideas...">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SpaceHey | Groups | SpaceHey">
+  <meta property="og:description" content="Hello everyone — This is a Group for any kind of Feedback, Ideas or Bug Reports on SpaceHey! Please use the Group Forum for Bug Reports, Feature Ideas and Ideas...">
+  <meta property="og:image" content="https://external-media.spacehey.net/media/200x200,sc,sqwHVod0sVW2KgaoUt2TQpjA9CC34OH8HBZOGq2toi2Y=/https://cdn.spacehey.net/grouppics/1_68f6464ca59160f455658beecfff8d79.png?token=X9aJ3OQ8fLb5RewXG8dsU4mDv225oWu0XIBCJUSgY7I&amp;expires=1702732690">
+  <meta property="og:site_name" content="SpaceHey">
+
+  <meta property="twitter:site" content="@spacehey">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:title" content="SpaceHey | Groups | SpaceHey">
+  <meta property="twitter:description" content="Hello everyone — This is a Group for any kind of Feedback, Ideas or Bug Reports on SpaceHey! Please use the Group Forum for Bug Reports, Feature Ideas and Ideas...">
+  <meta property="twitter:image" content="https://external-media.spacehey.net/media/200x200,sc,sqwHVod0sVW2KgaoUt2TQpjA9CC34OH8HBZOGq2toi2Y=/https://cdn.spacehey.net/grouppics/1_68f6464ca59160f455658beecfff8d79.png?token=X9aJ3OQ8fLb5RewXG8dsU4mDv225oWu0XIBCJUSgY7I&amp;expires=1702732690">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://spacehey.com/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://spacehey.com/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://spacehey.com/img/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="https://spacehey.com/img/favicons/safari-pinned-tab.svg" color="#1D4ED8">
+  <link rel="manifest" href="https://spacehey.com/img/favicons/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="SpaceHey">
+  <meta name="application-name" content="SpaceHey">
+  <meta name="msapplication-TileColor" content="#1D4ED8">
+  <meta name="msapplication-config" content="https://spacehey.com/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#1D4ED8">
+
+  <link href="https://spacehey.com/opensearch.xml" rel="search" title="Search SpaceHey" type="application/opensearchdescription+xml">
+
+  <link rel="canonical" href="https://groups.spacehey.com/spacehey">  
+</head>
+<body data-base="https://spacehey.com">
+<!-- [spacehey.com] SpaceHey Server: webserver-1 -->
+
+<div class="container">
+  <nav class="">
+            <div class="top">
+      <div class="left">
+        <a href="#">
+                    <img class="logo logo-fallback" src="https://spacehey.com/img/logo.svg" alt="SpaceHey" fetchpriority="high" style="aspect-ratio: 55/14;">
+        </a>
+                                        <a href="#" title="Christmas 2023">
+              <img class="christmas" src="https://i.ibb.co/VSMZbwp/profilepic.png" alt="Christmas">
+            </a>
+                        </div>
+      <div class="center">
+                              <form action="https://groups.spacehey.com/search" role="search">
+              <label for="q">Search Groups:</label>
+              <div class="search-wrapper">
+                <input id="q" type="text" name="q" autocomplete="off">
+              </div>
+              <button type="submit">Search</button>
+            </form>
+                        </div>
+      <div class="right">
+        <a href="#" rel="help">Help</a> | <form action="https://spacehey.com/logout" method="post" class="logout-form"><button class="logout-btn" type="submit" name="submit">LogOut</button></form>                    <br>
+          <div class="support-right">
+            <a href="#">
+              Support us
+            </a>
+          </div>
+                        </div>
+    </div>
+        <ul class="links">
+            <li class=""><a href="#">Home</a></li>
+      <li class=""><a href="#">Browse</a></li>
+      <li class=""><a href="#">Search</a></li>
+      <li class=""><a href="#">Messages</a></li>
+      <li class=""><a href="#">Blog</a></li>
+      <li class=""><a href="#">Bulletins</a></li>
+      <li class=""><a href="#">Forum</a></li>
+      <li class="active"><a href="#">Groups</a></li>
+      <li class=""><a href="#">Layouts</a></li>
+            <li class=""><a href="#">Favorites</a></li>
+      <li class=""><a href="#">Invite</a></li>
+            <li class=""><a href="#" title="SpaceHey Mobile"><img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""> App</a></li>
+      <li><a href="#">Shop</a></li>
+      <li class=""><a href="#">About</a></li>
+          </ul>
+    </nav>
+  <main>
+
+<div class="row groups-container">
+  <div class="col w-25 group-left">
+    <h4>
+      <a href="#">
+        « SpaceHey Groups
+      </a>
+    </h4>
+    <div class="m-row">
+      <div class="m-col">
+        <img class="group-pic" src="SpaceHeyImages/mainprofile.png" alt="SpaceHey group picture" loading="lazy">
+      </div>
+      <div class="m-col">
+        <ul class="group-actions">
+          <a href="#"><li>Open Bulletin Board</li></a><a href="#"><li>Open Group Forum</li></a><a href="#"><li>507 Members</li></a><a href="#"><li>2 Moderators</li></a><a href="#"><li>Leave Group</li></a>        </ul>
+        <p class="report-group">
+          <a href="#" rel="nofollow">
+            <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">            Report Group
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col w-75 group-right">
+    <h1>SpaceHey</h1>
+    <p class="description"><b>Hello everyone</b> — This is a Group for any kind of Feedback, Ideas or Bug Reports on SpaceHey!
+<br><br>
+Please use the Group Forum for Bug Reports, Feature Ideas and Ideas for Improvements.<br>
+If you want to talk about SpaceHey, write about your thoughts on a SpaceHey-related feature or there is something else, please post a Group Bulletin instead.
+<br><br>
+I will especially check the Group Forum regularly to look for Bug reports, answer your questions and keep you updated on the things I do. I will try to mark Bug Reports/Feature requests which are completed as "closed", so they won't clutter the Group Forum Overview and we can go back to them if needed by visiting the "Closed Topics" Section in the Group Forum.
+<br><br>
+If there is something you need to tell me privately, please don't hesitate to <a href="#" rel="ugc">send me an IM</a> or Email (See "Contact SpaceHey" Link in the Footer). Thank you!
+
+<style>
+img.group-pic{
+  border-radius: 4px;
+}
+div.col:nth-child(2) > h3:nth-child(5):after{
+  content: " — Talking about SpaceHey, Thoughts, ...";
+  color: var(--dark-gray);
+  font-size: 0.9em;
+}
+div.col:nth-child(2) > h3:nth-child(12):after{
+  content: " — Bug Reports, Ideas, Improvements";
+  color: var(--dark-gray);
+  font-size: 0.9em;
+}
+</style></p>
+    <br><br>
+
+        <h3>Group Bulletin Board</h3>
+    <a href="#" class="rss-right" title="Open Group Bulletin Board"><img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""></a>
+    <table class="bulletin-table">
+      <thead>
+        <tr>
+          <th scope="col">From</th>
+          <th scope="col">Time</th>
+          <th scope="col">Subject</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+            </tbody>
+    </table>
+    <p><i>No Group Bulletins found — <a href="#">Post a new Bulletin</a></i></p><br><br>
+        <h3>Group Forum</h3>
+    <a href="#" class="rss-right" title="Open Group Forum"><img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""></a>
+    <table class="forum-table">
+      <thead>
+        <tr>
+          <th>Author</th>
+          <th>Subject</th>
+          <th>Replies</th>
+          <th>Last Post</th>
+        </tr>
+      </thead>
+      <tbody>
+              <tr class="">
+          <td class="user-info ">
+            <a href="#">
+              <img class="profile-pic pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="Lennox's profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+            </a>
+          </td>
+          <td class="subject">
+                        <a href="#">
+              <b>Spacehey Desktop client?? </b>
+            </a>
+          </td>
+          <td class="reply-count">
+            <big>0</big>
+          </td>
+          <td>
+            <time class="ago" data-timestamp="1702268936" style="opacity: 1;">5 days ago</time>
+          </td>
+        </tr>
+                <tr class="">
+          <td class="user-info ">
+            <a href="#">
+              <img class="profile-pic pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="Cranky Old Witch's profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+            </a>
+          </td>
+          <td class="subject">
+                        <a href="#">
+              <b>Request for a "History" category</b>
+            </a>
+          </td>
+          <td class="reply-count">
+            <big>0</big>
+          </td>
+          <td>
+            <time class="ago" data-timestamp="1702151704" style="opacity: 1;">6 days ago</time>
+          </td>
+        </tr>
+                <tr class="">
+          <td class="user-info ">
+            <a href="#">
+              <img class="profile-pic pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="▄︻╦̵̵̿═SniperLife═'s profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+            </a>
+          </td>
+          <td class="subject">
+                        <a href="#">
+              <b>Feature request custom cc/html on our own home page</b>
+            </a>
+          </td>
+          <td class="reply-count">
+            <big>0</big>
+          </td>
+          <td>
+            <time class="ago" data-timestamp="1702042208" style="opacity: 1;">1 week ago</time>
+          </td>
+        </tr>
+                <tr class="">
+          <td class="user-info ">
+            <a href="#">
+              <img class="profile-pic pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="♡Niko!♡'s profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+            </a>
+          </td>
+          <td class="subject">
+                        <a href="#">
+              <b>suggestion for advent calendar!!</b>
+            </a>
+          </td>
+          <td class="reply-count">
+            <big>0</big>
+          </td>
+          <td>
+            <time class="ago" data-timestamp="1701986184" style="opacity: 1;">8 days ago</time>
+          </td>
+        </tr>
+                <tr class="">
+          <td class="user-info ">
+            <a href="#">
+              <img class="profile-pic pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="Stamps The Creepypasta fa...'s profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+            </a>
+          </td>
+          <td class="subject">
+                        <a href="#">
+              <b>Suggestion for advent calendrer </b>
+            </a>
+          </td>
+          <td class="reply-count">
+            <big>0</big>
+          </td>
+          <td>
+            <time class="ago" data-timestamp="1701725374" style="opacity: 1;">11 days ago</time>
+          </td>
+        </tr>
+                <tr class="">
+          <td class="user-info ">
+            <a href="#">
+              <img class="profile-pic pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="Cranky Old Witch's profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+            </a>
+          </td>
+          <td class="subject">
+                        <a href="#">
+              <b>Suggestions for forums</b>
+            </a>
+          </td>
+          <td class="reply-count">
+            <big>1</big>
+          </td>
+          <td>
+            <time class="ago" data-timestamp="1701740313" style="opacity: 1;">11 days ago</time>
+          </td>
+        </tr>
+                <tr class="">
+          <td class="user-info ">
+            <a href="#">
+              <img class="profile-pic pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="▄︻╦̵̵̿═SniperLife═'s profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+            </a>
+          </td>
+          <td class="subject">
+                        <a href="#">
+              <b>feature request: edit bullitens, both title and contents</b>
+            </a>
+          </td>
+          <td class="reply-count">
+            <big>0</big>
+          </td>
+          <td>
+            <time class="ago" data-timestamp="1701204941" style="opacity: 1;">17 days ago</time>
+          </td>
+        </tr>
+                <tr class="">
+          <td class="user-info ">
+            <a href="#">
+              <img class="profile-pic pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="▄︻╦̵̵̿═SniperLife═'s profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+            </a>
+          </td>
+          <td class="subject">
+                        <a href="#">
+              <b>feature request: Security key support</b>
+            </a>
+          </td>
+          <td class="reply-count">
+            <big>0</big>
+          </td>
+          <td>
+            <time class="ago" data-timestamp="1701194107" style="opacity: 1;">17 days ago</time>
+          </td>
+        </tr>
+                <tr class="">
+          <td class="user-info ">
+            <a href="#">
+              <img class="profile-pic pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="▄︻╦̵̵̿═SniperLife═'s profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+            </a>
+          </td>
+          <td class="subject">
+                        <a href="#">
+              <b>Mobile app </b>
+            </a>
+          </td>
+          <td class="reply-count">
+            <big>2</big>
+          </td>
+          <td>
+            <time class="ago" data-timestamp="1701490050" style="opacity: 1;">2 weeks ago</time>
+          </td>
+        </tr>
+                <tr class="">
+          <td class="user-info ">
+            <a href="#">
+              <img class="profile-pic pfp-fallback" src="https://spacehey.com/img/default_profile_pic.png" alt="Cynder's profile picture" loading="lazy" style="aspect-ratio: 1 / 1;">
+            </a>
+          </td>
+          <td class="subject">
+                        <a href="#">
+              <b>How????</b>
+            </a>
+          </td>
+          <td class="reply-count">
+            <big>0</big>
+          </td>
+          <td>
+            <time class="ago" data-timestamp="1699306256" style="opacity: 1;">1 month ago</time>
+          </td>
+        </tr>
+              </tbody>
+    </table>
+    <br><a href="#"><button>Open Group Forum</button></a>  </div>
+</div>
+
+  </main>
+  <footer>
+    <p>
+      brought to you by <a href="#" target="_blank" rel="noopener">tibush labs</a>
+          </p>
+    <p>       <i>Disclaimer: This is a fan-based project and is not affiliated with MySpace® in any way.</i>
+    </p>
+    <ul class="links">
+            <li><a href="#">About</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Rules</a></li>
+      <li><a href="#">Press</a></li>
+      <li><a href="#">Brand</a></li>
+      <li><a href="#">Credits</a></li>
+      <li><a href="#">RSS</a></li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Imprint</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Report Abuse</a></li>
+      <li><a href="#">Status</a></li>
+      <li><a href="#">SpaceHey Shop</a></li>
+    </ul>
+    <p class="copyright">
+      <a href="#">©2023 SpaceHey.com All Rights Reserved.</a>
+    </p>
+  </footer>
+</div>
+
+<link rel="stylesheet" href="https://spacehey.com/css/important.css?c=994aafba76bf9205f4f293837ea21a3ecdfd1dbc4223ec4de3cac4e15c853257">
+
+
+</body>
+
+  `;
+
+  showBoxes([0,1,2,3,4,5,6,7,8,9,10,11]);
+  removeBoxes([1,2,3,4,5,6,7,8,9,10]);
   document.getElementById("previewContainer").innerHTML = defaultProf;
 }
 
@@ -1762,6 +2179,8 @@ document.getElementById('designOption').addEventListener('change', function() {
     openDefaultBlog();
   } else if (selectedValue === 'Bulletin') {
     openDefaultBulletin();
+  } else if (selectedValue === 'Group'){
+    openDefaultGroup();
   }
 });
 
