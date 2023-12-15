@@ -1561,7 +1561,7 @@ function openDefaultBulletin(){
       <li class=""><a href="#">Layouts</a></li>
             <li class=""><a href="#">Favorites</a></li>
       <li class=""><a href="#">Invite</a></li>
-            <li class=""><a href="#" title="SpaceHey Mobile"><img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""> App</a></li>
+      <a href="#" title="SpaceHey Mobile"><img src="https://static.spacehey.net/icons/new.png" class="icon" aria-hidden="true" loading="lazy" alt=""> App</a>
       <li><a href="#">Shop</a></li>
       <li class=""><a href="#">About</a></li>
           </ul>
@@ -1842,7 +1842,7 @@ function openDefaultGroup(){
       <li class=""><a href="#">Layouts</a></li>
             <li class=""><a href="#">Favorites</a></li>
       <li class=""><a href="#">Invite</a></li>
-            <li class=""><a href="#" title="SpaceHey Mobile"><img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""> App</a></li>
+      <a href="#" title="SpaceHey Mobile"><img src="https://static.spacehey.net/icons/new.png" class="icon" aria-hidden="true" loading="lazy" alt=""> App</a>
       <li><a href="#">Shop</a></li>
       <li class=""><a href="#">About</a></li>
           </ul>
