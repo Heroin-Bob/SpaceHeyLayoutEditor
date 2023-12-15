@@ -2218,6 +2218,8 @@ window.onload = function(){
   $(cm.getWrapperElement()).hide();
   var cm = $('.CodeMirror')[9].CodeMirror;
   $(cm.getWrapperElement()).hide();
+  var cm = $('.CodeMirror')[10].CodeMirror;
+  $(cm.getWrapperElement()).hide();
   /*
   document.getElementById("detailsBoxesWrapper").getElementsByClassName("CodeMirror cm-s-abcdef CodeMirror-wrap")[8].style.display = "none";
   document.getElementById("detailsBoxesWrapper").getElementsByClassName("CodeMirror cm-s-abcdef CodeMirror-wrap")[9].style.display = "none";
