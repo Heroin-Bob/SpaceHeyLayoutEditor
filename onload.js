@@ -272,20 +272,23 @@ function openDefaultProfile() {
           <a href="https://spacehey.com/help">Help</a> | <form action="https://spacehey.com/logout" method="post" class="logout-form"><button class="logout-btn" type="submit" name="submit">LogOut</button></form>      </div>
       </div>
       <ul class="links">
-              <li class="active"><a href="https://spacehey.com/home">Home</a></li>
-        <li class=""><a href="https://spacehey.com/browse">Browse</a></li>
-        <li class=""><a href="https://spacehey.com/search">Search</a></li>
-        <li class=""><a href="https://im.spacehey.com">Messages</a></li>
-        <li class=""><a href="https://blog.spacehey.com">Blog</a></li>
-        <li class=""><a href="https://spacehey.com/bulletins">Bulletins</a></li>
-        <li class=""><a href="https://forum.spacehey.com/">Forum</a></li>
-        <li class=""><a href="https://groups.spacehey.com">Groups <img src="SpaceHeyImages/new.png" class="icon" aria-hidden="true" loading="lazy" alt="New Icon"></a></li>
-        <li class=""><a href="https://layouts.spacehey.com">Layouts</a></li>
-        <li class=""><a href="https://spacehey.com/topmusic">Music Charts</a></li>
-        <li class=""><a href="https://spacehey.com/favorites">Favorites</a></li>
-        <li class=""><a href="https://spacehey.com/invite">Invite</a></li>
-              <li class=""><a href="https://spacehey.com/about">About</a></li>
-            </ul>
+            <li class=""><a href="#">Home</a></li>
+            <li class=""><a href="#">Browse</a></li>
+            <li class=""><a href="#">Search</a></li>
+            <li class=""><a href="#">Messages</a></li>
+            <li class="active"><a href="#">Blog</a></li>
+            <li class=""><a href="#">Bulletins</a></li>
+            <li class=""><a href="#">Forum</a></li>
+            <li class=""><a href="#">Groups</a></li>
+            <li class=""><a href="#">Layouts</a></li>
+            <li class=""><a href="#">Favorites</a></li>
+            <li class=""><a href="#">Invite</a></li>
+            <li class="">
+                <a href="#" title="SpaceHey Mobile"><img src="https://static.spacehey.net/icons/new.png" class="icon" aria-hidden="true" loading="lazy" alt=""> App</a>
+            </li>
+            <li><a href="#">Shop</a></li>
+            <li class=""><a href="#">About</a></li>
+        </ul>
     </nav>
     <main>
       <div class="row profile">
@@ -1582,13 +1585,13 @@ function openDefaultBulletin(){
         </p>
         <p class="links">
           <a href="#">
-            <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">            <span class="m-hide">View</span> Bulletins
+            <img src="https://static.spacehey.net/icons/text_list_bullets.png" class="icon" aria-hidden="true" loading="lazy" alt="">            <span class="m-hide">View</span> Bulletins
           </a>
           <a href="#">
-            <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">            <span class="m-hide">View</span> Profile
+            <img src="https://static.spacehey.net/icons/user.png" class="icon" aria-hidden="true" loading="lazy" alt="">            <span class="m-hide">View</span> Profile
           </a>
           <a href="#" rel="nofollow">
-            <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">            Report Bulletin
+            <img src="https://static.spacehey.net/icons/flag_red.png" class="icon" aria-hidden="true" loading="lazy" alt="">            Report Bulletin
           </a>
         </p>
       </div>
@@ -1628,7 +1631,7 @@ function openDefaultBulletin(){
                 <br>
                                 <p class="report">
                   <a href="#" rel="nofollow">
-                    <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">                    Report Comment
+                    <img src="https://static.spacehey.net/icons/flag_red.png" class="icon" aria-hidden="true" loading="lazy" alt="">                    Report Comment
                   </a>
                 </p>
                                 <br><br>
@@ -1667,7 +1670,7 @@ function openDefaultBulletin(){
                 <br>
                                 <p class="report">
                   <a href="#" rel="nofollow">
-                    <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">                    Report Comment
+                    <img src="https://static.spacehey.net/icons/flag_red.png" class="icon" aria-hidden="true" loading="lazy" alt="">                    Report Comment
                   </a>
                 </p>
                                 <br><br>
@@ -1692,7 +1695,7 @@ function openDefaultBulletin(){
                 <br>
                                 <p class="report">
                   <a href="#" rel="nofollow">
-                    <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">                    Report Comment
+                    <img src="https://static.spacehey.net/icons/flag_red.png" class="icon" aria-hidden="true" loading="lazy" alt="">                    Report Comment
                   </a>
                 </p>
                                 <br><br>
@@ -1865,7 +1868,7 @@ function openDefaultGroup(){
           <a href="#"><li>Open Bulletin Board</li></a><a href="#"><li>Open Group Forum</li></a><a href="#"><li>507 Members</li></a><a href="#"><li>2 Moderators</li></a><a href="#"><li>Leave Group</li></a>        </ul>
         <p class="report-group">
           <a href="#" rel="nofollow">
-            <img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt="">            Report Group
+            <img src="https://static.spacehey.net/icons/flag_red.png" class="icon" aria-hidden="true" loading="lazy" alt="">            Report Group
           </a>
         </p>
       </div>
@@ -1900,7 +1903,7 @@ div.col:nth-child(2) > h3:nth-child(12):after{
     <br><br>
 
         <h3>Group Bulletin Board</h3>
-    <a href="#" class="rss-right" title="Open Group Bulletin Board"><img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""></a>
+    <a href="#" class="rss-right" title="Open Group Bulletin Board"><img src="https://static.spacehey.net/icons/arrow_right.png" class="icon" aria-hidden="true" loading="lazy" alt=""></a>
     <table class="bulletin-table">
       <thead>
         <tr>
@@ -1915,7 +1918,7 @@ div.col:nth-child(2) > h3:nth-child(12):after{
     </table>
     <p><i>No Group Bulletins found — <a href="#">Post a new Bulletin</a></i></p><br><br>
         <h3>Group Forum</h3>
-    <a href="#" class="rss-right" title="Open Group Forum"><img src="https://i.ibb.co/VSMZbwp/profilepic.png" class="icon" aria-hidden="true" loading="lazy" alt=""></a>
+    <a href="#" class="rss-right" title="Open Group Forum"><img src="https://static.spacehey.net/icons/arrow_right.png" class="icon" aria-hidden="true" loading="lazy" alt=""></a>
     <table class="forum-table">
       <thead>
         <tr>
