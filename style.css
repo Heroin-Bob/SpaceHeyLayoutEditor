@@ -254,7 +254,7 @@ textarea{
 .copyButton:active{
   background: #222222;
 }
-
+/*
 #paneSizeButton{
   height: 25px;
   font-size: 20px;
@@ -263,7 +263,7 @@ textarea{
   background: #333;
   color: #FFF;
 }
-
+*/
 .highlight {
   outline: 2px solid red;
 }

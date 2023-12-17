@@ -1,7 +1,7 @@
 const BORDER_SIZE = 4;
 const panel = document.getElementById("previewContainer");
 const lpanel = document.getElementById("editorContainer");
-
+/*/*
 let m_pos;
 
 function resize(e) {
@@ -11,13 +11,6 @@ function resize(e) {
   m_pos = e.x;
   panel.style.width = (parseInt(getComputedStyle(panel, '').width) + dx) + "px";
   lpanel.style.width = (w - (parseInt(getComputedStyle(panel, '').width))) + "px";
-  /*
-  var codeBoxes = $(".CodeMirror").length;
-  for (var i = 0; i < codeBoxes; i++){
-    document.getElementsByClassName("CodeMirror")[i].style.setProperty ('width', ((w-(parseInt(getComputedStyle(panel,'').width)))-30) + "px", 'important');
-    //document.getElementsByClassName("CodeMirror")[i].style.width = ((w-(parseInt(getComputedStyle(panel,'').width)))-100) + "px";
-  }
-  */
 }
 
 document.addEventListener("mousedown", function(e) {
@@ -30,7 +23,7 @@ document.addEventListener("mousedown", function(e) {
 document.addEventListener("mouseup", function() {
   document.removeEventListener("mousemove", resize, false);
 }, false);
-
+*/
 var CSSeditor;
 var aboutMeeditor;
 var meeteditor;

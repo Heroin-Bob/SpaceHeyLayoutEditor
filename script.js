@@ -277,7 +277,7 @@ function copyMin() {
 // Example usage:
 // setCookie('layoutCookie', 'Hello, Cookie!', 90);
 
-
+/*
 function resizeButtonToggle() {
   const button = document.getElementById('paneSizeButton');
   const container = document.getElementById('previewContainer');
@@ -292,7 +292,7 @@ function resizeButtonToggle() {
       document.getElementById("previewContainer").style.width = "70%";
   }
 }
-
+*/
 
 
 /*
