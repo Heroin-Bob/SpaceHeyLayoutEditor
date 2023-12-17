@@ -2267,7 +2267,7 @@ for (i = 0; i < coll.length; i++) {
         } else if (event.clientX > window.innerWidth/2){
           cardRect.style.left = cleft - cardRect.getBoundingClientRect().width + cwidth + "px";
         }
-        cardRect.style.zIndex = "5";
+        cardRect.style.zIndex = "15";
       }
     }
   });
@@ -2330,7 +2330,7 @@ for (i = 0; i < previewcoll.length; i++) {
           } else if (event.clientX > window.innerWidth/2){
             cardRect.style.left = cleft - cardRect.getBoundingClientRect().width + cwidth + "px";
           }
-          cardRect.style.zIndex="5";
+          cardRect.style.zIndex="15";
         }
       }
   });
