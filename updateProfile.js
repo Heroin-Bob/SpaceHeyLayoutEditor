@@ -68,3 +68,26 @@ function setCookie(name, value, daysToExpire) {
   const cookieValue = encodeURIComponent(name) + '=' + encodeURIComponent(value) + '; expires=' + expirationDate.toUTCString() + '; path=/';
   document.cookie = cookieValue;
 }
+
+
+// Global variable to hold updateTime in seconds
+var updateTime = parseInt(document.getElementById('updateTimerValue').value); // You can set the initial value as needed
+var updateIntervalId;
+
+// Function to start or stop the updateProfile() function based on checkbox state
+function toggleUpdate() {
+  var checkbox = document.getElementById('updateTimerCheckbox');
+  var input = document.getElementById('updateTimerValue');
+
+  if (checkbox.checked) {
+    // Start updating profile every updateTime seconds
+    updateTime = parseInt(input.value) || updateTime; // Use the input value if present, otherwise use the current value
+    updateProfile(); // Call initially
+    updateIntervalId = setInterval(updateProfile, updateTime * 1000); // Convert seconds to milliseconds
+    input.disabled = false; // Enable the input
+  } else {
+    // Stop updating profile
+    clearInterval(updateIntervalId);
+    input.disabled = true; // Disable the input
+  }
+}

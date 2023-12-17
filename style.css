@@ -120,14 +120,16 @@ textarea{
   font-size: 19px;
   color: #FFFFFF;
 }
-#updateBar li:last-child p{
+#updateButton{
   color: lightgreen;
   font-size: 35px;
   cursor: pointer;
+  display: inline-block;
 }
-#updateBar li:last-child p:hover{
-  color: #FFFFFF;
+#updateButton:hover{
+  color: #FFFFFF
 }
+
 #optionsBar ul{
   display: flex;
   flex-direction: row;
@@ -266,4 +268,52 @@ textarea{
 
 .highlight {
   outline: 2px solid red;
+}
+
+#flexsettingsButton{
+  margin: 0 12px;
+  cursor: pointer;
+  color: lightgreen;
+  width: 20px;
+}
+#flexsettingsButton:hover{
+  color: white;
+}
+
+#updateBar ul li{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.previewCard{
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  overflow: auto;
+  background: #333333;
+  padding: 10px;
+  border: 1px solid #BBB;
+  border-radius: 0px;
+  box-shadow: 0 0 5px #DDD;
+  z-index: -5;
+  color: #FFF;
+  font-size: 25px;
+}
+
+#previewsettingsButton input{
+  width: 20px;
+  margin: 5px;
+}
+
+#previewsettingsButton li{
+  text-align: left;
+  width: 100%;
+}
+#previewsettingsButton li:nth-child(2){
+  border-bottom: 1px solid #FFF;
+  width: 100%;
+  margin: 5px 0;
 }

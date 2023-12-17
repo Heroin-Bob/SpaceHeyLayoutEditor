@@ -2218,4 +2218,147 @@ window.onload = function(){
   document.getElementById("detailsBoxesWrapper").getElementsByClassName("CodeMirror cm-s-abcdef CodeMirror-wrap")[8].style.display = "none";
   document.getElementById("detailsBoxesWrapper").getElementsByClassName("CodeMirror cm-s-abcdef CodeMirror-wrap")[9].style.display = "none";
   */
+
+
+
+  //Assign all the flexLink class elements to an array
+var coll = document.getElementsByClassName("flexLink");
+
+//Assign all the previewCard class elements to an array
+var previewcoll = document.getElementsByClassName("previewCard");
+
+var i;
+//cycle through each flexLink element and add an event
+//listener that does stuff when mouseover occurs
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("mouseover", function() {
+    this.classList.toggle("active");
+    //Get the boundaries of the hovered element
+    var elementRect = this.getBoundingClientRect();
+    var cbottom = elementRect.bottom;
+    var cleft = elementRect.left;
+    var ctop = elementRect.top;
+    var cright = elementRect.right;
+    var cwidth = elementRect.width
+    var curElementID = this.id;
+    var z;
+    //When hovered, cycle through the previewCard class and modify the
+    //position, height, and width
+    for (z = 0; z < previewcoll.length; z++){
+      //Compare ID tags to select the correct card to load.
+      if (previewcoll[z].id == curElementID.replace("flex","preview")){
+        var cardRect = previewcoll[z];
+        cardRect.style.height = "auto";
+        cardRect.style.width = "400px";
+        cardRect.style.maxWidth = "600px";
+        cardRect.style.maxHeight = "150px";
+        //When at the top half of the screen place the card below the link,
+        //when in the bottom half place the card above the link.
+        if (event.clientY < window.innerHeight/2){
+          cardRect.style.top = cbottom - 3 + "px";
+        } else if (event.clientY > window.innerHeight/2){
+          cardRect.style.top = ctop - cardRect.getBoundingClientRect().height + 3 + "px";
+        }
+        
+        //When in the left half of the screen place the card to the right of the link,
+        //when in the right half place the card to the left of the link.
+        if (event.clientX < window.innerWidth/2){
+          cardRect.style.left = cleft + "px";
+        } else if (event.clientX > window.innerWidth/2){
+          cardRect.style.left = cleft - cardRect.getBoundingClientRect().width + cwidth + "px";
+        }
+        cardRect.style.zIndex = "5";
+      }
+    }
+  });
+}
+//Add a second event listener to each flexLink element which sets the
+//width and height to 0 and the position of the element off screen
+//when the mouse is moved off of the link.
+for (i = 0; i < coll.length; i++) {
+  currentSelectedClass = coll[i];
+  coll[i].addEventListener("mouseout", function() {
+    this.classList.toggle("active");
+    var elementRect = this.getBoundingClientRect();
+    var cbottom = elementRect.bottom;
+    var cleft = elementRect.left;
+    var curElementID = this.id;
+    var z;
+    for (z = 0; z < previewcoll.length; z++){
+      if (previewcoll[z].id == curElementID.replace("flex","preview")){
+        var cardRect = previewcoll[z];
+        cardRect.style.top = "-9999px";
+        cardRect.style.left = "-9999px";
+        cardRect.style.height = "0";
+        cardRect.style.width = "0";
+        cardRect.style.zIndex = "-5";
+      }
+    }
+  });
+}
+
+for (i = 0; i < previewcoll.length; i++) {
+  previewcoll[i].addEventListener("mouseover", function() {
+    this.classList.toggle("active");
+    var z;
+    for (z = 0; z < coll.length; z++){
+      if (coll[z].id == this.id.replace("preview","flex")){
+          var elementRect = coll[z].getBoundingClientRect();
+          var cbottom = elementRect.bottom;
+          var cleft = elementRect.left;
+          var ctop = elementRect.top;
+          var cright = elementRect.right;
+          var cwidth = elementRect.width
+          var curElementID = coll[z].id;
+          var cardRect = this;
+          cardRect.style.height = "auto";
+          cardRect.style.width = "400px";
+          cardRect.style.maxWidth = "600px";
+          cardRect.style.maxHeight = "150px";
+          //When at the top half of the screen place the card below the link,
+          //when in the bottom half place the card above the link.
+          if (event.clientY < window.innerHeight/2){
+            cardRect.style.top = cbottom - 3 + "px";
+          } else if (event.clientY > window.innerHeight/2){
+            cardRect.style.top = ctop - cardRect.getBoundingClientRect().height + 3 + "px";
+          }
+
+          //When in the left half of the screen place the card to the right of the link,
+          //when in the right half place the card to the left of the link.
+          if (event.clientX < window.innerWidth/2){
+            cardRect.style.left = cleft + "px";
+          } else if (event.clientX > window.innerWidth/2){
+            cardRect.style.left = cleft - cardRect.getBoundingClientRect().width + cwidth + "px";
+          }
+          cardRect.style.zIndex="5";
+        }
+      }
+  });
+}
+
+for (i = 0; i < previewcoll.length; i++) {
+  previewcoll[i].addEventListener("mouseout", function() {
+    this.classList.toggle("active");
+    var z;
+    for (z = 0; z < coll.length; z++){
+      if (coll[z].id == this.id.replace("preview","flex")){
+          var elementRect = coll[z].getBoundingClientRect();
+          var cbottom = elementRect.bottom;
+          var cleft = elementRect.left;
+          var ctop = elementRect.top;
+          var cright = elementRect.right;
+          var cwidth = elementRect.width
+          var curElementID = coll[z].id;
+          var cardRect = this;
+          cardRect.style.height = "0";
+          cardRect.style.width = "0";
+          cardRect.style.maxWidth = "0";
+          cardRect.style.maxHeight = "0";
+          cardRect.style.top = "-9999px";
+          cardRect.style.left = "-9999px";
+          cardRect.style.zIndex = "-5";
+      }
+    }
+  });
+}
 }

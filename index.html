@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="codemirror-5.62.0/lib/codemirror.css">
   <link rel="stylesheet" href="codemirror-5.62.0/theme/abcdef.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
-
   <title>SpaceHey Layout Editor</title>
 </head>
 <!--
@@ -58,8 +57,17 @@
           
       </script>
       <ul>
-        <li>(Alt + S)</li>
-        <li><p onclick="updateProfile()">Update</p></li>
+        <li><p id="updateButton" onclick="updateProfile()">Update</p> <img id="flexsettingsButton" class="flexLink" src="SpaceHeyImages/img_425620 (1).png"/></li>
+
+      <div class="previewCard" id="previewsettingsButton" style="display: flex; flex-direction: column;">
+        <ul>
+          <li>Update Settings:</li>
+          <li></li>
+          <li><input id="updateTimerCheckbox" type="checkbox" id="toggleFunction" onchange="toggleUpdate()"/>Turn on auto-update for every <input id="updateTimerValue" type="text" value="1">Seconds</li>
+
+        </ul>
+      <div>
+        
       </ul>
     </div>
     <div id="contentBoxesWrapper">
