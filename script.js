@@ -164,11 +164,11 @@ function themeMix(){
   var num5 = ranNum;
 
   var themeStr = ":root {\n" +
-  "--themecolor" + num1 + ": #" + color1 + ";\n" +
-  "--themecolor" + num2 + ": #" + color2 + ";\n" +
-  "--themecolor" + num3 + ": #" + color3 + ";\n" +
-  "--themecolor" + num4 + ": #" + color4 + ";\n" +
-  "--themecolor" + num5 + ": #" + color5 + ";\n" +
+  "--themecolor" + num1 + ": " + color1 + ";\n" +
+  "--themecolor" + num2 + ": " + color2 + ";\n" +
+  "--themecolor" + num3 + ": " + color3 + ";\n" +
+  "--themecolor" + num4 + ": " + color4 + ";\n" +
+  "--themecolor" + num5 + ": " + color5 + ";\n" +
   "}\n";
   
 
@@ -251,23 +251,6 @@ function themeMix(){
   updateProfile();
 
 
-}
-
-function copyMin() {
-  var str = CSSeditor.getValue();
-  str = str.split("\n").join("\\" + "n");
-
-  var el = document.createElement('textarea');
-  el.value = str;
-  el.setAttribute('readonly', '');
-  el.style = {
-    position: 'absolute',
-    left: '-9999px'
-  };
-  document.body.appendChild(el);
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
 }
 
 //cookie stuff
@@ -388,3 +371,47 @@ function copyToClipboard(text) {
     document.execCommand('copy');
     document.body.removeChild(textarea);
 }
+
+
+
+Coloris({
+  el: '.coloris',
+  swatches: [
+    '#264653',
+    '#2a9d8f',
+    '#e9c46a',
+    '#f4a261',
+    '#e76f51',
+    '#d62828',
+    '#023e8a',
+    '#0077b6',
+    '#0096c7',
+    '#00b4d8',
+    '#48cae4'
+  ]
+});
+
+/** Instances **/
+
+Coloris.setInstance('.instance1', {
+  theme: 'pill',
+  themeMode: 'dark',
+  formatToggle: true,
+  closeButton: true,
+  clearButton: true,
+  swatches: [
+    '#067bc2',
+    '#84bcda',
+    '#80e377',
+    '#ecc30b',
+    '#f37748',
+    '#d56062'
+  ]
+});
+
+Coloris.setInstance('.instance2', { theme: 'polaroid' });
+
+Coloris.setInstance('.instance3', {
+  theme: 'polaroid',
+  swatchesOnly: true
+});

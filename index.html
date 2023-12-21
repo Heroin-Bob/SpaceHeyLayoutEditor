@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="codemirror-5.62.0/lib/codemirror.css">
   <link rel="stylesheet" href="codemirror-5.62.0/theme/abcdef.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+  <link rel="stylesheet" href="coloris/coloris.min.css"/>
+  
   <title>SpaceHey Layout Editor</title>
 </head>
 <!--
@@ -19,22 +21,22 @@
 
 -->
 <body>
-  <!---
+
   <div id="themeMixer">
     <p>Color 1:</p>
-    <input type="text" id="color1"></input>
+    <input id="color1" type="text" data-coloris>
     <p>Color 2:</p>
-    <input type="text" id="color2"></input>
+    <input id="color2" type="text" data-coloris>
     <p>Color 3:</p>
-    <input type="text" id="color3"></input>
+    <input id="color3" type="text" data-coloris>
     <p>Color 4:</p>
-    <input type="text" id="color4"></input>
+    <input id="color4" type="text" data-coloris>
     <p>Color 5:</p>
-    <input type="text" id="color5"></input>
+    <input id="color5" type="text" data-coloris>
     <div id="themeMixerButton" onclick="themeMix()">Mix 'em</div>
-    <div id="copyMixer" onclick="copyMin()">Copy Min CSS</div>
+    <a href="https://colorhunt.co/" target="_blank" style="color: lightgreen; text-align: center;">Need ideas?</a>
   </div>
--->
+
   <div id="editorContainer">
     <div id="optionsBar">
       <ul style="font-size: 10px; width: 100%; display: flex; justify-content: space-between;">
@@ -59,11 +61,14 @@
       <ul>
         <li><p id="updateButton" onclick="updateProfile()">Update</p> <img id="flexsettingsButton" class="flexLink" src="SpaceHeyImages/img_425620 (1).png" style="width: 20px"/></li>
 
-      <div class="previewCard" id="previewsettingsButton" style="display: flex; flex-direction: column;">
+      <div class="previewCard" id="previewsettingsButton" >
         <ul>
           <li>Update Settings:</li>
           <li></li>
-          <li><input id="updateTimerCheckbox" type="checkbox" id="toggleFunction" onchange="toggleUpdate()"/>Turn on auto-update for every <input id="updateTimerValue" type="text" value="1">Seconds</li>
+          <li><input disabled checked id="updateHotkey" type="checkbox" onchange=""/>ALT + S manual update hotkey</li>
+          <li><input id="updateTimerCheckbox" type="checkbox" id="toggleFunction" onchange="toggleUpdate()"/>Turn on auto-update for every <input id="updateTimerValue" type="text" value="1">Second(s)</li>
+          <li><input id="showThemeCheckbox" type="checkbox" onchange="toggleTheme()"/>Show theme mixer (Profile only)</li>
+          
 
         </ul>
       <div>
@@ -945,6 +950,7 @@
   <script type="text/javascript" src="codemirror-5.62.0/mode/css/css.js"></script>
   <script type="text/javascript" src="codemirror-5.62.0/mode/xml/xml.js"></script>
   <script type="text/javascript" src="updateProfile.js"></script>
+  <script src="coloris/coloris.min.js"></script>
   
   <script type="text/javascript" src="script.js"></script>
   <script type="text/javascript" src="onload.js"></script>

@@ -91,3 +91,16 @@ function toggleUpdate() {
     input.disabled = true; // Disable the input
   }
 }
+
+function toggleTheme() {
+  var checkbox = document.getElementById('showThemeCheckbox');
+  var themeMixer = document.getElementById("themeMixer");
+  if (checkbox.checked) {
+    // Start updating profile every updateTime seconds
+    themeMixer.style.display = "flex";
+  } else {
+    // Stop updating profile
+    themeMixer.style.display = "none";
+    
+  }
+}
