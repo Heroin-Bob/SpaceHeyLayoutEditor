@@ -114,6 +114,16 @@ function CSSReference(elem){
       HTMLoutStr = "<h1 class='agoraphobia'>Agoraphobia</h1>";
       PreviewOutStr ="<style>" + CSSoutStr + '#snippetPreview{background: #000000 !important;}' + "</style>" + "<h1 class='agoraphobia' style='font-size: 45px;'>Agoraphobia</h1>";
       break;
+    case "varDisplayNameImage":
+      CSSoutStr = ".profile h1{\n  font-size: 0px;\n}\n\n.profile h1:before{\n  content:url('url') !important;\n}";
+      HTMLoutStr = "";
+      PreviewOutStr ="<p>Thank you <a href='https://spacehey.com/xqj'>Anti</a> for the design.</p><br><p style='font-size:20px;'>Enter the link to the image you would like to replace your display name with:</p><input type='text' id='profileNameImage' style='width: 200px;'>\n<button id='youtubeGenButton' onclick='genProfileNameImage()' style='width: 100px;'>Generate</button>";
+      break;
+    case "varInterestsCustomize":
+      CSSoutStr = "";
+      HTMLoutStr = "";
+      PreviewOutStr ="<p>Check off the boxes you would like to show. Unchecked boxes will hide the element.</p>\n<ul style='list-style: none; padding: 0; margin: 0; text-align: left;'>\n  <li><input type='checkbox' id='interests' checked=true><label for='interests'> Interests</label><br></li>\n  <li><input type='checkbox' id='general'><label for='general'> General</label></li>\n  <li><input type='checkbox' id='music'><label for='music'> Music</label></li>\n  <li><input type='checkbox' id='movies'><label for='movies'> Movies</label></li>\n  <li><input type='checkbox' id='television'><label for='television'> Television</label></li>\n  <li><input type='checkbox' id='books'><label for='books'> Books</label></li>\n  <li><input type='checkbox' id='heroes'><label for='heroes'> Heroes</label></li>\n</ul>\n<button onclick='genInterests()'>Generate</button>\n<div id='thing'></div>";
+      break;
     case "template":
       CSSoutStr = "";
       HTMLoutStr = "";
@@ -146,4 +156,38 @@ function genEmbed(){
   var videoID = youtubeURL.split('=')
   var embedStr = "<iframe width='0' height='0' src='https://www.youtube.com/embed/" + videoID[1] + "?si=V5PKq-TPG1c-kxHI//?&;amp;;autoplay=1&;loop=1&;controls=1' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='' loading='lazy'></iframe>";
   document.getElementById('HTMLOutputText').value = embedStr;
+}
+
+function genProfileNameImage(){
+  var nameImage = document.getElementById("profileNameImage").value;
+  var embedStr = ".profile h1{\n  font-size: 0px;\n}\n\n.profile h1:before{\n  content:url('" + nameImage + "') !important;\n}";
+  document.getElementById('CSSOutputText').value = embedStr;
+}
+
+function genInterests(){
+  var d = document;
+  var interests = d.getElementById("interests").checked;
+  var general = d.getElementById("general").checked;
+  var music = d.getElementById("music").checked;
+  var movies = d.getElementById("movies").checked;
+  var television = d.getElementById("television").checked;
+  var books = d.getElementById("books").checked;
+  var heroes = d.getElementById("heroes").checked;
+  var outStr = "";
+  if (interests === false){ outStr = outStr + ".col.w-40.left .table-section{display: none;}\n"; }
+    else { outStr = outStr + ".col.w-40.left .table-section{display: block;}\n"; }
+  if (general === false){ outStr = outStr + ".details-table tr:nth-child(1){display: none;}\n"; }
+    else { outStr = outStr + ".details-table tr:nth-child(1){display: table-row;}\n"; }
+  if (music === false){ outStr = outStr + ".details-table tr:nth-child(2){display: none;}\n"; }
+    else { outStr = outStr + ".details-table tr:nth-child(2){display: table-row;}\n"; }
+  if (movies === false){ outStr = outStr + ".details-table tr:nth-child(3){display: none;}\n"; }
+    else { outStr = outStr + ".details-table tr:nth-child(3){display: table-row;}\n"; }
+  if (television === false){ outStr = outStr + ".details-table tr:nth-child(4){display: none;}\n"; }
+    else { outStr = outStr + ".details-table tr:nth-child(4){display: table-row;}\n"; }
+  if (books === false){ outStr = outStr + ".details-table tr:nth-child(5){display: none;}\n"; }
+    else { outStr = outStr + ".details-table tr:nth-child(5){display: table-row;}\n"; }
+  if (heroes === false){ outStr = outStr + ".details-table tr:nth-child(6){display: none;}\n"; }
+    else { outStr = outStr + ".details-table tr:nth-child(6){display: table-row;}\n"; }
+  
+    document.getElementById('CSSOutputText').value = outStr;
 }
