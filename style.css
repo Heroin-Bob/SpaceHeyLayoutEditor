@@ -60,7 +60,7 @@ textarea{
   right: 0;
   background-color: transparent;
 }
-
+/*
 #previewContainer:after {
   display: flex;
   content: " ";
@@ -73,6 +73,18 @@ textarea{
   border-left: 1px solid #000000;
   border-right: 1px solid #000000;
 }
+*/
+
+#resizer{
+  height: 100vh;
+  width: 5px;
+  background: lightblue;
+  cursor:e-resize;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  z-index: 2;
+}
+
 .hideAfter::after {
   display: none !important;
 }
@@ -147,7 +159,7 @@ textarea{
 #cssBoxWrapper{
   height: auto;
   width: 100%;
-  border-bottom: 3px solid #FFFFFF;
+  /*border-bottom: 3px solid #FFFFFF;*/
   padding: 0 0 10px 0;
 }
 
@@ -155,7 +167,15 @@ textarea{
   width: 96%;
 }
 
+#cssResize {
+  width: 96%;
+  height: 15px;
+  background: white;
+  /*cursor:n-resize;*/
+}
+
 #detailsBoxesWrapper{
+  
   display: block;
   height: auto;
   width: 100%;

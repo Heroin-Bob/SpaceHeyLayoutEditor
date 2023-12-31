@@ -24,6 +24,29 @@ document.addEventListener("mouseup", function() {
   document.removeEventListener("mousemove", resize, false);
 }, false);
 */
+
+const resizer = document.getElementById('resizer');
+let isResizing = false;
+
+resizer.addEventListener('mousedown', (event) => {
+  isResizing = true;
+  document.addEventListener('mousemove', handleMouseMove);
+  document.addEventListener('mouseup', () => {
+    isResizing = false;
+    document.removeEventListener('mousemove', handleMouseMove);
+  });
+});
+
+
+function handleMouseMove(event) {
+  if (isResizing) {
+    const leftColumnWidth = event.clientX - lpanel.getBoundingClientRect().left;
+    lpanel.style.width = `${leftColumnWidth}px`;
+    panel.style.width = `calc(100% - ${leftColumnWidth}px)`;
+  }
+}
+
+
 var CSSeditor;
 var aboutMeeditor;
 var meeteditor;
@@ -2214,10 +2237,7 @@ window.onload = function(){
   $(cm.getWrapperElement()).hide();
   var cm = $('.CodeMirror')[10].CodeMirror;
   $(cm.getWrapperElement()).hide();
-  /*
-  document.getElementById("detailsBoxesWrapper").getElementsByClassName("CodeMirror cm-s-abcdef CodeMirror-wrap")[8].style.display = "none";
-  document.getElementById("detailsBoxesWrapper").getElementsByClassName("CodeMirror cm-s-abcdef CodeMirror-wrap")[9].style.display = "none";
-  */
+
 
 
 
