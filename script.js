@@ -415,3 +415,25 @@ Coloris.setInstance('.instance3', {
   theme: 'polaroid',
   swatchesOnly: true
 });
+
+
+
+const resizeBar = document.getElementById("cssResize");
+
+resizeBar.addEventListener('mousedown', (event) => {
+  const cssBox = document.getElementsByClassName('CodeMirror')[0];
+  isResizing = true;
+  document.addEventListener('mousemove', handleCSSMouseMove);
+  document.addEventListener('mouseup', () => {
+    isResizing = false;
+    resizeBar.removeEventListener('mousemove', handleCSSMouseMove);
+  });
+});
+
+function handleCSSMouseMove(event) {
+  const cssBox = document.getElementsByClassName('CodeMirror')[0];
+  if (isResizing) {
+    const cssBoxBottom = event.clientY - cssBox.getBoundingClientRect().top;
+    cssBox.style.height = `${cssBoxBottom}px`;
+  }
+}
