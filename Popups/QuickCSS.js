@@ -153,7 +153,13 @@ function CSSReference(elem){
 
 function genEmbed(){
   var youtubeURL = document.getElementById('youtubeURL').value;
-  var videoID = youtubeURL.split('=')
+  var videoID = "";
+  if (youtubeURL.includes(".be")){
+    videoID = youtubeURL.split(".be/");    /*https://youtu.be/QbRkKO3xzQ8*/
+  } else {
+    videoID = youtubeURL.split('=');
+  }
+  
   var embedStr = "<iframe width='0' height='0' src='https://www.youtube.com/embed/" + videoID[1] + "?si=V5PKq-TPG1c-kxHI//?&;amp;;autoplay=1&;loop=1&;controls=1' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='' loading='lazy'></iframe>";
   document.getElementById('HTMLOutputText').value = embedStr;
 }
