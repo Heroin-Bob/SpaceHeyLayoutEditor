@@ -426,7 +426,7 @@ resizeBar.addEventListener('mousedown', (event) => {
   document.addEventListener('mousemove', handleCSSMouseMove);
   document.addEventListener('mouseup', () => {
     isResizing = false;
-    resizeBar.removeEventListener('mousemove', handleCSSMouseMove);
+    document.removeEventListener('mousemove', handleCSSMouseMove);
   });
 });
 
