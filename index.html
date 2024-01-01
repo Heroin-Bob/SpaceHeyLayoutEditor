@@ -55,9 +55,6 @@
     </div>
     <div id="updateBar">
       <input type="checkbox" id="toggleFunction" onchange="toggleHighlightFunction()"><label style="color: white; padding: 5px;">Turn On/Off Element Selection</label><p id="hoverInfo" style="display: inline; color: yellow; font-size: 1.2em; cursor: pointer;" onclick="alert('This box, when checked, will turn on a function that will:\n1. Make each element you hover show a red border\n2. When that element is clicked the element will be stored in your clipboard.\nFrom there you can paste the element selector in the CSS box and style away! (this is still a work in progress and not 100% accurate...)')">?</p>
-      <script>
-          
-      </script>
       <ul>
         <li><p id="updateButton" onclick="updateProfile()">Update</p> <img id="flexsettingsButton" class="flexLink" src="SpaceHeyImages/img_425620 (1).png" style="width: 20px"/></li>
 
@@ -80,7 +77,9 @@
         <h1>CSS:<span class="copyButton" onclick="copyText('css')"></span></h1>
         <textarea id="cssBox" name="code" class="codemirror-textarea"></textarea>
       </div>
+      <div>
       <div id="cssResize"></div>
+    </div>
       <div id="detailsBoxesWrapper">
         <h1>About Me<span class="copyButton" onclick="copyText('aboutMe')"></span></h1>
         <textarea id="aboutMeBox" name="code" class="codemirror-textarea"></textarea>
