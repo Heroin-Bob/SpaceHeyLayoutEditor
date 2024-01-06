@@ -41,10 +41,17 @@ function updateProfile() {
       //Heroes
       document.querySelector("#previewContainer > div > main > div > div.col.w-40.left > div:nth-child(6) > div.inner > table > tbody > tr:nth-child(6) > td:nth-child(2)").innerHTML = heroeseditor.getValue();
 
-      //document.getElementById("updateBar").getElementsByTagName("li:hover")[1].style.color = "#90ee90";
+      const boxArr = [CSSeditor.getValue(), 
+                      aboutMeeditor.getValue(), 
+                      meeteditor.getValue(), 
+                      generaleditor.getValue(), 
+                      musiceditor.getValue(), 
+                      movieseditor.getValue(), 
+                      tveditor.getValue(), 
+                      bookseditor.getValue(), 
+                      heroeseditor.getValue()];
+      storeString(boxArr)
 
-      const boxArr = [CSSeditor.getValue(), aboutMeeditor.getValue(), meeteditor.getValue(), generaleditor.getValue(), musiceditor.getValue(), movieseditor.getValue(), tveditor.getValue(), bookseditor.getValue(), heroeseditor.getValue()];
-      setCookie('layoutCookie', JSON.stringify(boxArr), 90);
       break;
     case "Blog":
         //CSS
@@ -61,13 +68,12 @@ function updateProfile() {
 
 }
 
-function setCookie(name, value, daysToExpire) {
-  const expirationDate = new Date();
-  expirationDate.setDate(expirationDate.getDate() + daysToExpire);
 
-  const cookieValue = encodeURIComponent(name) + '=' + encodeURIComponent(value) + '; expires=' + expirationDate.toUTCString() + '; path=/';
-  document.cookie = cookieValue;
+function storeString(value) {
+  var myString = JSON.stringify(value);
+  sessionStorage.setItem('profileData', myString);
 }
+
 
 
 // Global variable to hold updateTime in seconds

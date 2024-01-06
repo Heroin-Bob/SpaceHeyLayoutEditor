@@ -184,8 +184,7 @@ $(document).ready(function() {
     lineWrapping: true
   });
 
-  const myCookieValue = getCookie('layoutCookie');
-  const newArr = JSON.parse(myCookieValue);
+  const newArr = retrieveString();
   
   CSSeditor.setValue(newArr[0]);
   aboutMeeditor.setValue(newArr[1]);
@@ -2174,7 +2173,7 @@ div.col:nth-child(2) > h3:nth-child(12):after{
   removeBoxes([1,2,3,4,5,6,7,8,9,10]);
   document.getElementById("previewContainer").innerHTML = defaultProf;
 }
-
+/*
 function getCookie(name) {
   const cookies = document.cookie.split(';');
   
@@ -2190,6 +2189,13 @@ function getCookie(name) {
   // Return null if the cookie is not found
   return null;
 }
+*/
+function retrieveString() {
+  // Retrieve the string from session storage
+  var storedString = JSON.parse(sessionStorage.getItem('profileData'));
+  return storedString;
+}
+
 
 document.getElementById('designOption').addEventListener('change', function() {
   var selectedValue = this.value;
