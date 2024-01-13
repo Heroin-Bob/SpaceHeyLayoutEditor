@@ -44,7 +44,7 @@
       overflow-y: auto;
       background: #333;
     }
-    #CSSOptions .CSSOption {
+    #CSSOptions .CSSOption, #CSSOptionsLinks .CSSOption {
       padding: 0 0 0 10px;
       display: block;
       overflow: hidden;
@@ -54,7 +54,7 @@
       background: #dfe290;
     }
 
-    #CSSOptions .CSSButton {
+    #CSSOptions .CSSButton, #CSSOptionsLinks .CSSButton {
       background: #333;
       color: white;
       cursor: pointer;
@@ -66,21 +66,22 @@
       font-size: 25px;
       transition: .3s;
     }
-
-    #CSSOptions .CSSButton:nth-child(odd) {
+   #CSSOptions .CSSButton:nth-child(odd),#CSSOptionsLinks a:nth-child(odd) .CSSButton {
       background: #444;
     }
-    #CSSOptions .CSSButton:focus{
+
+
+    #CSSOptions .CSSButton:focus, #CSSOptionsLinks .CSSButton:focus{
       background: #225044;
     }
 
-    #CSSOptions .CSSButton span {
+    #CSSOptions .CSSButton span, #CSSOptionsLinks .CSSButton span{
       padding: 0 0 0 0;
       float: left;
       transform: rotate(0deg);
       transition: .3s;
     }
-    #CSSOptions .CSSButton span::after{
+    #CSSOptions .CSSButton span::after, #CSSOptionsLinks .CSSButton span::after{
       content: ' ';
       padding: 0 8px 0 0;
     }
@@ -150,7 +151,7 @@
       width: 100%;
     }
 
-    #CSSOptions > button{
+    #CSSOptions > button, #CSSOptionsLinks > button{
       background: #555 !important;
     }
 
@@ -194,9 +195,10 @@
       </div>
 
 
-      <div id="CSSOptions">
+      <div id="CSSOptionsLinks">
         <button type="button" class="CSSButton">Blinkies/Stamps/etc.<span>&#11166;<span></button>
         <div class="CSSOption">
+          <a href="stamps.html" target="_blank"><button type="button" class="CSSButton">Tommy's Super Stamp Page</button></a>
           <a href="https://blinkies.neocities.org/" target="_blank"><button type="button" class="CSSButton">blinkies.neocities.org</button></a>
           <a href="https://raining-starss.neocities.org/" target="_blank"><button type="button" class="CSSButton">raining-starss.neocities.org</button></a>
           <a href="https://99gifshop.neocities.org/" target="_blank"><button type="button" class="CSSButton">99gifshop.neocities.org</button></a>
@@ -208,7 +210,7 @@
       </div>
 
 
-      <div id="CSSOptions">
+      <div id="CSSOptionsLinks">
         <button type="button" class="CSSButton">Other Resources<span>&#11166;<span></button>
         <div class="CSSOption">
           <a href="https://groups.spacehey.com/HTML_" target="_blank"><button type="button" class="CSSButton">SpaceHey HTML Group</button></a>
