@@ -12,6 +12,7 @@
     * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
 
     @font-face{
@@ -26,7 +27,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-family: sans-serif;
         color: #FFF;
         font-family: W95FA;
         background: #008083;
@@ -129,12 +129,77 @@
         padding: 0 5px 5px 5px;
         margin: 0 10px;
     }
+
+    .infoPopup{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        background: #C0C0C0;
+        color: #000;
+        box-shadow: inset -2px -2px 1px #000, inset 2px 2px 1px #FFF;
+        top: 100px;
+        transition: 1s;
+    }
+    .titlebar{
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        justify-content: space-between;
+        margin: 3px;
+        padding: 3px;
+        background:#000080;
+        color:#FFF;
+        font-size: 13px;
+    }
+
+    .titlebar button{
+        margin:2px 2px 2px 0;
+        float:right;
+        width:14px;
+        height: 13px;
+        background:#C0C0C0;
+        border-width:1px;
+        padding:0;
+        font-size:9px;
+        font-weight:bold;
+        font-family:Tahoma;
+        text-align:center;
+    }
+
+    .popupContent{
+        padding: 13px 12px
+    }
+    .popupButtons {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 10px 0 5px 0;
+    }
+    .popupButtons button{
+        width: 50px;
+        height: 25px;
+    }
 </style>
 
 <body>
-    <div class='stars'></div>
-<div class='twinkling'></div>
-<div class='clouds'></div>
+
+    <div class="infoPopup">
+        <div class="titlebar">
+            <p>Tommy's Stamps | Info</p>
+            <button onclick="removePopup()">X</button>
+        </div>
+        <div class="popupContent">
+            <p>Hi! Glad you're here!<br><br>This collection of stamps is manually organized by one person - me! And I am an imperfect person.<br><br>Sometimes I don't understand the reference in the stamp or I accidentally place something where it isn't meant to go.<br><br>If you see something somewhere that doesn't belong join <a href="https://discord.gg/kMfrND4gQG">Wubzilla's Discord</a> and shoot me a message with the urls of the stamps and where they need to be moved to.<br><br>Thanks and enjoy!<br>-Tommy Panzram</p>
+        </div>
+        <div class="popupButtons">
+            <button onclick="removePopup()">Ok</button>
+        </div>
+       
+        
+    </div>
+
+
     <div id="categories">
         <h2 style="font-weight: normal;">Categories</h2>
         <ul id="categoryList">

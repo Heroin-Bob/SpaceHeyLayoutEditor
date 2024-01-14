@@ -163,21 +163,27 @@ function fetchImages(cat) {
 
 function changeSize(change){
     for (var i = 0; i < imgs.length; i++){
+
         var currentWidth = imgs[i].width;
         var currentHeight = imgs[i].height;
+        var newWidth = "";
+        var newHeight = "";
 
         // Increase size by 10%
         if (change == '+'){
-            var newWidth = currentWidth * 1.1;
-            var newHeight = currentHeight * 1.1;
+            newWidth = currentWidth + 10;
         } else {
-            var newWidth = currentWidth * 0.9;
-            var newHeight = currentHeight * 0.9;
+            newWidth = currentWidth - 20;
         }
         
-
         // Apply the new size to the image
-        imgs[i].style.width = newWidth + 'px';
-        imgs[i].style.height = newHeight + 'px';
+        imgs[i].style.width = newWidth + "px";
+        imgs[i].style.height = newHeight + "px";
+        
+
     }
+}
+
+function removePopup(){
+    document.querySelector("body > div.infoPopup").style.top = "-1000px";
 }
