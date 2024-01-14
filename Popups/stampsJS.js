@@ -95,7 +95,9 @@ function pageinateImages() {
     for (var i = imagePosition; i < catImageArr.length; i++){
         if (imagePosition >= startIndex && imagePosition < endIndex) {
             catImageArr[i].style.display = 'block';
+            catImageArr[i].style.width = 99 + sizeModifier + "px";
             imagePosition++;
+
         } else {
             catImageArr[i].style.display = 'none';
         }
@@ -152,6 +154,7 @@ function fetchImages(cat) {
         if (cat == "none") {
             if (imgs[i].outerHTML.includes("cat=") == false) {
                 imgs[i].style.display = "block";
+                
             }
         } else {
             if (imgs[i].outerHTML.includes(cat)) {
@@ -161,7 +164,16 @@ function fetchImages(cat) {
     }
 }
 
+var sizeModifier = 0;
+
 function changeSize(change){
+    if (change == '+'){
+        sizeModifier = sizeModifier + 10;
+    } else {
+        sizeModifier = sizeModifier - 10;
+    }
+    if (sizeModifier < 0){sizeModifier = 0;}
+    console.log(sizeModifier);
     for (var i = 0; i < imgs.length; i++){
 
         var currentWidth = imgs[i].width;
@@ -169,12 +181,15 @@ function changeSize(change){
         var newWidth = "";
         var newHeight = "";
 
-        // Increase size by 10%
-        if (change == '+'){
-            newWidth = currentWidth + 10;
-        } else {
-            newWidth = currentWidth - 20;
+        if (currentWidth != 0){
+            if (change == '+'){
+                newWidth = 99 + sizeModifier;
+            } else {
+                newWidth = currentWidth - 10;
+            }
         }
+        // Increase size by 10%
+        
         
         // Apply the new size to the image
         imgs[i].style.width = newWidth + "px";
