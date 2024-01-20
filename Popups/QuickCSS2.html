@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../98.css" />
+    <link rel="stylesheet" href="../editorstyle.css">
+    <title>Quick CSS</title>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+        @font-face {
+            font-family: W95FA;
+            src: url("../font/W95FA.otf")
+        }
+
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Pixelated MS Sans Serif', serif;
+        }
+
+        #CSSOutput {
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            width: 100%;
+            height: 50vh;
+        }
+
+
+        .outputCol {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 40%;
+        }
+
+        .topBar{
+            margin: 10px 0 10px 0;
+        }
+        .topBar h3{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        
+        .topBar button{
+            margin: 0 0 0 20px;
+            font-weight: bold;
+        }
+
+        .outputCol textarea {
+            width: 80%;
+            height: 285px;
+            resize: none;
+            color: #000;
+            background: #c0c0c0;
+            font-size: 20px;
+            font-family: inherit;
+            margin: 0 20px;
+            font-size: 15px;
+        }
+
+        #elementImgWrapper {
+            max-height: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        #CSSOutput h3 {
+            display: flex;
+            align-items: center;
+            height: 50px;
+            font-size: 25px;
+            margin: 0 0 0 20px;
+        }
+
+        #CSSOutput .copyButton {
+            margin: 0 20px 0 0;
+        }
+
+        #snippetPreview {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            width: 50%;
+            margin: 0 0 0 20px;
+        }
+
+
+        #contentWrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+        }
+
+        #desktop {
+            width: 100%;
+            background: #008083;
+            padding: 10px;
+            color: #FFFFFF;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: top;
+            align-items: left;
+            text-align: center;
+        }
+
+
+        #desktop p {
+            width: 100%;
+            overflow-wrap: break-word;
+        }
+
+        #desktop li img {
+            width: 100%;
+        }
+
+        #codeSnippets {
+            position: absolute;
+            top: 50px;
+            left: 150px;
+            width: 400px;
+        }
+
+        #textEffects {
+            position: absolute;
+            top: 300px;
+            left: 50px;
+            width: 400px;
+        }
+
+        #otherResources{
+            position: absolute;
+            top: 100px;
+            left: 300px;
+            width: 400px;
+        }
+
+        #ieContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 101;
+        }
+
+        .window.ie {
+            width: 100%;
+            height: 100%;
+        }
+
+        .window.ie .fileExplorer {
+            height: calc(100vh - 195px);
+        }
+
+        .fileExplorer {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            background: #FFF;
+            text-align: center;
+            height: 300px;
+            box-shadow: inset 2px 2px #555, 2px 2px #FFF;
+            flex-wrap: wrap;
+            overflow-y: auto;
+        }
+
+        .fileExplorer li img {
+            width: 100%;
+        }
+
+        .folder {
+            width: 65px;
+            margin: 10px;
+            list-style: none;
+            user-select: none;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .folder img,
+        .folder p {
+            cursor: pointer;
+        }
+
+        .folder p {
+            overflow-wrap: break-word;
+        }
+
+        .menuBar {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            user-select: none;
+            margin: 2px;
+        }
+
+        .menuBar li {
+            padding: 3px 5px 4px 5px;
+            font-size: 15px;
+            cursor: default;
+            margin: 0 1px;
+
+        }
+
+        .menuBar li:hover, #wordContainer li, #wordContainer .menuBar:nth-child(2) li:hover {
+            box-shadow: var(--msButtonOut);
+        }
+
+        .menuBar li:active, #wordContainer li:active, #wordContainer .menuBar:nth-child(2) li:active {
+            box-shadow: var(--msButtonIn);
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .window-body {
+            margin: 0 8px 8px 8px;
+        }
+
+        #codeSnippets,
+        #textEffects,
+        #blinkies,
+        #otherResources {
+            z-index: 1;
+        }
+
+        #codeSnippets:focus,
+        #textEffects:focus,
+        #blinkies:focus,
+        #otherResources:focus {
+            z-index: 100 !important;
+        }
+
+        .window {
+            user-select: none;
+        }
+
+        #blinkies {
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            width: 400px;
+        }
+
+        .title-bar-text {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        .toolSizer {
+            width: 5px;
+            padding: 0 !important;
+            margin: 0 0 0 0px !important;
+            box-shadow: inset -1px -1px #dfdfdf55, inset 1px 1px #dfdfdf55, inset -2px -2px grey, inset 2px 2px #dfdfdf55;
+            cursor: default !important;
+        }
+
+        .toolSizer:hover,
+        .toolSizer:active {
+            box-shadow: inset -1px -1px #dfdfdf55, inset 1px 1px #dfdfdf55, inset -2px -2px grey, inset 2px 2px #dfdfdf55 !important;
+            cursor: default;
+        }
+
+        .ie {
+            margin: 0 0 3px 0;
+        }
+
+        .ie .menuBar, #wordContainer .menuBar {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            margin: 0 0 0 0;
+            /*box-shadow: inset -1px -1px #0a0a0a55, inset 1px 1px #ffffff55, inset -2px -2px grey, inset 2px 2px #dfdfdf55;*/
+            border-top: #FFF solid 2px;
+            /*border-right: #ffffff55 solid 2px;*/
+            border-bottom: #0a0a0a55 solid 2px;
+            /*border-left: #dfdfdf55 solid 2px;*/
+        }
+
+        .ieNav img {
+            width: 35px;
+            margin: 0 0 0 0;
+        }
+
+        .ieNav li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px 30px;
+        }
+
+
+        
+
+        .ieAddress {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .ieAddress input {
+            background: white url(../images/other/IE5-Page-16x16.png) left no-repeat;
+            padding-left: 25px;
+            width: 100%;
+        }
+
+        .ieAddress select {
+            width: 0px !important;
+        }
+
+        .ieAddress img {
+            width: 20px;
+            margin: 0 3px;
+        }
+
+        .fileExplorer iframe {
+            width: 100%;
+        }
+
+        .ieAddress input:read-only {
+            color: #000;
+            background: white url(../images/other/IE5-Page-16x16.png) left no-repeat;
+        }
+
+        #wordContainer{
+            position: absolute;
+            width: 70%;
+            z-index: 100;
+            left: 200px;
+            top: 75px;
+        }
+        #wordContainer .fileExplorer{
+            height: 700px;
+            overflow-y: auto;
+        }
+
+        #wordContainer .menuBar:nth-child(2) li{
+            box-shadow: none;
+        }
+        .formatBar li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            height: 25px;
+        }
+
+        .fileBar li, .formatBar li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 25px;
+            height: 25px;
+        }
+        .formatBar li:nth-child(1), .formatBar li:nth-child(2){
+            display: inline-block;
+            width: auto;
+            height: auto;
+        }
+        .noButton,
+        .noButton:hover,
+        .noButton:active {
+            box-shadow: none !important;
+            cursor: default;
+        }
+    </style>
+    <div id="contentWrapper">
+        <div id="desktop" class="pane">
+            <li class="folder" style="width: 60px">
+                <img src="../images/other/recycle_bin_full-2.png">
+                <p>Recycle Bin</p>
+            </li>
+            <li onclick="showWindow('codeSnippets')" class="folder">
+                <img src="../images/other/95 icon.png">
+                <p>Code Snippets</p>
+            </li>
+            <li onclick="showWindow('textEffects')" class="folder">
+                <img src="../images/other/95 icon.png">
+                <p>Text Effects</p>
+            </li>
+            <li class="folder" onclick="showWindow('blinkies')">
+                <img src="../images/other/95 icon.png">
+                <p>Blinkies/Stamps/etc.</p>
+            </li>
+            <li class="folder" onclick="showWindow('otherResources')">
+                <img src="../images/other/95 icon.png">
+                <p>Other Resources</p>
+            </li>
+        </div>
+
+
+    </div>
+
+    <!--CODE SNIPPETS-->
+
+    <div id="codeSnippets" style="display: none;" tabindex="0">
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">Code Snippets</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('codeSnippets')"></button>
+                </div>
+            </div>
+            <div class="menuBar">
+                <li><span class="underline">F</span>ile</li>
+                <li><span class="underline">E</span>dit</li>
+                <li><span class="underline">V</span>iew</li>
+                <li><span class="underline">H</span>elp</li>
+            </div>
+            <div class="window-body">
+                <div class="fileExplorer">
+                    <li class="folder" onclick="showWord('Autoplay Music (YouTube)','varYoutubeAutoplay')">
+                        <img src="../images/other/document-0.png">
+                        <p>Autoplay Music (YouTube)</p>
+                    </li>
+                    <li class="folder" onclick="showWord('CRT Scan Lines','varCRT')">
+                        <img src="../images/other/document-0.png">
+                        <p>CRT Scan Lines</p>
+                    </li>
+                    <li class="folder" onclick="showWord('CRT Scan Lines (Animated)','varAnimatedCRT')">
+                        <img src="../images/other/document-0.png">
+                        <p>CRT Scan Lines (Animated)</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Display Name Image','varDisplayNameImage')">
+                        <img src="../images/other/document-0.png">
+                        <p>Display Name Image</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Enter / Leave Splash Screen','varEnterLeaveSplash')">
+                        <img src="../images/other/document-0.png">
+                        <p>Enter / Leave Splash Screen</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Falling Images (Snowflakes)','varSnowflakes')">
+                        <img src="../images/other/document-0.png">
+                        <p>Falling images (snowflakes)</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Floatie','varBaseImage')">
+                        <img src="../images/other/document-0.png">
+                        <p>Floatie</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Interests Box Customize','varInterestsCustomize')">
+                        <img src="../images/other/document-0.png">
+                        <p>Interests Box Customize</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Profile Banner','varBanner')">
+                        <img src="../images/other/document-0.png">
+                        <p>Profile Banner</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Record Player','varRecordPlayer')">
+                        <img src="../images/other/document-0.png">
+                        <p>Record Player</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Splash Screen / Loading Animation','varLoadingAnimation')">
+                        <img src="../images/other/document-0.png">
+                        <p>Splash Screen / Loading Animation</p>
+                    </li>
+                </div>
+            </div>
+            <div class="status-bar">
+                <p class="status-bar-field">Press F1 for help</p>
+                <p class="status-bar-field">Slide 1</p>
+                <p class="status-bar-field">CPU Usage: 6%</p>
+            </div>
+        </div>
+    </div>
+
+    <!--TEXT EFFECTS-->
+
+    <div id="textEffects" style="display: none;" tabindex="0">
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">Text Effects</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('textEffects')"></button>
+                </div>
+            </div>
+            <div class="menuBar">
+                <li><span class="underline">F</span>ile</li>
+                <li><span class="underline">E</span>dit</li>
+                <li><span class="underline">V</span>iew</li>
+                <li><span class="underline">H</span>elp</li>
+            </div>
+            <div class="window-body">
+                <div class="fileExplorer">
+                    <li class="folder" onclick="showWord('Agoraphobia','varAgoraphobia')">
+                        <img src="../images/other/document-0.png">
+                        <p>Agoraphobia</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Anaglyph','varAnaglyph')">
+                        <img src="../images/other/document-0.png">
+                        <p>Anaglyph</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Comic Boox','varComicBoox')">
+                        <img src="../images/other/document-0.png">
+                        <p>Comic Boox</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Dying Sign','varDyingSign')">
+                        <img src="../images/other/document-0.png">
+                        <p>Dying Sign</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Glitch','varGlitchText')">
+                        <img src="../images/other/document-0.png">
+                        <p>Glitch</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Rainbow','varRainbowText')">
+                        <img src="../images/other/document-0.png">
+                        <p>Rainbow</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Rainbow Underline','varRainbowUnderline')">
+                        <img src="../images/other/document-0.png">
+                        <p>Rainbow Underline</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Rainbow Pan','varRainbowPan')">
+                        <img src="../images/other/document-0.png">
+                        <p>Rainbow Pan</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Rainbow Flash','varRainbowFlash')">
+                        <img src="../images/other/document-0.png">
+                        <p>Rainbow Flash</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Rainbow Flash Shadow','varRainbowFlashShadow')">
+                        <img src="../images/other/document-0.png">
+                        <p>Rainbow Flash Shadow</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Rainbow Blink','varRainbowBlink')">
+                        <img src="../images/other/document-0.png">
+                        <p>Rainbow Blink</p>
+                    </li>
+                    <li class="folder" onclick="showWord('Rainbow Blink Pan','varRainbowBlinkPan')">
+                        <img src="../images/other/document-0.png">
+                        <p>Rainbow Blink Pan</p>
+                    </li>
+                </div>
+            </div>
+            <div class="status-bar">
+                <p class="status-bar-field">Press F1 for help</p>
+                <p class="status-bar-field">Slide 1</p>
+                <p class="status-bar-field">CPU Usage: 6%</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="blinkies" style="display: none;" tabindex="0">
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">Blinkies / Stamps / Etc.</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('blinkies')"></button>
+                </div>
+            </div>
+            <div class="menuBar">
+                <li><span class="underline">F</span>ile</li>
+                <li><span class="underline">E</span>dit</li>
+                <li><span class="underline">V</span>iew</li>
+                <li><span class="underline">H</span>elp</li>
+            </div>
+            <div class="window-body">
+                <div class="fileExplorer">
+                    <li class="folder"
+                        onclick="showWindow('ieContainer','https://heroin-bob.github.io/SpaceHeyLayoutEditor/Popups/stamps.html','Tommys Stamp Page')">
+                        <img src="../images/other/html-2.png">
+                        <p>Tommy's Super Stamp Page</p>
+                    </li>
+                    <li class="folder"
+                        onclick="showWindow('ieContainer','https://blinkies.neocities.org/','The Blinkie Hoard')">
+                        <img src="../images/other/html-2.png">
+                        <p>The Blinkie Hoard</p>
+                    </li>
+                    <li class="folder"
+                        onclick="showWindow('ieContainer','https://raining-starss.neocities.org/','Kidcore wonderland')">
+                        <img src="../images/other/html-2.png">
+                        <p>Kidcore wonderland</p>
+                    </li>
+                    <li class="folder"
+                        onclick="showWindow('ieContainer','https://99gifshop.neocities.org/', '99GIF shop')">
+                        <img src="../images/other/html-2.png">
+                        <p>99GIF shop</p>
+                    </li>
+                    <li class="folder"
+                        onclick="showWindow('ieContainer','https://plasticdino.neocities.org/','plasticdino')">
+                        <img src="../images/other/html-2.png">
+                        <p>plasticdino</p>
+                    </li>
+                    <li class="folder" onclick="showWindow('ieContainer','https://shishka.neocities.org/','shishka')">
+                        <img src="../images/other/html-2.png">
+                        <p>shishka</p>
+                    </li>
+                    <li class="folder"
+                        onclick="showWindow('ieContainer','https://ol1vi4s-corner.neocities.org/','The Rainbow Locker')">
+                        <img src="../images/other/html-2.png">
+                        <p>The Rainbow Locker</p>
+                    </li>
+                </div>
+            </div>
+            <div class="status-bar">
+                <p class="status-bar-field">Press F1 for help</p>
+                <p class="status-bar-field">Slide 1</p>
+                <p class="status-bar-field">CPU Usage: 6%</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="otherResources" style="display: none" tabindex="0">
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">Other Resources</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('otherResources')"></button>
+                </div>
+            </div>
+            <div class="menuBar">
+                <li><span class="underline">F</span>ile</li>
+                <li><span class="underline">E</span>dit</li>
+                <li><span class="underline">V</span>iew</li>
+                <li><span class="underline">H</span>elp</li>
+            </div>
+            <div class="window-body">
+                <div class="fileExplorer">
+                    <li class="folder" onclick="openInNewTab('https://groups.spacehey.com/HTML_')">
+                        <img src="../images/other/html-2.png">
+                        <p>SpaceHey HTML Group</p>
+                    </li>
+                    <li class="folder" onclick="openInNewTab('https://discord.gg/DmbEX2qkyp')">
+                        <img src="../images/other/html-2.png">
+                        <p>Wubzilla's Discord</p>
+                    </li>
+                    <li class="folder" onclick="openInNewTab('https://www.youtube.com/watch?v=mtwpj9c3HqQ')">
+                        <img src="../images/other/html-2.png">
+                        <p>Wubzilla's Demo</p>
+                    </li>
+                    <li class="folder" onclick="openInNewTab('https://blog.spacehey.com/entry?id=981664')">
+                        <img src="../images/other/html-2.png">
+                        <p>Anti's Resources</p>
+                    </li>
+                    <li class="folder" onclick="openInNewTab('https://blog.spacehey.com/entry?id=813699')">
+                        <img src="../images/other/html-2.png">
+                        <p>Zyozi's Resources</p>
+                    </li>
+                </div>
+            </div>
+            <div class="status-bar">
+                <p class="status-bar-field">Press F1 for help</p>
+                <p class="status-bar-field">Slide 1</p>
+                <p class="status-bar-field">CPU Usage: 6%</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="ieContainer" style="display: none;">
+
+    </div>
+
+    <div id="wordContainer" style="display: none;">
+        
+    </div>
+
+
+
+    <!--
+  <div id="quickCSSWrapper">
+    <div id="CSSOptionsWrapper">
+      <div id="CSSOptions">
+
+        <button type="button" class="CSSButton">Code Snippets<span>&#11166;<span></button>
+        <div class="CSSOption">
+          <button type="button" class="CSSButton" onclick="CSSReference('varYoutubeAutoplay')">Autoplay Music (YouTube)</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varCRT')">CRT Scan Lines</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varAnimatedCRT')">CRT Scan Lines (Animated)</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varDisplayNameImage')">Display Name Image</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varEnterLeaveSplash')">Enter / Leave Splash Screen</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varSnowflakes')">Falling images (snowflakes)</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varBaseImage')">Floatie</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varInterestsCustomize')">Interests Box Customize</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varBanner')">Profile Banner</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRecordPlayer')">Record Player</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varLoadingAnimation')">Splash Screen / Loading Animation</button>
+        </div>
+      </div>
+
+      <div id="CSSOptions">
+        <button type="button" class="CSSButton">Text Effects<span>&#11166;<span></button>
+        <div class="CSSOption">
+          <button type="button" class="CSSButton" onclick="CSSReference('varAgoraphobia')">Agoraphobia</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varAnaglyph')">Anaglyph</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varComicBoox')">Comic Boox</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varDyingSign')">Dying Sign</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varGlitchText')">Glitch</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowText')">Rainbow</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowUnderline')">Rainbow Underline</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowPan')">Rainbow Pan</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowFlash')">Rainbow Flash</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowFlashShadow')">Rainbow Flash Shadow</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowBlink')">Rainbow Blink</button>
+          <button type="button" class="CSSButton" onclick="CSSReference('varRainbowBlinkPan')">Rainbow Blink Pan</button>
+        </div>
+      </div>
+
+
+      <div id="CSSOptionsLinks">
+        <button type="button" class="CSSButton">Blinkies/Stamps/etc.<span>&#11166;<span></button>
+        <div class="CSSOption">
+          <a href="stamps.html" target="_blank"><button type="button" class="CSSButton">Tommy's Super Stamp Page</button></a>
+          <a href="https://blinkies.neocities.org/" target="_blank"><button type="button" class="CSSButton">blinkies.neocities.org</button></a>
+          <a href="https://raining-starss.neocities.org/" target="_blank"><button type="button" class="CSSButton">raining-starss.neocities.org</button></a>
+          <a href="https://99gifshop.neocities.org/" target="_blank"><button type="button" class="CSSButton">99gifshop.neocities.org</button></a>
+          <a href="https://plasticdino.neocities.org/" target="_blank"><button type="button" class="CSSButton">plasticdino.neocities.org</button></a>
+          <a href="https://shishka.neocities.org/ " target="_blank"><button type="button" class="CSSButton">shishka.neocities.org</button></a>
+          <a href="https://ol1vi4s-corner.neocities.org/" target="_blank"><button type="button" class="CSSButton">ol1vi4s-corner.neocities.org</button></a>
+
+        </div>
+      </div>
+
+
+      <div id="CSSOptionsLinks">
+        <button type="button" class="CSSButton">Other Resources<span>&#11166;<span></button>
+        <div class="CSSOption">
+          <a href="https://groups.spacehey.com/HTML_" target="_blank"><button type="button" class="CSSButton">SpaceHey HTML Group</button></a>
+          <a href="https://discord.gg/DmbEX2qkyp" target="_blank"><button type="button" class="CSSButton">Wubzilla's Discord</button></a>
+          <a href="https://www.youtube.com/watch?v=mtwpj9c3HqQ" target="_blank"><button type="button" class="CSSButton">Wubzilla's Demo</button></a>
+          <a href="https://blog.spacehey.com/entry?id=981664" target="_blank"><button type="button" class="CSSButton">Anti's Resources</button></a>
+          <a href="https://blog.spacehey.com/entry?id=813699" target="_blank"><button type="button" class="CSSButton">Zyozi's Resources</button></a>
+        </div>
+      </div>
+
+
+
+      
+    </div>
+-->
+
+<!--
+    <div id="CSSOutput">
+        <div class="outputCol">
+            <h3>Interactive Preview:</h3>
+            <div id="snippetPreview">
+
+            </div>
+            
+        <div id="elementImgWrapper">
+          <img id="elementImg"></img>
+        </div>
+      
+        </div>
+        <div class="outputCol">
+            <div class="topBar">
+                <h3>Element CSS: <span class="copyButton" onclick="copyText('quickCSS')"></span></h3>
+            </div>
+            <textarea id="CSSOutputText"></textarea>
+            <div class="topBar">
+                <h3>Element HTML: <span class="copyButton" onclick="copyText('quickHTML')"></span></h3>
+            </div>
+            <textarea id="HTMLOutputText"></textarea>
+        </div>
+    </div>
+    </div>
+
+
+    <script>
+        window.onload = loader();
+
+        function loader() {
+            var coll = document.getElementsByClassName("CSSButton");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    if (this.getElementsByTagName("span")[0].style.transform === "rotate(90deg)") {
+                        this.getElementsByTagName("span")[0].style.transform = "rotate(0deg)";
+                    } else {
+                        this.getElementsByTagName("span")[0].style.transform = "rotate(90deg)";
+                    }
+
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight === "500px") {
+                        content.style.maxHeight = "0px";
+                    } else {
+                        content.style.maxHeight = "500px";
+                    }
+                });
+            }
+        }
+    </script>
+    -->
+    <script src="QuickCSS.js"></script>
+    <script src="../script.js"></script>
+</body>
+
+</html>

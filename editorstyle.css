@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
 
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/font/ms_sans_serif.woff) format("woff");
+  src: url(/font/ms_sans_serif.woff2) format("woff2")
+}
+
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  font-style: normal;
+  font-weight: 700;
+  src: url(/font/ms_sans_serif_bold.woff) format("woff");
+  src: url(/font/ms_sans_serif_bold.woff2) format("woff2")
+}
+
+:root{
+  --msGrey: #c0c0c0;
+  --msButtonOut: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  --msButtonIn: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+}
+
+
 *{
   padding: 0;
   margin: 0;
@@ -31,11 +54,11 @@ textarea{
 }
 
 #editorContainer{
-  font-family: 'Teko', sans-serif;
+  font-family: 'Pixelated MS Sans Serif', serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #333333;
+  background: #404040;
   width: 30%;
   height: 100vh;
   overflow: hidden;
@@ -43,10 +66,12 @@ textarea{
 
 #editorContainer h1, #CSSBoxWrapper h1{
   position: relative;
-  color: #DDDDDD;
+  color: #FFFFFF;
   text-align: center;
   padding: 0 !important;
-  margin: 0 !important;
+  margin: 5px 0 !important;
+  font-size: 20px;
+  font-weight: normal;
 }
 
 #previewContainer{
@@ -60,20 +85,6 @@ textarea{
   right: 0;
   background-color: transparent;
 }
-/*
-#previewContainer:after {
-  display: flex;
-  content: " ";
-  background-color: lightblue;
-  position: absolute;
-  left: 0;
-  width: 4px;
-  height: 400%;
-  cursor: default;
-  border-left: 1px solid #000000;
-  border-right: 1px solid #000000;
-}
-*/
 
 #resizer{
   height: 100vh;
@@ -95,12 +106,13 @@ textarea{
   width: 100%;
   padding: 5px 30px;
   color: #FFFFFF;
+  margin: 0 0 10px 0;
 }
 #updateBar{
   width: 100%;
   text-align: center;
   padding: 5px 0;
-  background: #444444;
+  background: #606060;
 }
 #updateBar ul{
   list-style: none;
@@ -110,14 +122,15 @@ textarea{
   line-height: 25px;
 }
 #updateBar li:first-child{
-  font-size: 19px;
+  font-size: 25px;
   color: #FFFFFF;
 }
 #updateButton{
   color: lightgreen;
-  font-size: 35px;
+  font-size: 25px;
   cursor: pointer;
   display: inline-block;
+  margin: 7px 0;
 }
 #updateButton:hover{
   color: #FFFFFF
@@ -133,18 +146,10 @@ textarea{
 
 }
 #optionsBar li{
-  font-size: 25px;
+  font-size: 15px;
   border: 1px solid transparent;
   transition: .3s;
   margin: 3px 0;
-}
-
-#optionsBar select{
-  background: white;
-  border: 2px solid transparent;
-  border-radius: 0;
-  font-size: 15px !important;
-  font-family: 'Teko', sans-serif !important;
 }
 
 
@@ -216,14 +221,14 @@ textarea{
   top: -9999px;
 }
 .popup iframe{
-  width: 60%;
-  height: 80vh;
+  width: 80%;
+  height: 90vh;
   border: 2px solid white;
 }
 
 .button{
   position: absolute;
-  bottom: 8.5vh;
+  bottom: 4vh;
   background: #DDDDDD;
   color: #333333;
   font-weight: bold;
@@ -238,24 +243,28 @@ textarea{
   color: #333333;
 }
 .copyButton{
-  font-size: 15px;
   position: absolute;
   right: 0;
-  padding: 5px 8px;
-  border: 1px solid #FFFFFF;
-  margin: 5px 0 0 10px;
-  cursor: pointer;
-  background: #444444;
-  color: #DDDDDD;
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: transparent;
+  min-height: 23px;
+  min-width: 75px;
+  padding: 0 12px;
+  text-shadow: 0 0 #222;
+  background: silver;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  font-size: 14px;
 }
 .copyButton::after{
   content: 'copy';
 }
 .copyButton:hover{
-  background: #777777;
+  
 }
 .copyButton:active{
-  background: #222222;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey
 }
 
 #paneSizeButton{
@@ -300,7 +309,7 @@ textarea{
   border-radius: 0px;
   z-index: -5;
   color: #FFF;
-  font-size: 25px;
+  font-size: 15px;
 }
 
 #previewsettingsButton li{
@@ -395,3 +404,23 @@ textarea{
   height: 100%;
   border-radius: 5px;
 }
+
+.CodeMirror pre{
+  box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
