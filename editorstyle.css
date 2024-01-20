@@ -10,7 +10,7 @@
   font-family: "Pixelated MS Sans Serif";
   font-style: normal;
   font-weight: 700;
-  src: url(../../font/ms_sans_serif_bold.woff) format("woff");
+  src: url(../font/ms_sans_serif_bold.woff) format("woff");
   /*src: url(../../font/ms_sans_serif_bold.woff2) format("woff2");*/
 }
 
