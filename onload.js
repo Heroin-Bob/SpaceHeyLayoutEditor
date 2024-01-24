@@ -1,3 +1,5 @@
+alert("Hi!<br><br>The new home for the layout editor is tommypanzram.neocities.org. This page will still exist but will soon begin automatically redirecting users. So, if you have this page bookmarked you should update it.<br><br>Enjoy!");
+
 const BORDER_SIZE = 4;
 const panel = document.getElementById("previewContainer");
 const lpanel = document.getElementById("editorContainer");
