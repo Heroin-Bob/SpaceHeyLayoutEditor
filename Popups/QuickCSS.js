@@ -11,7 +11,7 @@ function CSSReference(elem) {
       PreviewOutStr = "<style>" + "#splashprofile{\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background: lightgreen;\n  left: 0;\n  top: 0;\n  width: 100%;\n  position: relative;\n  height: 100%;\n  opacity: 1;\n  transition: .2s;\n}\n\n#splashprofile:target {\n opacity: 0;\n visibility: hidden;\n}" + "</style>" + HTMLoutStr;
       break;
     case "varRecordPlayer":
-      CSSoutStr = "  @keyframes spin {\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n  .vinyl {\n    animation: spin 3s linear infinite;\n    width: 150px;\n    margin-left: 55px;\n    padding: 0px;\n    position: absolute;\n  }\n  .vinylRecord {\n    height: 150px;\n    padding: 0px;\n    position: relative;\n    z-index: 1;\n    margin-right: 55px;\n  }\n  .recordPlayer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }";
+      CSSoutStr = "  @keyframes spin {\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n  .vinyl {\n    animation: spin 3s linear infinite;\n    width: 150px;\n    margin-left: 55px;\n    padding: 0px;\n    position: absolute;\n  }\n  .vinylRecord {\n    height: 150px;\n    padding: 0px;\n    position: relative;\n    z-index: 1;\n    margin-right: 55px;\n  }\n  .recordPlayer {\nposition: relative;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }";
       HTMLoutStr = "<div class='recordPlayer'>\n  <img class='vinyl' src='https://i.ibb.co/xqbZjv3/vinyl-black-1.png' />\n  <img class='vinylRecord' src='https://i.ibb.co/PxSdL3D/81a-ECQl-JWw-L-UF894-1000-QL80.jpg' />\n</div>";
       PreviewOutStr = "<p>Thank you <a href='https://murgn.neocities.org/secretsociety'>Morgan</a> for the design.</p><br><style>" + CSSoutStr + "</style>" + HTMLoutStr;
       break;
@@ -242,12 +242,12 @@ function showIEPage(pageURL, pageTitle){
               <button aria-label='Close' onclick='closeWindow("ieContainer")'></button></div></div><div class='ieTopBar'><div class='menuBar' style='width: 100% !important;'>
               <li class='toolSizer' style='height: 25px !important;'></li><li><span class='underline'>F</span>ile</li><li><span class='underline'>E</span>dit</li>
               <li><span class='underline'>V</span>iew</li><li><span class='underline'>H</span>elp</li><img src='../images/other/it5_loading_globe.gif' style='width: 50px; margin-right: 0; margin-left: auto;'>
-              </div><div class='menuBar ieNav'><li class='toolSizer' style='height: 75px !important;'></li><li><img src='../images/other/Back.png'>Back</li><li><img src='../images/other/Forward.png'>Forward</li>
+              </div><div class='menuBar ieNav'><li class='toolSizer' style='height: 60px !important;'></li><li><img src='../images/other/Back.png'>Back</li><li><img src='../images/other/Forward.png'>Forward</li>
               <li><img src='../images/other/Stop.png'>Stop</li><li><img src='../images/other/Refresh.png'>Refresh</li><li><img src='../images/other/Home.png'>Home</li>
-              <li class='toolSizer' style='height: 75px !important;'></li><li><img src='../images/other/Search.png'>Search</li><li><img src='../images/other/Favorites.png'>Favorites</li>
-              <li><img src='../images/other/History.png'>History</li><li class='toolSizer' style='height: 75px !important;'></li><li><img src='../images/other/Mail.png'>Mail</li>
+              <li class='toolSizer' style='height: 60px !important;'></li><li><img src='../images/other/Search.png'>Search</li><li><img src='../images/other/Favorites.png'>Favorites</li>
+              <li><img src='../images/other/History.png'>History</li><li class='toolSizer' style='height: 60px !important;'></li><li><img src='../images/other/Mail.png'>Mail</li>
               <li><img src='../images/other/Print.png'>Print</li></div><div class='menuBar ieAddress'><li class='toolSizer' style='height: 20px !important;'></li><li class='noButton'>A<span class='underline'>d</span>dress:</li>
-              <li class='noButton' style='width: 90%;'><input type='text' value='` + pageURL + `' readonly></li><li><img src='../images/other/Go-Navigation.png'>Go</li></div>
+              <li class='noButton'><input type='text' value='` + pageURL + `' readonly></li><li onclick="openInNewTab('` + pageURL + `')"><img src='../images/other/Go-Navigation.png'>Go</li></div>
               </div><div class='window-body'><div class='fileExplorer'><iframe src='` + pageURL +`'frameborder='0'></iframe></div></div><div class='status-bar' style='display: flex; flex-direction: row;'>
               <p class='status-bar-field'> <img src='../images/other/Page-Alert-16x16.png'style='padding: 0 5px 0 0'>Done!</p><p class='status-bar-field'></p>
               <p class='status-bar-field'></p><p class='status-bar-field'> <img src='../images/other/World.png' alt='' />Internet</p></div></div>

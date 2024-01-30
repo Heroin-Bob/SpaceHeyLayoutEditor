@@ -19,12 +19,23 @@
             src: url("../font/W95FA.otf")
         }
 
-
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
             font-family: 'Pixelated MS Sans Serif', serif;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+            text-rendering: optimizeLegibility !important;
+            -webkit-font-smoothing: antialiased !important;
+
+        }
+
+        body{
+            background: #008083;
+            width: 100%;
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
 
         #CSSOutput {
@@ -96,7 +107,7 @@
             text-align: center;
             align-items: center;
             flex-direction: column;
-            height: 100%;
+            height: 80%;
             width: 50%;
             margin: 0 0 0 20px;
         }
@@ -105,13 +116,11 @@
         #contentWrapper {
             display: flex;
             flex-direction: column;
-            height: 100vh;
             width: 100%;
         }
 
         #desktop {
             width: 100%;
-            background: #008083;
             padding: 10px;
             color: #FFFFFF;
             height: 100%;
@@ -120,6 +129,7 @@
             justify-content: top;
             align-items: left;
             text-align: center;
+            overflow-x: hidden;
         }
 
 
@@ -155,11 +165,11 @@
 
         #ieContainer {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 10px;
+            width: 75%;
+            height: auto;
             z-index: 101;
+            right: 30px;
         }
 
         .window.ie {
@@ -167,8 +177,10 @@
             height: 100%;
         }
 
-        .window.ie .fileExplorer {
-            height: calc(100vh - 195px);
+        #ieContainer .fileExplorer {
+            position: relative;
+            /*height: calc(100% - 195px);*/
+            height: 100%;
         }
 
         .fileExplorer {
@@ -177,7 +189,6 @@
             flex-direction: row;
             background: #FFF;
             text-align: center;
-            height: 300px;
             box-shadow: inset 2px 2px #555, 2px 2px #FFF;
             flex-wrap: wrap;
             overflow-y: auto;
@@ -211,6 +222,7 @@
             list-style: none;
             user-select: none;
             margin: 2px;
+            height: 25px;
         }
 
         .menuBar li {
@@ -234,7 +246,10 @@
         }
 
         .window-body {
+            position: relative;
             margin: 0 8px 8px 8px;
+            
+            overflow-y: auto;
         }
 
         #codeSnippets,
@@ -261,7 +276,9 @@
             left: 200px;
             width: 400px;
         }
-
+        .title-bar{
+            height: 20px;
+        }
         .title-bar-text {
             display: flex;
             align-items: center;
@@ -297,10 +314,14 @@
             /*border-right: #ffffff55 solid 2px;*/
             border-bottom: #0a0a0a55 solid 2px;
             /*border-left: #dfdfdf55 solid 2px;*/
+
+        }
+        .ieNav{
+            height: 80px;
         }
 
         .ieNav img {
-            width: 35px;
+            width: 1.75rem;
             margin: 0 0 0 0;
         }
 
@@ -310,7 +331,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 10px 30px;
+            padding: 16px 20px
         }
 
 
@@ -320,6 +341,8 @@
             display: flex;
             flex-direction: row;
             align-items: center;
+            height: 30px;
+            width: 100%;
         }
 
         .ieAddress input {
@@ -337,8 +360,14 @@
             margin: 0 3px;
         }
 
+        .ieAddress li:nth-child(3){
+            width: 80%;
+        }
+
         .fileExplorer iframe {
             width: 100%;
+            height: 75vh;
+            overflow-y: hidden;
         }
 
         .ieAddress input:read-only {
@@ -354,7 +383,7 @@
             top: 75px;
         }
         #wordContainer .fileExplorer{
-            height: 700px;
+            height: 500px;
             overflow-y: auto;
         }
 
@@ -388,10 +417,31 @@
             box-shadow: none !important;
             cursor: default;
         }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+            font-weight: normal;
+        }
+
+
+
+
+        @media (max-width: 1400px) {
+            .folder{
+                width: 60px;
+            }
+            .ieNav li{
+                padding: 10px 15px;
+            }
+            #ieContainer .window-body, #ieContainer .fileExplorer, #ieContainer iframe{
+                height: 60vh;
+            }
+        }
     </style>
     <div id="contentWrapper">
         <div id="desktop" class="pane">
-            <li class="folder" style="width: 60px">
+            <li class="folder">
                 <img src="../images/other/recycle_bin_full-2.png">
                 <p>Recycle Bin</p>
             </li>
@@ -410,6 +460,12 @@
             <li class="folder" onclick="showWindow('otherResources')">
                 <img src="../images/other/95 icon.png">
                 <p>Other Resources</p>
+            </li>
+            <li class="folder">
+                <a href="http://127.0.0.1:5500/index2.html" target="_blank">
+                    <img src="../images/other/spacehey.png">
+                    <p>SpaceHey Layout Editor</p>
+                </a>
             </li>
         </div>
 
@@ -588,7 +644,7 @@
             <div class="window-body">
                 <div class="fileExplorer">
                     <li class="folder"
-                        onclick="showWindow('ieContainer','https://heroin-bob.github.io/SpaceHeyLayoutEditor/Popups/stamps.html','Tommys Stamp Page')">
+                        onclick="showWindow('ieContainer','stamps.html','Tommys Stamp Page')">
                         <img src="../images/other/html-2.png">
                         <p>Tommy's Super Stamp Page</p>
                     </li>
@@ -678,6 +734,7 @@
             </div>
         </div>
     </div>
+    
 
     <div id="ieContainer" style="display: none;">
 

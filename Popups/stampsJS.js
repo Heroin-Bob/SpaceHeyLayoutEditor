@@ -202,3 +202,20 @@ function changeSize(change){
 function removePopup(){
     document.querySelector("body > div.infoPopup").style.top = "-1000px";
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var categoryListItems = document.querySelectorAll("#categoryList li");
+
+    categoryListItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+            // Remove 'active' class from all items
+            categoryListItems.forEach(function(item) {
+                item.classList.remove("active");
+            });
+
+            // Add 'active' class to the clicked item
+            this.classList.add("active");
+        });
+    });
+});
