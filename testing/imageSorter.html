@@ -20,18 +20,20 @@
             color: #FFF;
         }
         #categoryList{
-            width: 100%;
+            width: 50%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             list-style: none;
             font-weight: bold;
             color: #000;
+            flex-wrap: wrap;
         }
         #categoryList li{
             cursor: pointer;
             border: 2px solid black;
             padding: 4px;
+            margin: 5px;
             border-radius: 5px;
             background: lightgreen;
             user-select: none;
@@ -50,24 +52,34 @@
         img{
             width: 200%;
         }
+        .highlighted{
+            background: orange !important;
+        }
+        #categories{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
     </style>
     <div id="container">
         <div id="categories">
             <h2>Categories</h2>
             <ul id="categoryList">
-                <li onclick="showNextImage('anime')">Anime</li>
-                <li onclick="showNextImage('cartoons')">Cartoons</li>
-                <li onclick="showNextImage('cute')">Cute</li>
-                <li onclick="showNextImage('food')">Food/Hobbies</li>
-                <li onclick="showNextImage('gaming')">Gaming</li>
-                <li onclick="showNextImage('lgbtq')">LGBTQ+</li>
-                <li onclick="showNextImage('memes')">Memes</li>
-                <li onclick="showNextImage('pokemon')">Pokemon</li>
-                <li onclick="showNextImage('awareness')">Social Awareness</li>
-                <li onclick="showNextImage('spooky')">Spooky</li>
-                <li onclick="showNextImage('text')">Text</li>
-                <li onclick="showNextImage('tv')">TV/Movies/<br>Music/Youtube</li>
-                <li onclick="showNextImage('remove')">Remove</li>
+                <li onclick="showNextImage('anime')">Anime<br>[Q]</li>
+                <li onclick="showNextImage('cartoons')">Cartoons<br>[W]</li>
+                <li onclick="showNextImage('cute')">Cute<br>[E]</li>
+                <li onclick="showNextImage('food')">Food/Hobbies<br>[R]</li>
+                <li onclick="showNextImage('gaming')">Gaming<br>[T]</li>
+                <li onclick="showNextImage('lgbtq')">LGBTQ+<br>[A]</li>
+                <li onclick="showNextImage('memes')">Memes<br>[S]</li>
+                <li onclick="showNextImage('pokemon')">Pokemon<br>[D]</li>
+                <li onclick="showNextImage('awareness')">Social Awareness<br>[F]</li>
+                <li onclick="showNextImage('spooky')">Spooky<br>[G]]</li>
+                <li onclick="showNextImage('text')">Text<br>[Z]</li>
+                <li onclick="showNextImage('tv')">TV/Movies/<br>Music/Youtube<br>[X]</li>
+                <li onclick="showNextImage('remove')">Remove<br>[C]</li>
                 
             </ul>
         </div>

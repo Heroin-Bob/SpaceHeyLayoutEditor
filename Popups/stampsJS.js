@@ -114,6 +114,7 @@ function nextPage(){
         currentPage++;
         pageinateImages();
     }
+    hideCopyNotif();
 }
 
 function prevPage(){
@@ -122,6 +123,7 @@ function prevPage(){
         imagePosition = imagesPerPage * (currentPage - 1);
         pageinateImages();
     }
+    hideCopyNotif();
 }
 
 var catImageArr = [];
@@ -147,6 +149,7 @@ function showImages(category) {
     currentPage = 1;
     pageinateImages();
     document.getElementById("totalPages").innerText = totalPages;
+    hideCopyNotif();
 }
 
 function fetchImages(cat) {
@@ -162,11 +165,13 @@ function fetchImages(cat) {
             }
         }
     }
+    hideCopyNotif();
 }
 
 var sizeModifier = 0;
 
 function changeSize(change){
+
     if (change == '+'){
         sizeModifier = sizeModifier + 10;
     } else {
@@ -197,6 +202,8 @@ function changeSize(change){
         
 
     }
+
+    hideCopyNotif();
 }
 
 function removePopup(){
@@ -219,3 +226,51 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById('checkCopyImg');
+    const images = document.querySelectorAll('#imageContainer img');
+
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            images.forEach(img => {
+                img.addEventListener('click', copyImageTag);
+            });
+        } else {
+            images.forEach(img => {
+                img.removeEventListener('click', copyImageTag);
+            });
+            hideCopyNotif();
+        }
+    });
+
+    function copyImageTag(event) {
+        const imgTag = `<img src="${event.target.src}" alt="${event.target.alt}">`;
+        
+        var thisL = this.offsetLeft;
+        var thisT = this.offsetTop;
+        var thisH = this.offsetHeight;
+        var thisW = this.offsetWidth;
+
+
+
+        console.log(thisL + "," + thisT  + "," +  thisH + "," + thisW)
+
+        navigator.clipboard.writeText(imgTag).then(function() {
+            const copyNotif = document.getElementById("copyNotif");
+            copyNotif.style.left = thisL + "px";
+            copyNotif.style.top = thisT + "px";
+            copyNotif.style.height = thisH + "px";
+            copyNotif.style.width = thisW + "px";
+            console.log('Image tag copied to clipboard:', imgTag);
+        }, function() {
+            console.error('Failed to copy image tag to clipboard');
+        });
+    }
+});
+
+function hideCopyNotif(){
+    document.getElementById("copyNotif").style.top = "-9999px";
+}
