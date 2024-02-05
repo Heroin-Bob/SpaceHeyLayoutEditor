@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function copyImageTag(event) {
-        const imgTag = `<img src="${event.target.src}" alt="${event.target.alt}">`;
+        const imgTag = `<img src="${event.target.src}"/>`;
         
         var thisL = this.offsetLeft;
         var thisT = this.offsetTop;
